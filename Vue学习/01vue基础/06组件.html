@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件</title>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+</head>
+
+<body>
+
+<!--1. Prop-->
+<div id="app-1">
+    <child :prop-a='message' :prop-c='alert'></child>
+</div>
+
+<!--2. 自定义事件-->
+<div id="app-2">
+    {{bar}}
+    <comp :foo="bar" @update:foo="val => bar = val"></comp>
+</div>
+
+<!--3. 自定义表单输入组件-->
+<div id="app-3">
+
+    <currency-input v-model="price"></currency-input>{{price}}
+    <!--上面语法是下面语法的语法糖-->
+    <!--<currency-input :value="price" @input="price = arguments[0]"></currency-input>{{price}}-->
+</div>
+
+<script>
+    Vue.component('child', {
+        // 声明 props
+        props: {
+            // 基础类型检测 （`null` 意思是任何类型都可以）
+            propA: Number,
+            // 多种类型
+            propB: [String, Number],
+            // 必传且是字符串
+            propC: {
+                type: String,
+                required: true
+            },
+            // 数字，有默认值
+            propD: {
+                type: Number,
+                default: 100
+            },
+            // 数组／对象的默认值应当由一个工厂函数返回
+            propE: {
+                type: Object,
+                default: function () {
+                    return { message: 'hello' }
+                }
+            },
+            // 自定义验证函数
+            propF: {
+                validator: function (value) {
+                    return value > 10
+                }
+            }
+        },
+        template: '<div><h4>{{ propC }}</h4>{{ propA }}</div>'
+    })
+
+    var app1 = new Vue({
+        el: '#app-1',
+        data:{
+            message:123,
+            alert:'hello!',
+        }
+    })
+
+
+    Vue.component('comp',{
+        props:['foo'],
+        template:'<div><input :value="foo" @input="update">{{foo}}</div>',
+
+
+
+        methods:{
+            update:function(e){
+                this.$emit('update:foo', e.target.value);
+            }
+        }
+    })
+
+    var app2 = new Vue({
+        el:'#app-2',
+        data:{
+            bar:'hello'
+        }
+    })
+
+    Vue.component('currency-input',{
+        props:['value'],
+        template:`<span>
+        $<input :value="value" @input="updateValue">
+        </span>`,
+        methods:{
+            updateValue:function(e){
+                var value = e.target.value;
+                var formattedValue = value
+                // 删除两侧的空格符
+                    .trim()
+                    // 保留 2 小数位
+                    .slice(0, value.indexOf('.') + 3);
+                // 如果值不统一，手动覆盖以保持一致
+                if (formattedValue !== value) {
+                    e.target.value = formattedValue
+                }
+                console.log(123);
+                // 通过 input 事件发出数值
+                this.$emit('input', Number(formattedValue))
+            }
+        }
+
+    })
+
+    var app3 = new Vue({
+        el:'#app-3',
+        data:{
+            price:12.12
+        }
+    })
+
+
+</script>
+</body>
+</html>

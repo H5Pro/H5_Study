@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+align-items属性定义项目在侧轴上如何对齐
+值	描述
+flex-start	与侧轴起始方向对齐
+flex-end	向侧轴终点方向对齐
+center	向侧轴中点方向对齐。
+baseline	在侧轴上保持基线对齐，以第一个项目的基线为准
+strength	（默认），在侧轴方向拉伸每个项目，使每个项目保持相同的起始位置和终点位置
+
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container {
+            height: 400px;
+            width: 400px;
+            display: flex;
+            border: 2px solid #aaa;
+
+            align-items: baseline;
+        }
+
+
+
+        .container .box:last-child{
+            font-size: 24px;
+        }
+
+
+
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: lightgreen;
+            border: 1px solid black;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+
+</div>
+
+</body>
+</html>

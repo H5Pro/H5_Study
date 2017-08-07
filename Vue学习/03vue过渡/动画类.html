@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../node_modules/animate.css/animate.css">
+    <script src="../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <button @click="show = !show">
+        Toggle render
+    </button>
+    <transition
+            enter-active-class="animated tada"
+            leave-active-class="animated bounceOutRight"
+    >
+        <p v-if="show">hello</p>
+    </transition>
+</div>
+
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            show:false
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .content{
+            background-color: lightsalmon;
+            line-height: 50px;
+        }
+    </style>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+      <test v-model="user"></test>
+      <input type="button" value="show" @click="show">
+  </div>
+
+  <template id="test">
+      <div>
+          {{value.title}}
+          {{value.name}}
+      </div>
+
+  </template>
+
+  <script>
+      Vue.component('test',{
+          /*props:['value'],
+          data(){
+            return {
+                user:{
+                    title:'',
+                    name:''
+                }
+            }
+          },*/
+          props:{
+            value:{
+                type:Object,
+                default:{title:'',name:''}
+            }
+          },
+
+          created(){
+          },
+          watch:{
+             value(v){
+                console.log(v)
+             }
+          },
+          template:'#test'
+      })
+
+      new Vue({
+          el:'#app',
+          data:{
+              user:{
+                  name:'1111',
+                  title:'22222'
+              }
+          },
+          methods:{
+              show(){
+                  this.user={name:Date.now(),title:Date.now()}
+              }
+          }
+      })
+  </script>
+</body>
+</html>

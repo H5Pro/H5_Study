@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+    flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。
+    如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。
+    如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。
+    负值对该属性无效。
+-->
+<!--
+    以上代码子元素basis超出父容器，这时的计算方法
+    溢出值P= basis1+basis2+basisN-ContainerWidth
+    单独元素加权值V= shrink*basis
+    总体加权值T= V1+V2+.....Vn
+    元素宽度W = basis-V/T*P
+-->
+
+
+
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        .container {
+            height: 400px;
+            width: 600px;
+            display: flex;
+            border: 2px solid #aaa;
+
+        }
+
+        .box{
+            width: 100px;
+            background-color: lightgreen;
+            border: 1px solid black;
+
+        }
+
+        .box:nth-child(1){
+            flex-shrink: 2;
+            width: 200px;
+        }
+
+        .box:nth-child(2){
+            flex-shrink: 2;
+            width: 400px;
+        }
+
+        .box:nth-child(3){
+            flex-shrink: 1;
+            width: 400px;
+        }
+
+
+
+
+
+
+
+
+
+
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+    <div class="box">
+        1
+    </div>
+    <div class="box">2</div>
+    <div class="box">
+        3
+    </div>
+
+
+</div>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .textField {
+            color:#444444;
+            border:1px solid #777777;
+            border-radius:  4px;
+            height: 30px;
+            width: 280px;
+            margin-left: 0px;
+
+
+        }
+        .customBtn{
+            background-color: darkcyan;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            width: 240px;
+            height: 55px;
+            font-size: 23px;
+        }
+        .outer{
+            padding-top: 30px;
+            border: 2px solid blue;
+            width: 510px;
+            height: 680px;
+        }
+        .horizon{
+            margin-bottom: 20px;
+            line-height: 35px;
+            vertical-align: middle;
+        }
+        .label{
+
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+            color: black;
+            font-size: 22px;
+
+        }
+        .text1{
+            width: 100%;
+            color: gray;
+            font-size: 24px;
+            text-align: center;
+        }
+        .text2{
+            display: inline-block;
+            color: #888888;
+            font-size: 13px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+<form action="acceptForm.html" method="get">
+    <div class="outer">
+        <div class="horizon">
+            <div class="text1">还没有开心网账号？赶紧注册吧！</div>
+        </div>
+
+        <div class="horizon" style="margin-bottom: 5px">
+            <div class="label">电子邮箱：</div>
+            <input class="textField" type="text" name="email">
+        </div>
+
+        <div class="horizon" style="margin-bottom: 5px">
+            <div class="label"></div>
+            <div class="text2">如果没有邮箱，你可以用<a style="text-decoration: none" href="sendForm.html">账号注册</a></div>
+        </div>
+
+        <div class="horizon">
+            <div class="label">创建密码：</div>
+            <input class="textField" type="password" name="password">
+        </div>
+        <div class="horizon">
+            <div class="label">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</div>
+            <input class="textField" type="text" name="name">
+        </div>
+        <div class="horizon">
+            <div class="label">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：</div>
+            <label for="nan"> <input type="radio" name="sex" id="nan" value="man">男</label>
+            <label for="nv">  <input type="radio" name="sex" id="nv" value="woman">女</label>
+
+        </div>
+
+        <div class="horizon">
+            <div class="label">生&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日：</div>
+            <select name="year">
+                <option value="0">请选择</option>
+                <option value="1">2017</option>
+                <option value="2">2016</option>
+                <option value="3">2015</option>
+                <option value="4">2014</option>
+                <option value="5">2013</option>
+                <option value="6">2012</option>
+
+            </select>年
+            <select name="month">
+                <option value="0">__</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+
+            </select>月
+
+            <select name="day">
+                <option value="0">__</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+
+            </select>日
+        </div>
+        <div class="horizon">
+            <div class="label">居&nbsp;&nbsp;住&nbsp;&nbsp;地：</div>
+            <select name="resident">
+                <option value="1">北京</option>
+                <option value="2">天津</option>
+                <option value="3">河北</option>
+                <option value="4">河南</option>
+                <option value="5">湖北</option>
+                <option value="6">湖南</option>
+                <option value="7">四川</option>
+                <option value="8">陕西</option>
+            </select>
+        </div>
+
+        <div class="horizon">
+            <div class="label">我&nbsp;&nbsp;现&nbsp;&nbsp;在：</div>
+            <label for="job"> <input type="radio" id="job" name="profession" value="work">在工作 </label>
+            <label for="study"> <input type="radio" id="study" name="profession" value="study">在上学 </label>
+            <label for="other"> <input type="radio" id="other" name="profession" value="other">其他 </label>
+        </div>
+        <div class="horizon">
+            <div class="label"></div>
+            <label for="agree"><input type="checkbox" id="agree" name="clause">同意</label>
+            <a href="">开心网服务条款</a>
+        </div>
+        <div class="horizon" style="text-align: center">
+            <input class="customBtn" type="submit" value="立即注册">
+        </div>
+
+    </div>
+</form>
+
+
+</body>
+</html>

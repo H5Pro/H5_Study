@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .nav{
+            display: table;
+            width: 100%;
+        }
+        .nav>*{
+            display: table-cell;
+            width: 33%;
+            line-height: 50px;
+            text-align: center;
+        }
+        .c{
+            height: 300px;
+            width: 100%;
+            position: fixed;
+        }
+        .c-a{
+            background-color: lightsalmon;
+        }
+        .c-b{
+            background-color: lightskyblue;
+        }
+        .c-c{
+            background-color: lightcoral;
+        }
+        .flip-enter-active,
+        .flip-leave-active{
+            transition: all 1s;
+        }
+        .flip-enter{
+            transform: translateX(100%);
+        }
+        .flip-leave-to{
+            transform: translateX(-100%);
+        }
+    </style>
+</head>
+<body>
+   <div id="app">
+       <div class="nav">
+           <div @click="name='test-a'">A1</div>
+           <div @click="name='test-b'">A2</div>
+           <div @click="name='test-c'">A3</div>
+       </div>
+       <transition name="flip" >
+           <component v-bind:is="name">
+
+           </component>
+       </transition>
+   </div>
+   <script src="../vue.min.js"></script>
+   <script>
+       var A={template:'<div class="c c-a"></div>'}
+       var B={template:'<div class="c c-b"></div>'}
+       var C={template:'<div class="c c-c"></div>'}
+       new Vue({
+           el:'#app',
+           data:{
+               name:'test-a'
+           },
+           components:{
+               'test-a':A,
+               'test-b':B,
+               'test-c':C
+           }
+       })
+   </script>
+</body>
+</html>

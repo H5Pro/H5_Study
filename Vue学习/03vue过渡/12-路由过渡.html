@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .nav{
+            display: table;
+            width: 100%;
+        }
+        .nav>*{
+            display: table-cell;
+            width: 33%;
+            line-height: 50px;
+            text-align: center;
+        }
+        .page{
+            height: 400px;
+        }
+        .page-home{
+            background-color: red;
+        }
+        .page-user{
+            background-color: #ccc;
+        }
+        .page-score{
+            background-color: blue;
+        }
+        .page-pwd{
+            background-color: lightcoral;
+        }
+        .page a{
+            line-height: 30px;
+            display: block;
+        }
+        .child-view {
+            position: absolute;
+            width:100%;
+            transition: all .8s cubic-bezier(.55,0,.1,1);
+        }
+        .slide-left-enter, .slide-right-leave-to {
+            transform: translate(100%, 0);
+        }
+        .slide-left-leave-to, .slide-right-enter {
+
+            transform: translate(-100%, 0);
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div class="nav">
+        <router-link to="/">home</router-link>
+        <router-link to="/user">user</router-link>
+    </div>
+    <transition :name="transition">
+        <router-view class="child-view"></router-view>
+    </transition>
+
+</div>
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script src="../node_modules/vue-router/dist/vue-router.js"></script>
+<template id="home">
+    <div class="page page-home">
+
+    </div>
+</template >
+<template id="user">
+    <router-view></router-view>
+</template>
+<template id="pwd">
+    <div class="page page-pwd">
+        <header>
+            <input type="button" @click="$router.go(-1)" value="返回">
+        </header>
+    </div>
+</template>
+<template id="score">
+    <div class="page page-score">
+        <input type="button" @click="$router.go(-1)" value="返回">
+    </div>
+</template>
+<template id="profile">
+    <div class="page page-user">
+        <router-link to="pwd">密码修改</router-link>
+        <router-link to="score">用户积分</router-link>
+    </div>
+</template>
+<script>
+    var Home={template:'#home'}
+    var User={template:'#user'}
+    var Pwd={template:'#pwd'}
+    var Score={template:'#score'}
+    var Profile={template:'#profile'}
+    var routes=[
+        {
+            path:'/',
+            component:Home
+        },
+        {
+            path:'/user',
+            component:User,
+            children:[
+                {
+                    name:'',
+                    path:'',
+                    component:Profile
+                },
+                {
+                    name:'pwd',
+                    path:'pwd',
+                    component:Pwd
+                },
+                {
+                    name:'score',
+                    path:'score',
+                    component:Score
+                }
+            ]
+        },
+
+    ]
+    var router=new VueRouter({
+        routes,
+    })
+    new Vue({
+        el:'#app',
+        router,
+        data:{
+          transition:'slide-left'
+        },
+        created(){
+
+        },
+        computed:{
+            paths(){
+                if(!window['_routes']){
+                    window['_routes']=[];
+                }
+                return window['_routes'];
+            }
+        },
+        watch:{
+            '$route':function (to,from) {
+                console.log(to.path,from.path)
+                if(this.paths.length>=2&&this.paths[this.paths.length-1]==from.path){
+                    this.transition='slide-right'
+                    this.paths.pop();
+                }else{
+                    this.paths.push(to.path)
+                    this.transition='slide-left'
+                }
+            }
+        }
+
+    })
+</script>
+</body>
+</html>

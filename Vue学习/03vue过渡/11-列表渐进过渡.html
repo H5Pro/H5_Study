@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .list{
+            list-style: none;
+            padding-left: 0;
+            overflow: hidden;
+        }
+        .del-btn{
+            display: block;
+            text-decoration: none;
+            color:#fff;
+            position: absolute;
+            height: 100%;
+            top:0;
+            right:0;
+            width: 100px;
+            background-color: red;
+            border:0;
+            transition: all 1s;
+        }
+        .list-item{
+            line-height: 50px;
+            background-color: #f1f1f1;
+            text-align: left;
+            padding: 0 20px;
+            margin-bottom: 10px;
+            position: relative;
+            width: 100%;
+            transition: all 1s;
+        }
+        .list-enter{
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+        .list-move{
+            transition: all 1s;
+        }
+        .list-leave-active{
+            position: absolute;
+        }
+        .list-leave-to  {
+            opacity: 0;
+        }
+        .remove-enter,.remove-leave-to{
+            right:-100px;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <input type="button" value="add" @click="add">
+    <transition-group name="list" class="list" tag="ul">
+        <li v-for="(item,index) in items" :key="item.name" class="list-item" @click="item.show=!item.show">
+            <span>{{item.name}}</span>
+            <transition name="remove">
+                <button  v-show="item.show" @click.stop="remove(item,index)" class="del-btn">删除</button>
+            </transition>
+        </li>
+    </transition-group>
+</div>
+<script src="../vue.min.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            items:[
+                {name:'AAAAA',show:false},
+                {name:'BBBBBB',show:false},
+                {name:'CCCCCC',show:false},
+                {name:'DDDDDD',show:false},
+                {name:'EEEEE',show:false},
+                {name:'FFFFF',show:false}],
+            index:0
+        },
+        methods:{
+            add(){
+                this.items.splice(0,0,{name:'new item '+this.index++,show:false});
+            },
+            remove(item,index){
+                this.items.splice(index,1)
+            }
+        },
+
+
+    })
+</script>
+</body>
+</html>

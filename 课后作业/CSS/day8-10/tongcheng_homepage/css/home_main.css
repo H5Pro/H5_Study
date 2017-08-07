@@ -1,0 +1,228 @@
+
+
+.scenic_spot:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.scenic_spot .nav{
+    border-bottom: 2px solid #ccc;
+}
+
+.scenic_spot .nav_title{
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.scenic_spot .nav_title:hover{
+    border-bottom: 3px solid rgb(67,169,3);
+    color: rgb(67,169,0);
+}
+
+.scenic_spot .nav_title:hover .triangle{
+    display: block;
+}
+
+.scenic_spot .vc{
+    top: 0px;
+    bottom: 0px;
+    margin: auto;
+}
+.scenic_spot .hc{
+    left: 0px;
+    right: 0px;
+    margin: auto;
+}
+
+.scenic_spot .triangle{
+    position: absolute;
+    display: none;
+    margin: auto;
+    width: 0px;
+    height: 0px;
+    top: 100%;
+    border: 5px solid transparent;
+    border-bottom-color: rgb(67,169,3);
+}
+
+.scenic_spot .nav_more{
+    float: right;
+    font-size: 14px;
+    color: rgb(83,83,83);
+    margin-top: 18px;
+
+}
+
+.scenic_spot .main{
+    position: relative;
+}
+
+.scenic_spot .scenic_list{
+    width: 100%;
+    margin: 10px -10px;
+    padding-right: 240px;
+    font-size: 0px;
+
+}
+.scenic_spot .item{
+    font-size: 16px;
+    float: left;
+    padding: 10px;
+
+}
+
+.scenic_spot .item_content:hover{
+    border-color: #ccc;
+
+}
+.scenic_spot .item_content{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    border: 1px solid transparent;
+    background-color: rgb(242,242,242);
+}
+
+
+
+.scenic_spot .item-2>.item{
+    width: 50%;
+}
+.scenic_spot .item-3>.item{
+    width: 33.33%;
+}
+.scenic_spot .item-4>.item{
+    width: 25%;
+}
+.scenic_spot .item-5>.item{
+    width: 20%;
+}
+
+
+.scenic_spot .item_content img{
+    width: 100%;
+    transition: all 0.6s ease-in-out;
+}
+
+.scenic_list .item_content:hover img{
+   transform: scale(1.16);
+}
+
+
+
+.scenic_spot .img_bottom{
+    line-height: 25px;
+    height: 25px;
+    background-color: rgba(0,0,0,0.6);
+    position: absolute;
+    z-index: 1;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    margin-top: -26px;
+    padding-left: 10px;
+    width: 100%;
+}
+
+.scenic_spot .img_down{
+    line-height: 40px;
+    font-size: 13px;
+    color: rgb(83,83,83);
+    padding: 0px 10px;
+}
+
+.scenic_spot .price{
+    display: inline-block;
+    float: right;
+    color: rgb(135,135,135);
+}
+
+.scenic_spot .red_text{
+    font-size: 18px;
+    color: rgb(243,78,40);
+}
+
+/*右侧导航部分*/
+.scenic_spot .rightNv{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: inline-block;
+    vertical-align: top;
+    width: 240px;
+
+}
+
+.scenic_spot .rightNv .title{
+    color: rgb(38,38,38);
+    font-size: 16px;
+    margin: 10px 0px 20px;
+    font-weight: bolder;
+
+}
+
+.scenic_spot .theme_spot{
+    margin-top: 10px;
+}
+
+.scenic_spot .theme_spot a{
+    display: inline-block;
+    margin: 0px 20px 13px 0px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.scenic_spot .hot_spot a{
+    display: inline-block;
+    border: 1px solid rgb(213,213,213);
+    padding: 4px 9px;
+    margin: 0px 9px 9px 0px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.scenic_spot .rightNv a:hover{
+    color: rgb(243,78,40);
+    border-color: rgb(243,78,40);
+}
+
+.scenic_spot .rightNv li{
+    display: inline-block;
+}
+
+.scenic_spot .feature{
+   margin-top: 10px;
+}
+.scenic_spot .feature img{
+    vertical-align: middle;
+}
+
+.scenic_spot .right_text{
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 7px;
+}
+.scenic_spot .right_text_title{
+    margin-bottom: 9px;
+}
+
+.scenic_spot .red_text{
+    color: rgb(201,81,20);
+}
+
+
+.scenic_spot .fontsize_17{
+    font-size: 17px;
+}
+
+.scenic_spot .fontsize_13{
+    font-size: 13px;
+}
+
+.scenic_spot .gray_text{
+    color: rgb(103,130,166);
+}

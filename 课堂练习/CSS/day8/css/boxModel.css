@@ -1,0 +1,53 @@
+/*----------------------------------------公共区域设置----------------------------------------*/
+
+*{
+    box-sizing: border-box;
+}
+
+/*----------------------------------------自定义table----------------------------------------*/
+/*表格*/
+.table_custom{
+    display: table;
+    border-collapse: collapse;
+    border: 2px solid red;
+    width: 100%;
+}
+/*行*/
+.table_custom .row{
+    display: table-row;
+}
+/*单元格*/
+.table_custom .cell{
+    display: table-cell;
+    padding: 10px;
+    height: 150px;
+    text-align: center;
+    vertical-align: middle;
+}
+/*给单元格添加边框*/
+.table_custom .cell_border{
+    border: 1px solid black;
+}
+
+/*------------------------------------------自定义ul-----------------------------------------*/
+/*列表*/
+.ul_custom{
+    padding-left: 40px;
+    list-style-type: disc;
+}
+/*列表项*/
+.ul_custom .li{
+    display: list-item;
+}
+/*------------------------------------------box-size-----------------------------------------*/
+/*自定义div*/
+.div1_test{
+    margin: 10px;
+    padding: 10px;
+    border: 10px solid white;
+    width: 200px;
+    height: 100px;
+    text-align: center;
+
+}
+

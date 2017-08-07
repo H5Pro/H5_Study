@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div>接口内容:<input id="url" size="80"></div>
+<div>参数键值:<input id="search" size="20">
+    <span id="alert" style="color: red;font-weight: bold"></span>
+</div>
+<div>搜索结果:<input id="result" disabled size="20"></div>
+
+</body>
+
+<script>
+
+    var params = {};
+
+    var url = document.getElementById('url');
+    var search = document.getElementById('search') ;
+    var result = document.getElementById('result');
+    var alert = document.getElementById('alert');
+
+    url.value = "www.baidu.com/login?tel=18888435345&password=123456&socket=qqqq";
+    params = getParams(url.value);
+    for(o in params){
+        search.value = o;
+        result.value = params[o];
+        break;
+    }
+
+    url.onchange = function () {
+        var urlStr = this.value;
+        params = getParams(urlStr);
+       // console.log(params);
+        search.onchange();
+    };
+
+    search.onchange = function(){
+        var key = this.value;
+        if(key.length==0){
+            result.value = '';
+            alert.innerText = '请输入参数的键值!';
+            return;
+        }
+        var value = params[key];
+        if(typeof value =='string'){
+            result.value = value;
+            alert.innerText = '';
+        }else {
+            result.value = '';
+            alert.innerText = '该参数不存在!';
+        }
+    };
+
+
+
+
+
+    //获取url中的参数
+    function getParams(urlStr) {
+        var params = {};
+
+        var paramStr = urlStr.slice(urlStr.indexOf('?') + 1);
+        var paramArr = paramStr.split('&');
+        paramArr.forEach(function (item) {
+            var arr = item.split('=');
+            var key = arr.length > 0 ? arr[0] : null;
+            var value = arr.length > 1 ? arr[1] : '';
+            if (key) {
+
+                params[key] = value;
+            }
+        });
+
+        return params;
+    }
+
+    //获取对象属性个数
+    function getAttrCount(obj) {
+        var count = 0;
+        for (var i in obj) {
+            if (obj.hasOwnProperty(i)) {  // 建议加上判断,如果没有扩展对象属性可以不加
+                count++;
+            }
+        }
+        return count;
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!--flex-direction属性决定主轴的方向（即项目的排列方向）-->
+<!--语法-->
+<!--flex-direction: row | row-reverse | column | column-reverse;-->
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        
+        .container{
+            height: 400px;
+            display: flex;
+            border: 2px solid #aaa;
+            flex-direction: row;
+        }
+
+        .row{
+            flex-direction: row;
+        }
+
+        .row-reverse{
+            flex-direction: row-reverse;
+        }
+
+        .col{
+            flex-direction: column;
+        }
+
+        .col-reverse{
+            flex-direction: column-reverse;
+        }
+        
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: lightgreen;
+
+            border: 1px solid black;
+        }
+        
+    </style>
+    
+</head>
+<body>
+
+<div class="container row">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+</div>
+
+<div class="container row-reverse">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+</div>
+
+<div class="container col">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+</div>
+
+<div class="container col-reverse">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <style>
+        .d1{
+            background: gray;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+
+    <input @keyup.ctrl.shift="show($event.target.value)" value="123">
+    <div class="d1" @click.once="show('outer div')">outer div
+        <button @click.stop="alert($event)">button</button>
+    </div>
+
+
+
+</div>
+
+
+<script>
+
+    var app =new Vue({
+        el:'#app',
+        data:{
+            msg:'hello'
+        },
+        methods:{
+           show(msg){
+              alert(msg);
+           },
+            alert:function(e){
+                alert(e.target.innerText)
+            }
+        }
+
+    })
+
+</script>
+</body>
+</html>

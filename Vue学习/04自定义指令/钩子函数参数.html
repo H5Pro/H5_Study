@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <div v-demo:foo.a.b="obj"></div>
+    <button @click="obj.age++">add</button>
+</div>
+<script>
+
+
+    Vue.directive('demo',
+       //函数简写(bind 和 update)
+        function(el,binding,vnode){
+            var s = JSON.stringify;
+            el.innerHTML =
+                `<ul>
+            <li>name:${s(binding.name)}</li>
+            <li>value:${s(binding.value)}</li>
+            <li>expression:${s(binding.expression)}</li>
+            <li>argument:${s(binding.arg)}</li>
+            <li>modifiers:${s(binding.modifiers)}</li>
+            <li>vnode keys:${Object.keys(vnode).join(', ')}</li>
+
+            </ul>`
+
+    })
+    var app = new Vue({
+        el:'#app',
+        data:{
+            obj:{
+                age:12,
+                name:'fjl'
+            }
+        }
+    })
+</script>
+</body>
+</html>

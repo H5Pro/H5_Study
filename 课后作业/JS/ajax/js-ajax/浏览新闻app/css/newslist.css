@@ -1,0 +1,43 @@
+
+ #news_list li{
+     position: relative;
+    display: flex;
+     border-bottom: 1px solid #DADADA;
+     align-items: center;
+}
+
+#news_list .icon{
+    flex: 0 150px;
+    margin: 10px;
+    height: 100px;
+
+}
+
+#news_list .summary{
+    flex: 1;
+    padding-right: 16px;
+}
+
+ #news_list .title{
+     font-weight: bold;
+     color: #D50019;
+     font-size: 18px;
+ }
+ #news_list .detail{
+     min-height: 20px;
+     color: #7F7F7F;
+     font-size: 14px;
+     margin: 5px 0px;
+ }
+
+ #news_list .other{
+     color: #ABABAB;
+     font-size: 14px;
+ }
+
+ #news_list .watch{
+     float: right;
+ }
+
+
+

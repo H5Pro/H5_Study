@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="item in list" >
+            {{item | uppercase}}
+        </li>
+    </ul>
+    <ul>
+        <li v-for="item in list2" >
+            {{item | round(2)}}
+        </li>
+    </ul>
+</div>
+<script src="../vue.min.js">
+</script>
+<script>
+    /*无参*/
+    Vue.filter('uppercase',function (value) {
+        if(typeof value=='string'){
+            return value.toUpperCase();
+        }
+        else{
+            return value
+        }
+    })
+    /*带参数*/
+    Vue.filter('round',function (value,count) {
+        console.log(count)
+       return value.toFixed(count)
+    })
+    new Vue({
+        el:'#app',
+        data:{
+            list:['aa','bbb','ccc'],
+            list2:[123.123,2666.999999,33.88888]
+        }
+    })
+</script>
+</body>
+</html>

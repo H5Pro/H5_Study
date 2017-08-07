@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="../node_modules/vue/dist/vue.min.js"></script>
+    <script src="../node_modules/vue-router/dist/vue-router.min.js"></script>
+
+</head>
+<body>
+
+<div id="app">
+    <h1>Hello App!</h1>
+    <router-link to="/user/first">first</router-link>
+    <router-link to="/user/first/info">info</router-link>
+    <router-link to="/user/first/intro">intro</router-link>
+    <router-view></router-view>
+</div>
+
+<script>
+    
+    const user = {
+        template:`
+<div class="user">
+<h2>User {{$route.params.id}}</h2>
+<router-view></router-view>
+</div>`
+    }
+
+    const home = {
+        template:'<div>fjl</div>'
+    }
+    const info = {
+        template:'<div>sex:man</div>'
+    }
+
+    const intro = {
+        template:'<div>graduate from: haust</div>'
+    }
+    
+    
+    
+    const router = new VueRouter({
+        routes:[
+            {
+                path:'/user/:id',
+                component:user,
+                children:[
+                    {
+                        path:'',
+                        component:home
+                    },
+                    {path:'info', component:info},
+                    {
+                        path:'intro',
+                        component:intro
+                    },
+                ]
+            }
+        ]
+    })
+    
+    const app = new Vue({
+        router
+    }).$mount('#app');
+</script>
+
+
+
+
+
+</body>
+</html>

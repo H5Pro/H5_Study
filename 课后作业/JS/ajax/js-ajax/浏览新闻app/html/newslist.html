@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新闻列表</title>
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/newslist.css">
+    <script src="../js/UrlReq.js"></script>
+</head>
+<body>
+<ul id="news_list">
+
+</ul>
+
+
+
+<script src="../js/juicer-min.js"></script>
+
+<script id="news_items" type="text/template">
+
+        {@each list as item}
+        <li>
+            <img class="icon" src=${item.pic}>
+            <div class="summary">
+                <div class="title">${item.title}</div>
+                <div class="detail">${item.titledesc}</div>
+                <div class="other">
+                    <span class="time">${item.currentTime}</span>
+                    <span class="watch">${item.count}</span>
+                </div>
+            </div>
+        </li>
+        {@/each}
+
+</script>
+
+<script src="../tools/jTools.js"></script>
+<script src="../js/newslist.js"></script>
+</body>
+</html>

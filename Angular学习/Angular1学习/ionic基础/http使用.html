@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../scripts/angular.min.js"></script>
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="customController">
+
+</div>
+
+<script>
+    var app = angular.module('myApp',[]);
+    app.controller('customController',function($scope,$http){
+        $http.get("http://www.w3cschool.cc/try/angularjs/data/Customers_JSON.php").subscribe(function(response){
+            $scope.names = response;
+            console.log(response);
+        });
+    });
+</script>
+
+
+</body>
+</html>

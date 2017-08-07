@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--用来决定容器内的项目是单行还是多行显示-->
+<!--值	           描述-->
+<!--nowrap	       默认值，不换行，容器内的项目可能会超出容器-->
+<!--wrap	       换行显示-->
+<!--wrap-reverse   换行显示，第一行在下面，-->
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        
+        .container {
+            height: 400px;
+            width: 400px;
+            display: flex;
+            border: 2px solid #aaa;
+            flex-wrap: wrap;
+        }
+
+
+
+
+        
+        .box{
+            width: 100px;
+            height: 100px;
+            min-width: 100px;
+            background-color: lightgreen;
+
+            border: 1px solid black;
+        }
+        
+    </style>
+    
+</head>
+<body>
+
+<div class="container">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+
+    <div class="box">4</div>
+    <div class="box">5</div>
+    <div class="box">6</div>
+
+    <div class="box">7</div>
+    <div class="box">8</div>
+    <div class="box">9</div>
+</div>
+
+
+
+
+
+</body>
+</html>

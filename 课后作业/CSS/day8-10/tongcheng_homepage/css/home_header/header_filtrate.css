@@ -1,0 +1,598 @@
+.header_filtrate{
+position: relative;
+
+}
+/*--------------------------------------------------头部导航--------------------------------------------------*/
+.header_filtrate .nav_back{
+    background-color: rgb(60,72,82);
+    height: 45px;
+
+}
+.header_filtrate .nav{
+    color: white;
+    font-size: 18px;
+    width: 100%;
+    height: 100%;
+}
+
+.header_filtrate .nav .cell:hover{
+    font-weight: bold;
+    background: rgb(67,169,3);
+    height: 100%;
+}
+.header_filtrate .nav .cell{
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+
+}
+
+
+
+.header_filtrate .a_item{
+    height: 23px;
+    line-height: 23px;
+}
+
+.header_filtrate .nav_back .hover_host{
+    position: relative;
+}
+
+
+
+.header_filtrate .nav .cell:before{
+    content: '';
+    position: absolute;
+    width: 1px;
+    top: 13px;
+    bottom: 13px;
+    right: 0px;
+    background-color: rgb(76,87,97);
+}
+/*.header_filtrate .nav .cell:last-child::before{
+    background-color: transparent;
+}*/
+
+.header_filtrate .nav_back .hover_host:hover:after{
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0px,0px);
+}
+
+.header_filtrate .nav_back .hover_host:hover .hidden_tip{
+
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0,0);
+}
+
+
+.header_filtrate .nav_back .hover_host:after{
+    position: absolute;
+    content: '';
+
+    width: 0;
+    height: 0;
+    border: 7px solid transparent;
+
+    border-bottom-color: white;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 2;
+
+    visibility: hidden;
+
+    opacity: 0;
+    transform: translate(0px,30px);
+    transition: all 0.2s ease-in;
+
+
+}
+
+.header_filtrate .hidden_tip{
+    position: absolute;
+    padding-top: 18px;
+    color: rgb(83,83,83);
+    font-size: 15px;
+    font-weight: normal;
+    text-align: left;
+    top: 100%;
+    left: 0px;
+    background-color: white;
+    min-width: 100%;
+    z-index: 2;
+
+    visibility: hidden;
+    opacity: 0;
+    transform: translate(0px,30px);
+    transition: all 0.2s ease-in;
+
+
+
+
+}
+
+
+
+.header_filtrate .hidden_tip li{
+    padding-left: 23px;
+    padding-bottom: 23px;
+}
+
+
+
+.header_filtrate .hover_host:hover .a_item>.show{
+    display: none;
+}
+
+.header_filtrate .hover_host:hover .a_item>.hidden{
+    display: inline-block;
+}
+
+.header_filtrate .hidden_tip li:hover a{
+    color: red;
+}
+
+.header_filtrate .cow_1{
+    width: 120px;
+
+}
+
+.header_filtrate .cow_2{
+    width: 240px;
+    font-size: 0px;
+}
+
+.cow_2:before{
+    content: '';
+    position: absolute;
+    width: 1px;
+    left: 0px;
+    right: 0px;
+    top: 18px;
+    bottom: 23px;
+    margin: auto;
+
+    background-color: rgb(235,235,235);
+
+
+}
+
+.cow_2 li{
+    display: inline-block;
+    width: 50%;
+    font-size: 15px;
+}
+
+
+
+.header_filtrate .cell:last-child .a_item{
+    border: none;
+}
+
+
+.header_filtrate .nav i{
+    vertical-align: middle;
+    font-size: 22px;
+    margin-left: -5px;
+
+}
+
+
+.header_filtrate .main_filtrate{
+
+    height: 352px;
+    position: relative;
+
+
+}
+
+.header_filtrate .main_background{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+   top: 0;
+    background: url("../../img/back4.jpg") 50% 50% no-repeat;
+    background-color: rgb(240,240,240);
+    z-index: -1;
+}
+
+
+/*--------------------------------------------------通用列表--------------------------------------------------*/
+
+.taobao_menu{
+    --menu_border_width: 0px;         /*菜单边框宽度*/
+    --menu_border_color:rgb(42,50,59);/*菜单边框色*/
+    --menu_backcolor:  rgb(42,50,59);  /*菜单背景颜色*/
+
+    --item_border_width: 0px;         /*选项边框宽度*/
+    --item_border_color: #fff;        /*选项边框色*/
+    --item_fontsize: 17px;            /*选项内的文字大小*/
+
+    --item_highlight_backcolor:#fff;  /*选项高亮背景色*/
+    --item_highlight_color: rgb(67,169,0); /*选项高亮字体色*/
+
+    --right_content_width:340px;      /*右侧内容部分的宽度*/
+    --right_content_color:rgb(83,83,83);    /*右侧内容部分的字体颜色*/
+
+
+    width: 66px;                     /*菜单选项的宽度*/
+    color: #fff;                     /*菜单的字体颜色*/
+    position: relative;
+    border: var(--menu_border_width) solid transparent;
+    background-color: var(--menu_backcolor);
+
+}
+
+
+
+
+/*列表项边框设置*/
+.taobao_menu .li_border{
+    position: relative;
+    z-index: 1;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    margin-left:calc(-1*var(--menu_border_width));
+    margin-right:calc(-1*var(--item_border_width));
+    border: var(--item_border_width) solid transparent;
+}
+
+.taobao_menu .li_text{
+    position: absolute;
+    display: inline-block;
+    vertical-align: bottom;
+    height: var(--item_fontsize);
+    line-height: var(--item_fontsize);
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+
+/*统一设置菜单边框颜色*/
+.taobao_menu{
+    border-color: var(--menu_border_color);
+}
+.taobao_menu li:hover .li_border{
+    border-color: var(--item_border_color);
+    background-color: var(--item_highlight_backcolor);
+}
+
+/*列表项高亮*/
+.taobao_menu li:hover .li_border{
+    color: var(--item_highlight_color);
+    border-right-color: var(--item_highlight_backcolor);
+}
+
+
+
+/*右侧内容部分*/
+.taobao_menu li .content_outer{
+    content: '';
+    position: absolute;
+    top: calc(-1*var(--menu_border_width));
+    bottom: calc(-1*var(--menu_border_width));
+    left: 100%;
+    width: var(--right_content_width);
+
+    color: var(--right_content_color);
+
+    border: var(--item_border_width) solid var(--item_border_color);
+    background-color: var(--item_highlight_backcolor);
+}
+
+.taobao_menu li .content{
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    right: 5px;
+    bottom: 5px;
+
+}
+
+/*列表项悬浮，显示右侧内容部分*/
+.taobao_menu li:hover .content_outer{
+    display: block;
+}
+
+
+/*--------------------------------------------------左侧筛选--------------------------------------------------*/
+
+.header_filtrate .full_height{
+    height: 100%;
+}
+.header_filtrate .item_8>li{
+    height: 12.5%;
+}
+.header_filtrate .item_8 .li_border{
+    height: 100%;
+}
+
+
+.item_8>li:nth-child(2n+1):hover .li_border{
+    color: rgb(237,76,6);
+}
+.item_8>li:nth-child(6n+1):hover .li_border{
+    color: rgb(40,142,247);
+}
+.item_8>li:last-child:hover .li_border{
+    color: rgb(50,182,210);
+}
+
+
+
+/*--------------------------------------------------筛选内容--------------------------------------------------*/
+
+
+.header_filtrate .item_8 .content{
+    left: 24px;
+    right: 24px;
+}
+
+
+.header_filtrate .select_classify{
+    color: rgb(38,38,38);
+}
+
+.header_filtrate ul.select_classify{
+    border-bottom: 2px solid rgb(234,234,234);
+}
+
+.header_filtrate .select_classify>li{
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    margin-right: 16px;
+    font-size: 15px;
+    padding: 0px 2px;
+    margin-bottom: -2px;
+}
+
+.header_filtrate .select_classify>li:hover{
+    color: rgb(67,169,0);
+    border-bottom: 2px solid rgb(67,169,0);
+    font-weight: bold;
+}
+
+.header_filtrate .select_classify .radio_back{
+    display: inline-block;
+    margin-left: 15px;
+}
+
+
+
+.header_filtrate .select_classify .main{
+    line-height: normal;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    padding: 0px 0px;
+    top: 40px;
+    color: rgb(38,38,38);
+    font-size: 15px;
+}
+
+.header_filtrate .select_classify .main_next{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    top: 30px;
+}
+
+.header_filtrate .select_classify .left{
+    text-align: left;
+}
+
+.header_filtrate .select_classify .right{
+    text-align: right;
+}
+
+.header_filtrate .select_classify .inputs{
+    margin-top: 10px;
+    width: 100%;
+}
+
+.header_filtrate .inputs .input_item{
+    height: 71px;
+    padding-top: 17px;
+    width: 50%;
+}
+
+.header_filtrate .input_item_content{
+
+    display: inline-block;
+    height: 100%;
+    width: 120px;
+}
+
+
+.header_filtrate .title{
+
+    margin-bottom: 7px;
+}
+
+.header_filtrate .input{
+    width: 100%;
+    height: 32px;
+    font-size: 15px;
+    border-radius: 2px;
+}
+
+.header_filtrate .address_input:focus~.address_hidden{
+    display: block;
+}
+
+
+.header_filtrate .exchange_line{
+    content: '';
+    position: absolute;
+    right: -17px;
+    top: 16px;
+    width: 13px;
+    height: 70px;
+    border: 1px solid rgb(214,214,214);
+    border-left-color: transparent;
+
+}
+.header_filtrate .exchange_line:after{
+    content: attr(alt);
+    position: absolute;
+    left: 0px;
+    top: 22px;
+    width: 26px;
+    height: 26px;
+    background-color: rgb(214,214,214);
+    line-height: 26px;
+    text-align: center;
+    font-size: 18px;
+    color: rgb(255,255,255);
+    border-radius: 2px;
+}
+.header_filtrate .exchange_line:hover{
+    border-color: rgb(243,98,9);
+    border-left-color: transparent;
+}
+.header_filtrate .exchange_line:hover::after{
+    background-color: rgb(243,98,9);
+}
+
+.header_filtrate .absolute_position{
+    top: 42px;
+    left: 0;
+}
+
+.header_filtrate .absolute_position:before{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 8px solid transparent;
+    border-bottom-color: #ccc;
+    left: 14px;
+    bottom: 100%;
+}
+
+
+.header_filtrate .serach_btn{
+    display: inline-block;
+    width: 121px;
+    height: 36px;
+    line-height: 36px;
+    background-color: rgb(243,98,9);
+    color: rgb(255,255,255);
+    font-size: 18px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.header_filtrate .bottom_text{
+    font-weight: bold;
+    color: rgb(135,135,135);
+}
+
+.header_filtrate .bottom_text_margin{
+    margin: 15px 0px 5px;
+}
+
+.header_filtrate .bottom_text a{
+    color: rgb(32,113,186);
+}
+
+
+.header_filtrate .horizon_textfield_text{
+    vertical-align: middle;
+    padding-right: 9px;
+
+}
+
+
+.header_filtrate .left_decoration_Title{
+    position: relative;
+    font-size: 16px;
+    color: rgb(38,38,38);
+    font-weight: bolder;
+    margin: 12px 0px 7px;
+    padding-left: 6px;
+
+}
+
+.header_filtrate .left_decoration_Title:after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    top:1.5px;
+    bottom: 1.5px;
+    left: 0;
+    background-color: rgb(67,169,3);
+
+
+}
+
+.header_filtrate .list1{
+    color: rgb(83,83,83);
+    font-size: 13px;
+}
+
+.header_filtrate .list1 li{
+    margin: 0px 15px 5px 0px;
+    display: inline-block;
+    ;
+}
+
+.header_filtrate .list1 a:hover{
+    color: rgb(243,78,40);
+}
+
+
+/*--------------------------------------------------背景图片--------------------------------------------------*/
+
+
+.header_filtrate .select_buttons{
+    position: static;
+
+    margin-top: -36px;
+    margin-left: 410px;
+    width: 666px;
+    text-align: center;
+}
+
+.header_filtrate .select_buttons a{
+    display: inline-block;
+    margin: 1px 0px;
+    height: 28px;
+    line-height: 28px;
+    width: 105px;
+    background: rgba(255,255,255,0.9);
+    text-align: center;
+    font-size: 13px;
+
+}
+
+.header_filtrate .select_buttons a:hover{
+    color: white;
+    background: rgba(0,0,0,0.55);
+}
+
+
+
+.header_filtrate .background_imge{
+    position: absolute;
+    left: 50%;
+    margin-left: -960px;
+    top: 0px;
+    z-index: -1;
+}
+
+
+
+
+

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        *{
+            box-sizing: border-box;
+        }
+
+        .container{
+
+            display: flex;
+            flex-wrap: wrap;
+
+            height: 420px;
+            background-color: lavenderblush;
+            width: 420px;
+            align-content: flex-start;
+        }
+
+
+        .container .row-1 .row{
+            height: 100%;
+        }
+
+        .container .row-2 .row{
+            height: 50%;
+
+        }
+
+        .container .row-3 .row{
+            height: 33.3333%;
+        }
+
+
+
+        .container .row{
+            display: flex;
+            width: 100%;
+        }
+
+
+        .box{
+
+            margin: 20px;
+            width: 100px;
+            height: 100px;
+            background-color: lightcoral;
+            border-radius:10px;
+        }
+
+        .container .row:nth-child(1){
+            justify-content: center;
+        }
+
+        .container .row:nth-child(2){
+            justify-content: space-between;
+        }
+
+        .container .row:nth-child(3){
+            justify-content: center;
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+<div class="container row-2">
+
+    <div class="row">
+        <div class="box"></div>
+
+    </div>
+
+    <div class="row">
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+
+    <div class="row">
+        <div class="box"></div>
+    </div>
+
+</div>
+
+</body>
+</html>

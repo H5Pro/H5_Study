@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+1.取值
+none：
+隐藏对象。与visibility属性的hidden值不同，其不为被隐藏的对象保留其物理空间
+inline：
+指定对象为内联元素。
+block：
+指定对象为块元素。
+list-item：
+指定对象为列表项目。
+inline-block：
+指定对象为内联块元素。（CSS2）
+table：
+指定对象作为块元素级的表格。类同于html标签<table>（CSS2）
+inline-table：
+指定对象作为内联元素级的表格。类同于html标签<table>（CSS2）
+table-caption：
+指定对象作为表格标题。类同于html标签<caption>（CSS2）
+table-cell：
+指定对象作为表格单元格。类同于html标签<td>（CSS2）
+table-row：
+指定对象作为表格行。类同于html标签<tr>（CSS2）
+table-row-group：
+指定对象作为表格行组。类同于html标签<tbody>（CSS2）
+table-column：
+指定对象作为表格列。类同于html标签<col>（CSS2）
+table-column-group：
+指定对象作为表格列组显示。类同于html标签<colgroup>（CSS2）
+table-header-group：
+指定对象作为表格标题组。类同于html标签<thead>（CSS2）
+table-footer-group：
+指定对象作为表格脚注组。类同于html标签<tfoot>（CSS2）
+-->
+<!--
+Basic Support包含值：none | inline | block | list-item | inline-block
+table系包含值：table | inline-table | table-caption | table-cell | table-row | table-row-group | table-column | table-column-group | table-footer-group | table-header-group
+IE6,7只支持inline元素设置为inline-block，其它类型元素均不可以-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        body,html{
+            height: 100%;
+        }
+
+        .div1{
+            display: none;
+            width: 200px;
+            height: 200px;
+            border: 1px solid #444444;
+            background: #8912ff;
+        }
+
+        .div2{
+            display: inline;
+            width: 200px;
+            height: 200px;
+            border: 1px solid #444444;
+            background: #159812;
+        }
+
+        .div3{
+            display: block;
+            width: 200px;
+            height: 200px;
+            border: 1px solid #444444;
+            background: #236799;
+        }
+
+        .div4{
+            display: list-item;
+            width: 200px;
+            height: 200px;
+            border: 1px solid #444444;
+            background: #ff1111;
+        }
+
+        .div5{
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            border: 1px solid #444444;
+            background: #23ff45;
+        }
+    </style>
+</head>
+<body>
+
+<div class="div1">div1</div>
+
+<div class="div2">div2</div>
+
+<div class="div5">div5</div>
+
+<div class="div4">div4</div>
+
+
+<div class="div3">div3</div>
+
+
+</body>
+</html>

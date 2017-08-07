@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .red{
+            color: red;
+        }
+        .blue{
+            color: blue;
+        }
+
+        .important
+        {
+            font-weight:bold;
+            font-size:xx-large;
+        }
+
+        .box{
+            padding: 5px;
+            margin: 10px;
+            background: lightgreen;
+            width: 400px;
+            height: 200px;
+            border: solid 1px black;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>第一章</h1>
+
+<ul id="title">
+    <li>第一节</li>
+    <li>第一节</li>
+    <li>第一节</li>
+</ul>
+<input id="input" placeholder="请输入章节内容">
+<button id="show_btn">提示</button>
+<button id="modify">修改样式</button>
+
+<div class="box">
+<p><b>内边距:5px  边框:1px  外边距:10px</b></p>
+</div>
+<button id="get_size">获取尺寸</button>
+<button id="mod_size">修改尺寸</button>
+<script src="../script/jquery-min.js"></script>
+<script>
+    $('#show_btn').click(function(){
+
+        //设置及获取
+        alert($('h1').eq(0).text('第二章').text());
+        alert($('#title').html('<li>第二小节</li>').html());
+        alert($('#input').val('jQuery').val());
+
+        //添加
+        var m1 = $('#title').children().first();
+        m1.before('<li>第一小节</li>');
+        m1.after('<li>第三小节</li>');
+
+        $('#title').prepend('<h3>副标题</h3>');
+        $('#title').append('<b>总结</b>');
+
+        //删除
+        //$('#title').remove();
+        $('#title').empty();
+
+    });
+
+    $('#modify').click(function(){
+       var h1 = $('h1').first();
+        if(h1.is('.red')){  //判断元素是否包含某个class
+            //移除
+            h1.removeClass('red');
+            //增加
+            h1.addClass('blue');
+        }else {
+            h1.removeClass('blue');
+            h1.addClass('red');
+        }
+
+        //切换
+        $('#title').toggleClass('important');
+
+        //css() - 设置或返回样式属性 (以下两种方式等价)
+       //alert($('#show_btn').css('color','green').css('font-size','24px').css('color'));
+        alert($('#show_btn').css({'color':'green','font-size':'24px'}).css('color'));
+
+    });
+
+    $('#get_size').click(function(){
+        var fBox = $('.box').first();
+        var txt = fBox.html();
+        //width和height不包含内边距,边框和外边距
+        txt += 'width of box: ' + fBox.width() +'<br>';
+        txt += 'height of box: '+ fBox.height() +'<br>';
+
+        //innerWidth和innerHeight不包含边框和外边距
+        txt += 'innerWidth of box: ' + fBox.innerWidth() +'<br>';
+        txt += 'innerHeight of box: '+ fBox.innerHeight() +'<br>';
+
+        //outerWidth和iouterHeight不包含外边距
+        txt += 'outerWidth of box: ' + fBox.outerWidth() +'<br>';
+        txt += 'outerHeight of box: '+ fBox.outerHeight() +'<br>';
+
+        fBox.html(txt);
+    });
+
+    $('#mod_size').click(function(){
+
+        var fBox = $('.box').first();
+        fBox.width('500px').height('500px');
+        var txt = fBox.html()+'<p><b>修改后的尺寸:</b></p>';
+        //width和height不包含内边距,边框和外边距
+        txt += 'width of box: ' + fBox.width() +'<br>';
+        txt += 'height of box: '+ fBox.height() +'<br>';
+
+        //innerWidth和innerHeight不包含边框和外边距
+        txt += 'innerWidth of box: ' + fBox.innerWidth() +'<br>';
+        txt += 'innerHeight of box: '+ fBox.innerHeight() +'<br>';
+
+        //outerWidth和iouterHeight不包含外边距
+        txt += 'outerWidth of box: ' + fBox.outerWidth() +'<br>';
+        txt += 'outerHeight of box: '+ fBox.outerHeight() +'<br>';
+
+        fBox.html(txt);
+    });
+
+</script>
+</body>
+</html>

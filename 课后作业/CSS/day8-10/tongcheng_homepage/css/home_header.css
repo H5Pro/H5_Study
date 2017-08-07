@@ -1,0 +1,146 @@
+@import url(home_header/header_login.css);
+@import url(home_header/header_search.css);
+@import url(home_header/header_filtrate.css);
+
+
+
+/*头部*/
+.tongcheng header{
+
+}
+
+
+/*隐藏的地址选择项*/
+.address_hidden{
+
+    position: absolute;
+    z-index: 999;
+    background-color: white;
+
+    display: none;
+    width: 385px;
+    line-height: normal;
+    font-size: 13px;
+    color: rgb(38,38,38);
+    padding-top: 20px;
+    /*border: 1px solid rgb(220,220,220);*/
+}
+/*城市分类项*/
+
+.address_hidden .city_classify_item{
+    padding: 0px 10px 5px 10px;
+}
+/*城市分类项悬置时的效果*/
+.address_hidden .city_classify_item:hover{
+    border-bottom: 2px solid rgb(67,169,3);
+    color: rgb(67,169,3);
+    font-weight: bold;
+}
+/*城市列表*/
+.address_hidden .city_list{
+    width: 385px;
+    position: absolute;
+    left: 0px;
+    top: 19px;
+    z-index:2;
+    background-color: white;
+    /*border: 1px solid rgb(220,220,220);*/
+    /*border-top: transparent;*/
+    color: rgb(83,83,83);
+}
+
+.address_hidden .city_list .cell:first-child{
+    padding-top: 10px;
+}
+
+.address_hidden .city_hot:hover .city_hot_list{
+    display: block;
+}
+/*热门城市列表*/
+.address_hidden .city_hot_list{
+    /*display: none;*/
+}
+/*城市ABCD*/
+.address_hidden .city_ABCD:hover .city_ABCD_list{
+    display: block;
+}
+/*城市ABCD列表*/
+.address_hidden .city_ABCD_list{
+    display: none;
+}
+/*城市EFGH*/
+.address_hidden .city_EFGH:hover .city_EFGH_list{
+    display: block;
+}
+/*城市EFGH列表*/
+.address_hidden .city_EFGH_list{
+    display: none;
+}
+/*城市JKL*/
+.address_hidden .city_JKL:hover .city_JKL_list{
+    display: block;
+}
+/*城市JKL列表*/
+.address_hidden .city_JKL_list{
+    display: none;
+}
+/*城市MNPQR*/
+.address_hidden .city_MNPQR:hover .city_MNPQR_list{
+    display: block;
+}
+/*城市MNPQR列表*/
+.address_hidden .city_MNPQR_list{
+    display: none;
+}
+/*城市STW*/
+.address_hidden .city_STW:hover .city_STW_list{
+    display: block;
+}
+/*城市STW列表*/
+.address_hidden .city_STW_list{
+    display: none;
+}
+/*城市XYZ*/
+.address_hidden .city_XYZ:hover .city_XYZ_list{
+    display: block;
+}
+/*城市XYZ列表*/
+.address_hidden .city_XYZ_list{
+    display: none;
+}
+/*城市列表项*/
+.address_hidden .city_list_item {
+    margin: 10px 20px 10px 0px;
+}
+/*城市列表项悬置效果*/
+.address_hidden .city_list_item:hover{
+    color: rgb(67,169,3);;
+}
+/*字体悬浮高亮*/
+.address_hidden .a_highlight_red:hover{
+    color: rgb(243,78,6);
+}
+/*城市列表*/
+.address_hidden ul{
+    padding: 0px 10px;
+    margin: 0px;
+    list-style-type: none;
+    text-align: left;
+}
+/*城市列表中的每一项*/
+.address_hidden li{
+    display: inline-block;
+    vertical-align: middle;
+}
+/*城市分类列表中的第一列（案首字母分类）*/
+.address_hidden .city_divide .row>.cell:first-child{
+    width: 25px;
+    text-align: right;
+    color: rgb(243,78,6);
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+
+

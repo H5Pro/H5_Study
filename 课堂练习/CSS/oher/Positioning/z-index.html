@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .z1,.z2,.z3{
+            position: absolute;
+            width: 200px;
+            height: 100px;
+            padding: 5px 10px;
+            color: #fff;
+            text-align: right;
+        }
+
+        .z1{
+            z-index:1;
+            background: #000;
+        }
+
+        .z2{
+            z-index: 2;
+            background: #c00;
+            top: 30px;
+            left: 30px;
+        }
+
+        .z3{
+            z-index: 3;
+            background: #999;
+            top: 60px;
+            left: 60px;
+        }
+
+
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="z1">z-index:1</div>
+<div class="z2">z-index:2</div>
+<div class="z3">z-index:3</div>
+
+
+
+</body>
+</html>

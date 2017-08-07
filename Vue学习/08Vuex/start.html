@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script src="../node_modules/vuex/dist/vuex.js"></script>
+</head>
+<body>
+<div id="app">
+    <div v-text="$store.state.num"></div>
+    <input v-model="userName">
+    <button @click="$store.commit('login',userName)">登录</button>
+    <button @click="$store.commit('logout',userName)">退出</button>
+    <button @click="$store.dispatch('add')">add</button>
+    <ul>
+        <li v-for="item in $store.getters.userList" v-text="item"></li>
+    </ul>
+</div>
+
+<script>
+
+    var store = new Vuex.Store({
+       state:{
+           userInfo:'ffffff',
+           userList:[],
+           num : 0,
+       },
+        mutations:{
+           login(state,user){
+               console.log(state);
+               state.userInfo = user;
+               state.userList = [2,3,6,7,89,8];
+           },
+            logout(state){
+               state.userInfo = null;
+                state.userList = [];
+            }
+        },
+        getters:{
+           user(state){
+               return state.userInfo;
+           },
+            userList(state){
+               return state.userList.filter(function (it) {
+                   return it%2==0;
+               })
+            }
+        },
+        actions:{
+            add(context){
+                console.log(123);
+                context.dispatch('add1',3);
+            },
+            add1(context,num){
+                console.log(context);
+                context.state.num +=num;
+            }
+        }
+    });
+
+    var app = new Vue({
+        el:'#app',
+        store,
+        data:{
+            userName:''
+        }
+    })
+</script>
+
+
+</body>
+</html>

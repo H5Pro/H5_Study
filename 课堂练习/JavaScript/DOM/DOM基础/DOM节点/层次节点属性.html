@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>层次节点属性</title>
+</head>
+<body>
+
+<div id="grand">
+    我是祖父节点中的文本子节点
+    <div id="parent" class="parent">
+        我是父节点中的文本子节点
+        <div id="child1">
+            第一个孩子节点
+        </div>
+        <div id="child2">
+            第二个孩子节点
+        </div>
+        <div id="child3">
+            第三个孩子节点
+        </div>
+    </div>
+</div>
+
+<script>
+
+    var grand = document.getElementById('grand');
+    var parent = document.getElementById('parent');
+    var child2 = document.getElementById('child2');
+    console.log('元素parent的所有子节点:');
+    console.log(parent.childNodes);
+    console.log('元素parent的第一个子节点:');
+    console.log(parent.firstChild.nodeName);
+    console.log('元素parent的文档根节点:');
+    console.log(parent.ownerDocument);
+    console.log('元素parent的文档父节点:');
+    console.log(parent.parentNode);
+    console.log('元素parent的所有属性节点:');
+    console.log(parent.attributes);
+    console.log('元素child2的前一个同级节点:');
+    console.log(child2.previousSibling);
+    console.log('元素child2的后一个同级节点:');
+    console.log(child2.nextSibling);
+</script>
+</body>
+</html>

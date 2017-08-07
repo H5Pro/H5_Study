@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <input type="button" value="show" @click="show">
+    {{title}}
+</div>
+<script>
+
+    var mix={
+        data:{
+            title:'mix title'
+        },
+        created(){
+            alert('mix')
+        },
+        methods:{
+            show(){
+                alert('mix show')
+            }
+        }
+    }
+    new Vue({
+        mixins:[mix],
+        el:'#app',
+        data:{
+            title:'app title'
+        },
+        created(){
+            alert('app')
+        },
+        methods:{
+            show(){
+                alert('app show')
+            }
+        }
+    })
+</script>
+</body>
+</html>

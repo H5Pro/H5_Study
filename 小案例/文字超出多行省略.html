@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+
+        p {
+            position:relative;
+            line-height:1.4em;
+            /* 3 times the line-height to show 3 lines */
+            height:4.2em;
+            overflow:hidden;
+        }
+        p::after {
+            content:"...";
+            font-weight:bold;
+            position:absolute;
+            bottom:0;
+            right:0;
+            padding:0 20px 1px 45px;
+            background:url(http://css88.b0.upaiyun.com/css88/2014/09/ellipsis_bg.png) repeat-y;
+        }
+
+        .mutipleLine_text{
+            width: 100%;
+            /*display: -webkit-box;*/
+            /*-webkit-line-clamp:4;*/
+            /*-webkit-box-orient: vertical;*/
+            max-lines: 2;
+            overflow: hidden;
+        }
+
+        .summary{
+            color: #666;
+            font-size: 14px;
+
+        }
+
+    </style>
+
+</head>
+<body>
+<div class="mutipleLine_text">
+    <div class="">
+
+    </div>
+   <!-- <div class="summary">
+    微信小程序开发微信小程序开发微信小程序开发微信小程序开发微信小程序开发微信小程序开发微信小程序开发微信小程序开发微信小程序开发微信小程序开发微信小程序开发微信小程序开发微信小程序开发微信小程序开发微信小程序开发微信小程序开发微信小程序开发微信小程序开发微信小程序开发微信小程序开发微信小程序开发微信小程序开发微信小程序开发微信小程序开发
+    </div>-->
+    <p> 微信小程序开发微信小程序开发微信小程序开发微信小程序开发微信小程序开发微信小程序开发微信小程 微信小程序开发微信小程序开发微信小程序开发微信小程序开发微信小程序开发微信小程序开发微信小程 微信小程序开发微信小程序开发微信小程序开发微信小程序开发微信小程序开发微信小程序开发微信小程</p>
+
+
+
+</div>
+</body>
+</html>

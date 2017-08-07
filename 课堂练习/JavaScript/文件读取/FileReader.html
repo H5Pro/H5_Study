@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    var result = document.getElementById("");
+    var file = document.getElementById("");
+    //判断浏览器是否支持FileReader接口
+    if(typeof FileReader == 'undefined'){
+        result.innerHTML = "<p>你的浏览器不支持FileReader接口!</p>";
+        //使选择空间不可操作
+        file.setAttribute("disabled","disabled");
+    }
+
+    function  readAsDataURL{
+        //检验是否为图像文件
+        var file = document.getElementById("file").files[0];
+        if(!/image\/\w+/.test(file.type)){
+            alert("上传的不是图片!");
+            return false;
+        }
+        var reader = new FileReader();
+        reader.onload = function(e){
+            var result = document.getElementById("");
+            //显示文件
+            result.innerHTML = "<imh src="+this.result + "";
+        }
+    }
+
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>what to buy</h1>
+<p title="a gentle reminder">Don`t forget to buy this stuff.</p>
+<ul id="purchases">
+    <li>A tin of beans</li>
+    <li class="sale">Cheese</li>
+    <li class="sale important">Milk</li>
+</ul>
+
+<script>
+    function currentBodyChildren() {
+        var body_element = document.getElementsByTagName('body')[0];
+        var childs = body_element.childNodes;
+        alert(childs.length);
+        for (i in childs){
+            /*
+            元素节点的nodetype属性值为1
+            元素节点的nodetype属性值为2
+            元素节点的nodetype属性值为3
+            */
+            var type = childs[i].nodeType;
+            alert(type);
+        }
+    }
+
+    window.onload = currentBodyChildren();
+
+</script>
+
+</body>
+</html>

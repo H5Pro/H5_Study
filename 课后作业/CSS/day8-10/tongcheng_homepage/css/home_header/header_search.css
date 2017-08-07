@@ -1,0 +1,193 @@
+/*头部logo和搜索部分*/
+.header_search{
+    font-size: 14px;
+    color: rgb(83,83,83);
+    width: 100%;
+}
+
+.header_search>.cell{
+    vertical-align: middle;
+}
+
+/*搜索区域的第一列（logo 和 地址）*/
+.header_search>.cell:first-child{
+    width: 360px;
+}
+/*搜索区域的第三列（右侧图片）*/
+.header_search>.cell:last-child{
+    width: 250px;
+    text-align: right;
+}
+
+
+/*搜索区域列表*/
+.header_search ul{
+    padding: 0px 10px;
+    margin: 0px;
+    list-style-type: none;
+    text-align: left;
+}
+/*搜索区域列表中的每一项*/
+.header_search li{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------------------地址选择---------------------------------------------------------*/
+/*地址选择*/
+.header_search .address{
+    display: inline-block;
+    color: black;
+    font-size: 0px;
+    font-weight: bold;
+    line-height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+}
+/*城市标题*/
+.header_search .city_title{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 26px;
+}
+/*城市标题右侧额箭头*/
+.header_search i{
+    font-size: 23px;
+    color: rgb(139,139,139);
+    vertical-align: middle;
+}
+
+/*地址选择悬置效果*/
+.header_search .address:hover{
+    border: 1px solid rgb(220,220,220);
+    border-bottom: 2px solid red;
+}
+/*地址悬置，显示地址选择栏*/
+.header_search .address:hover .address_hidden{
+    display: block;
+}
+
+.header_search .absolute_position{
+    top: 52px;
+    left: -2px;
+}
+
+
+
+/*---------------------------------------------------------景点搜索---------------------------------------------------------*/
+
+
+
+.header_search .search_back{
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    height: 36px;
+    padding-right: 70px;
+    background-color: rgb(243,81,19);
+    font-size: 14px;
+    color: rgb(83,83,91);
+    margin: 50px 0px;
+
+}
+
+.header_search .search_field_back{
+    position: absolute;
+    left: 2px;
+    right: 80px;
+    top: 2px;
+    bottom: 2px;
+}
+
+.header_search .search_field{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    font-size: 16px;
+}
+
+.header_search .search_button{
+    position: absolute;
+    font-size: 20px;
+    width: 80px;
+    height: 35px;
+    line-height: 35px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin: auto;
+    color: white;
+    text-align: center;
+}
+
+.header_search .search_back:before{
+    content: attr(alt);
+    position: absolute;
+    bottom: 100%;
+    margin-bottom: 6px;
+    left: -2px;
+    font-size: 34px;
+    color: rgb(241,34,109);
+    font-weight: bolder;
+
+}
+
+.header_search .search_field:focus~.search_field_tip{
+    display: block;
+}
+
+.header_search .search_field_tip{
+    position: absolute;
+    top: 34px;
+    left: -2px;
+    right: 0px;
+    display: none;
+
+    border: 1px solid #ccc;
+    background-color: white;
+    padding: 0px 15px 10px;
+    font-size: 16px;
+    z-index: 1;
+}
+
+.header_search .search_field_tip .title{
+    margin: 17px 0px;
+    font-weight: bolder;
+}
+
+.header_search .search_field_tip .row_title{
+    color: black;
+    font-weight: bold;
+    width: 40px;
+}
+
+.header_search .search_field_tip li{
+    padding: 0px 17px 11px 0px;
+}
+
+.header_search .search_field_tip li:nth-child(9n+1){
+    color: rgb(243,81,19);
+}
+
+.header_search .bottom_suggest{
+    position: absolute;
+    top: 100%;
+    padding: 12px 0px;
+
+}
+
+.header_search .bottom_suggest li{
+    padding-right: 20px;
+}
+
+.header_search .bottom_suggest li:nth-child(2n+1){
+    color: rgb(243,81,19);
+}

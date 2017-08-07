@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+
+<!--
+1. 默认样式的引用
+将任何 HTML 元素包裹在 <blockquote> 中即可表现为引用样式。对于直接引用，我们建议用 <p> 标签。
+-->
+
+<!--
+2. 多种引用样式
+对于标准样式的 <blockquote>，可以通过几个简单的变体就能改变风格和内容。
+命名来源
+添加 <footer> 用于标明引用来源。来源的名称可以包裹进 <cite>标签中。
+-->
+
+<!--
+另一种展示风格
+通过赋予 .blockquote-reverse 类可以让引用呈现内容右对齐的效果。
+-->
+
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="../less/aaa.css">
+
+</head>
+<body>
+
+<blockquote>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. </p>
+</blockquote>
+
+<blockquote class="blockquote-reverse">
+    <P>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</P>
+    <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+</blockquote>
+
+</body>
+</html>

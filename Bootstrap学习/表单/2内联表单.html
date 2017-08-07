@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+1. 内联表单
+    为 <form> 元素添加 .form-inline 类可使其内容左对齐并且表现为 inline-block 级别的控件。
+    只适用于视口（viewport）至少在 768px 宽度时（视口宽度再小的话就会使表单折叠）。
+    可能需要手动设置宽度
+
+    在 Bootstrap 中，输入框和单选/多选框控件默认被设置为 width: 100%; 宽度。
+    在内联表单，我们将这些元素的宽度设置为 width: auto;，因此，多个控件可以排列在同一行。
+    根据你的布局需求，可能需要一些额外的定制化组件。
+
+    一定要添加 label 标签
+    如果你没有为每个输入控件设置 label 标签，屏幕阅读器将无法正确识别。
+    对于这些内联表单，你可以通过为 label 设置 .sr-only 类将其隐藏。
+    还有一些辅助技术提供label标签的替代方案，比如 aria-label、aria-labelledby 或 title 属性。
+    如果这些都不存在，屏幕阅读器可能会采取使用 placeholder 属性，
+    如果存在的话，使用占位符来替代其他的标记，但要注意，这种方法是不妥当的。
+-->
+
+
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="../less/aaa.css">
+</head>
+<body>
+<form class="form-inline">
+    <div class="form-group">
+        <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+        <div class="input-group">
+            <div class="input-group-addon">$</div>
+            <input type="text" class="form-control" id="exampleInputAmount">
+            <div class="input-group-addon">.00</div>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Transfer cash</button>
+</form>
+
+</body>
+</html>

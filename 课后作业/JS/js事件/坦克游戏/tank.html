@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>坦克游戏</title>
+
+    <style>
+        .tank-up{
+            position: fixed;
+            background: url("tank-up.jpg");
+            background-size: cover;
+        }
+        .tank-left{
+            position: fixed;
+            background: url("tank-left.jpg");
+            background-size: cover;
+        }
+
+        .tank-down{
+            position: fixed;
+            background: url("tank-down.jpg");
+            background-size: cover;
+        }
+        .tank-right{
+            position: fixed;
+            background: url("tank-right.jpg");
+            background-size: cover;
+        }
+
+        .zidan{
+            background: darkolivegreen;
+            position: fixed;
+            border-radius: 50%;
+        }
+    </style>
+
+</head>
+<body>
+<script>
+
+    var config = {
+        //坦克的速度
+        tSpeed : 0.2,
+        //子弹的速度
+        zSpeed : 1,
+        //坦克的宽度
+        tWidth : 60,
+        //子弹的宽度
+        zWidth : 10,
+        //定义移动动画的时间间隔
+        timeInterval : 10,
+        //定义发射子弹的时间间隔
+        sendInterval : 100,
+
+    };
+
+    //定义按键的集合
+    var keyDowns = [];
+
+    //创建坦克
+    var tank = createSprit(0,config.tWidth,config.tWidth,config.tSpeed);
+
+
+    //按下按钮
+    window.onkeydown = function(e){
+        key(0, e.keyCode);
+    }
+
+    //松开按钮
+    window.onkeyup = function(e){
+        key(1, e.keyCode);
+    };
+
+
+    //按钮操作
+    function key(type,keyCode){
+        switch (keyCode){
+            case 37:   //左
+                type?removeKeyDown(1):addKeyDown(1);
+                break;
+
+            case 38:    //上
+                type?removeKeyDown(2):addKeyDown(2);
+                break;
+            case 39:    //右
+                type?removeKeyDown(3):addKeyDown(3);
+                break;
+            case 40:     //下
+                type?removeKeyDown(4):addKeyDown(4);
+                break;
+
+            case 70:     //发射子弹
+                type?removeKeyDown(0):addKeyDown(0);
+                break;
+
+        }
+    }
+    /*
+     * 创建精灵对象
+     * type: 0是坦克;1是子弹
+     * */
+    function createSprit(type,width,height,speed){
+        var sprit =  document.createElement('div');
+        sprit.style.width = width + 'px';
+        sprit.style.height = height + 'px';
+
+
+        if(type == 0){// 坦克
+            sprit.style.left = 0 + 'px';
+            sprit.style.top = 0 + 'px';
+            sprit.className = 'tank-up';
+            sprit.direct = {hd:0,vd:-1};
+        }else if(type == 1) { //子弹
+            var tankX = parseInt(tank.style.left);
+            var tankY = parseInt(tank.style.top);
+            var tankW = parseInt(tank.style.width);
+            var tankH = parseInt(tank.style.height);
+
+            var spritH = parseInt(sprit.style.height);
+            var spritW = parseInt(sprit.style.width);
+            sprit.className = 'zidan';
+            if(tank.direct.hd == -1){//左
+                sprit.style.left = tankX + 'px';
+                sprit.style.top = tankY + (tankH - spritH) / 2 + 'px';
+                zidanMove(sprit,-1,0);
+            }else if(tank.direct.vd == -1){//上
+                sprit.style.left = tankX + (tankW - spritW) / 2 + 'px';
+                sprit.style.top = tankY + 'px';
+                zidanMove(sprit,0,-1);
+            }else if(tank.direct.hd == 1){ //右
+                sprit.style.left = tankX + tankW - spritW + 'px';
+                sprit.style.top = tankY + (tankH - spritH) / 2 + 'px';
+                zidanMove(sprit,1,0);
+            }else if(tank.direct.vd == 1){//下
+                sprit.style.left = tankX + (tankW - spritW) / 2 + 'px';
+                sprit.style.top = tankY + tankH - spritH + 'px';
+                zidanMove(sprit,0,1);
+            }
+
+
+        }
+        sprit.speed = speed;
+        sprit.type = type;
+
+        document.body.appendChild(sprit);
+        return sprit;
+    }
+
+    //坦克移动
+    function tankMove(tank,hd,vd){
+
+        if(!tank.time || hd != tank.direct.hd || vd != tank.direct.vd){
+            if(tank.time){
+                clearInterval(tank.time);
+                tank.time = null;
+            }
+            tank.time = setInterval(function(){
+
+                spiritMove(tank, hd, vd);
+                if (crossBorder(tank)) {
+                    spiritMove(tank, -hd, -vd);
+                }
+
+            },config.timeInterval);
+            tank.direct.hd = hd;
+            tank.direct.vd = vd;
+            if(hd == -1){
+                tank.className = 'tank-left';
+            }else if(vd == -1){
+                tank.className = 'tank-up';
+            }else if(hd == 1){
+                tank.className = 'tank-right';
+            }else if(vd == 1){
+                tank.className = 'tank-down';
+            }
+
+        }
+
+
+
+
+    }
+
+    //子弹移动
+    function zidanMove(zidan,hd,vd){
+        var time = setInterval(function(){
+            spiritMove(zidan, hd, vd);
+            if (crossBorder(zidan)) {
+                clearInterval(time);
+                destroySprit(zidan);
+            }
+        },config.timeInterval);
+
+    }
+
+
+    /*
+     * 按键按下执行的动作
+     * keyType: 1左;2上;3右;4下;0发射
+     * */
+
+    function keyAction(keyType){
+        if (keyType == 0) {
+            if(!window.zidanTime){
+                window.zidanTime= setInterval(function(){
+                    createSprit(1, config.zWidth, config.zWidth, config.zSpeed);
+                },config.sendInterval);
+                createSprit(1, config.zWidth, config.zWidth, config.zSpeed);
+            }
+        }else if(keyType>0 && keyType<=4) {
+            switch (keyType){
+                case 1:
+                    tankMove(tank,-1,0);
+
+                    break;
+                case 2:
+                    tankMove(tank,0,-1);
+                    break;
+                case 3:
+                    tankMove(tank,1,0);
+                    break;
+                case 4:
+                    tankMove(tank,0,1);
+                    break;
+            }
+
+        }
+    }
+
+    /*
+     * 添加按键
+     * keyType: 1左;2上;3右;4下;0发射
+     * */
+    function addKeyDown(keyType) {
+        //向按键数组里添加按键
+        if(keyType == 0){
+            keyAction(keyType);
+        }else {
+            var index = keyDowns.indexOf(keyType);
+            console.log(index);
+            if(index<0){
+                keyDowns.push(keyType);
+                //按键执行的动作
+                keyAction(keyType);
+
+            }
+        }
+
+
+
+
+
+
+    }
+
+    /*
+     * 移除按键
+     * keyType: 1左;2上;3右;4下;0发射
+     * */
+    function removeKeyDown(keyType){
+
+        if(keyType == 0){
+            if(window.zidanTime) {
+                clearInterval(window.zidanTime);
+                window.zidanTime = null;
+            }
+        }else {
+            var index = keyDowns.indexOf(keyType);
+            keyDowns.splice(index,1);
+            if(tank.time) {
+                clearInterval(tank.time);
+                tank.time = null;
+            }
+            var last = keyDowns[keyDowns.length-1];
+            keyAction(last);
+        }
+
+    }
+
+    /*
+     * 销毁精灵(坦克或者子弹)
+     * */
+    function destroySprit(obj){
+        obj.parentNode.removeChild(obj);
+    }
+    /*
+     * 坦克移动
+     * hSpeed --水平方向的速度 (正值向obj右移动,负值向左移动)
+     * vSpeed --垂直方向的速度 (正值向右移动,负值向左移动)
+     * */
+    function spiritMove(obj, hd,vd) {
+
+
+        var speed = obj.speed*config.timeInterval;
+        var left = parseInt(obj.style.left) + hd*speed;
+        var top = parseInt(obj.style.top) + vd*speed;
+        obj.style.left = left + 'px';
+        obj.style.top = top + 'px';
+    }
+
+    function tankStop(tank) {
+        clearInterval(tank.time);
+        tank.time = null;
+    }
+
+    //判断元素是否越界
+    function crossBorder(obj){
+        var win_width = window.innerWidth;
+        var win_height = window.innerHeight;
+
+        var left = parseInt(obj.style.left);
+        var top = parseInt(obj.style.top);
+        var width = parseInt(obj.style.width);
+        var height = parseInt(obj.style.height);
+
+        if(left>=0 && top>=0 && left+width<=win_width && top+height<win_height){
+            return false;
+        }
+        return true;
+
+    }
+
+
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+1.语法：
+border：<line-width> || <line-style> || <color>
+<line-width> = <length> | thin | medium | thick
+<line-style> = none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset
+默认值：看每个独立属性
+适用于：所有元素
+继承性：无
+动画性：看每个独立属性
+计算值：看每个独立属性
+相关属性：[ border-top ] || [ border-right ] || [ border-bottom ] || [ border-left ]
+-->
+
+<!--
+2.取值：
+<line-width>：
+设置或检索对象边框宽度。
+<line-style>：
+设置或检索对象边框样式。
+<color>：
+设置或检索对象边框颜色。
+-->
+
+<!--
+3.说明：
+复合属性。设置对象边框的特性。参阅outline属性。
+如使用该复合属性定义其单个参数，则其他参数的默认值将无条件覆盖各自对应的单个属性设置。
+对应的脚本特性为border。
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+    .button{
+        border: medium none #000000;
+        border-style: solid;
+        background: #cccccc;
+        width: 100px;
+        text-align: center;
+        line-height: 25px;
+    }
+</style>
+
+<body>
+
+<div class="button">
+    ssss
+</div>
+
+</body>
+</html>

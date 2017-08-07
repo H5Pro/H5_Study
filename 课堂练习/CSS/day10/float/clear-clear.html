@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        .div_super{
+            padding: 2px;
+            border: 1px solid #cc0000;
+        }
+        .div_left{
+            width: 100px;
+            height: 100px;
+            background-color: lightcoral;
+            float: left;
+        }
+        /*兄弟元素为块元素*/
+        .brother_block{
+            display: block;
+            background-color: #ddd;
+        }
+        /*兄弟元素为内联元素*/
+        .brother_inline{
+            display: inline;
+            background-color: #23ff45;
+        }
+
+        /*兄弟元素为同一方向的浮动元素*/
+        .brother_left{
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: lightcoral;
+        }
+
+        /*兄弟元素为不同方向的浮动元素*/
+        .brother_right{
+            float: right;
+            width: 100px;
+            height: 100px;
+            background-color: lightseagreen;
+        }
+
+        /*float对父元素之外的元素的影响*/
+        .super_other{
+            background-color: lightskyblue;
+        }
+        /*清除浮动*/
+        .clear{
+            clear: both;
+        }
+    </style>
+
+</head>
+<body>
+<div class="div_super">
+    <div class="div_left">l1</div>
+    <div class="brother_left">l2</div>
+    <div class="brother_left">l3</div>
+    <div class="brother_right">r1</div>
+    <div class="brother_right">r2</div>
+    <div class="brother_right">r3</div>
+
+
+    <span class="brother_inline">
+        在现代浏览器，该元素会忽视浮动元素的而占据它的位置，
+        并且元素会处在浮动元素的下层（并且无法通过z-index属性改变他们的层叠位置），
+        但它的内部文字和其他行内元素都会环绕浮动元素。
+        在现代浏览器，该元素会忽视浮动元素的而占据它的位置，
+        并且元素会处在浮动元素的下层（并且无法通过z-index属性改变他们的层叠位置），
+        但它的内部文字和其他行内元素都会环绕浮动元素。
+
+        在现代浏览器，该元素会忽视浮动元素的而占据它的位置，
+        并且元素会处在浮动元素的下层（并且无法通过z-index属性改变他们的层叠位置），
+        但它的内部文字和其他行内元素都会环绕浮动元素。
+
+    </span>
+
+    <div class="clear"></div>
+
+
+</div>
+
+<div class="super_other">
+    当一个元素浮动时，在没有清楚浮动的情况下，它无法撑开其父元素，也就是父元素的宽高都为0。
+    并且其父元素之外的非浮动元素也会无视该浮动元素
+
+</div>
+
+</body>
+</html>

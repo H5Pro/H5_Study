@@ -1,0 +1,35 @@
+
+body{
+   background-color: #CC000D;
+}
+
+#login_form{
+    margin-top: 200px;
+}
+
+.input{
+    width: 80%;
+    margin: auto;
+}
+
+.textField{
+    margin: 5px;
+    font-size: 22px;
+    color: white ;
+    background-color: rgba(0,0,0,0);
+    outline-color: #F7EA2E;
+    width: 600px;
+    height: 60px;
+}
+
+.login_btn{
+    margin-top: 10px;
+    font-size: 24px;
+    color: white;
+    background-color: #EB292B;
+    border: none;
+    border-radius: 5px;
+    width: 600px;
+    height: 60px;
+
+}

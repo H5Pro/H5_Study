@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <cmp1></cmp1>
+</div>
+<script>
+    var cmp1 = {
+        template:`<div> <input v-focus:a.b.c="123"></div>`,
+    }
+    // 注册一个全局自定义指令 v-focus
+    Vue.directive('focus',{
+        // 当绑定元素插入到 DOM 中。
+        inserted(el,binding,vnode){
+            console.log(binding);
+            console.log(vnode);
+            el.focus();
+
+        }
+    })
+    var app = new Vue({
+        el:'#app',
+        components:{cmp1}
+
+    })
+</script>
+</body>
+</html>

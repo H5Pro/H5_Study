@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--1.语法：-->
+<!--visibility：visible | hidden | collapse-->
+<!--默认值：visible-->
+<!--适用于：所有元素-->
+<!--继承性：有-->
+<!--动画性：是-->
+<!--计算值：指定值-->
+
+<!--2.取值：-->
+<!--visible：-->
+<!--设置对象可视-->
+<!--hidden：-->
+<!--设置对象隐藏-->
+<!--collapse：-->
+<!--主要用来隐藏表格的行或列。隐藏的行或列能够被其他内容使用。对于表格外的其他对象，其作用等同于hidden。-->
+
+
+<!--3.说明：-->
+<!--设置或检索是否显示对象。与display属性不同，此属性为隐藏的对象保留其占据的物理空间-->
+<!--如果希望对象为可视，其父对象也必须是可视的。-->
+<!--对应的脚本特性为visibility。-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .test{
+            visibility: hidden;
+            width: 300px;
+            height: 200px;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="test">我不会出现在屏幕上</div>
+<h1>上边是有内容的，不过被影藏了</h1>
+
+</body>
+</html>

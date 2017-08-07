@@ -1,0 +1,62 @@
+
+body,html{
+    width:100%;
+}
+
+/*自定义单元格*/
+.custom_cell{
+    height: 185px;
+    line-height: 185px;
+}
+/*单元格悬浮时，设置背景色*/
+.custom_cell:hover{
+    background: rgb(246,246,246);
+}
+
+
+.custom_cell img{
+    height: 150px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/*单元格右侧说明部分*/
+.custom_cell .statement{
+    margin-left: 10px;
+    margin-right: 5px;
+    display: inline-block;
+    height: 150px;
+    width: 500px;
+    line-height: 32px;
+    vertical-align: middle;
+    font-size: 13px;
+    color: rgb(150,156,163);
+}
+/*分类*/
+.custom_cell .sort{
+    margin-top: 30px;
+}
+
+.custom_cell a{
+    color: inherit;
+}
+
+/*标题*/
+.custom_cell .title{
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.custom_cell a:hover{
+    color: rgb(54,109,240);
+}
+
+.custom_cell hr{
+    margin: 0px;
+    border: 0.5px solid rgb(238,238,238)
+}
+
+.custom_cell p{
+    margin: 0px;
+}

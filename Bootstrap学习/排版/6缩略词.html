@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+
+<!--
+1. 缩略词
+当鼠标悬停在缩写和缩写词上时就会显示完整内容，
+Bootstrap 实现了对 HTML 的 <abbr> 元素的增强样式。
+缩略语元素带有 title 属性，外观表现为带有较浅的虚线框，
+鼠标移至上面时会变成带有“问号”的指针。
+如想看完整的内容可把鼠标悬停在缩略语上（对使用辅助技术的用户也可见）,
+但需要包含 title 属性。
+-->
+
+<!--
+2. 首字母缩略语
+为缩略语添加 .initialism 类，可以让 font-size 变得稍微小些。
+
+
+-->
+
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="../less/aaa.css">
+
+</head>
+<body>
+<p>An abbreviation of the word attribute is <abbr title="attribiute">attr</abbr>.</p>
+<p><abbr title="HyperText Markup Language" class="initialism">HTML</abbr> is the best thing since sliced bread.</p>
+
+</body>
+</html>

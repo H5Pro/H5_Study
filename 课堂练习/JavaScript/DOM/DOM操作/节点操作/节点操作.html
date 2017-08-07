@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="width: 200px;height: 1000px;background-color: aqua"></div>
+<button class="position" id="btn1">滚入</button>
+
+<script>
+    document.write('hello');
+    document.write( '<h1>world</h1>');
+
+    //创建一个div元素节点
+    var div = document.createElement('div');
+    div.id = 'div1';
+    div.innerText = 'this is div text';
+    document.body.appendChild(div);
+
+    //创建一个文本节点
+    var text = document.createTextNode('dom');
+    text.appendData(' create');
+    text.insertData(0,'javascript ');
+    document.body.appendChild(text);
+
+    //创建style样式
+    var style=document.createElement('style');
+    style.appendChild(document.createTextNode('body{margin:0;}'));
+    style.appendChild(document.createTextNode('html{font-size:12px;}'));
+    style.appendChild(document.createTextNode('.position{position:fixed;right:40px;top:40px;}'));
+    document.head.appendChild(style);
+
+
+    document.write( '<div style="width: 200px;height: 1000px;background-color: aqua"></div>');
+
+
+    var btn1 = document.getElementById('btn1');
+    btn1.onclick = function(){
+        div.scrollIntoView();
+    };
+
+    //scrollIntoView():通过滚动浏览器或窗口或某个容器元素，使调用元素出现在视口中
+    div.scrollIntoView();
+
+    //contains():判断一个节点是不是另一个节点的后代
+    alert(div.parentNode.parentNode.contains(style));
+</script>
+
+</body>
+</html>

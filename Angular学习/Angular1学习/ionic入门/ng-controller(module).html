@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-controller</title>
+    <script src="../scripts/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="myApp">
+
+    <div ng-controller="firstController">
+        <ul>
+
+            <li ng-repeat="p in persons">
+                姓名:{{p.name}}
+                年龄:{{p.age}}
+            </li>
+        </ul>
+    </div>
+    <div ng-controller="secondController">
+        英雄的姓名:<input ng-model="name">
+        <div ng-bind="name"></div>
+        {{name}}
+    </div>
+</div>
+
+
+<script>
+    var app = angular.module('myApp',[]);
+    app.controller('firstController',function($scope){
+        $scope.persons = [
+            {name:'张三',age:'23'},
+            {name:'李四',age:'24'},
+        ];
+    });
+
+    app.controller('secondController',function($scope){
+        $scope.name = '张三';
+    });
+
+</script>
+
+</body>
+</html>

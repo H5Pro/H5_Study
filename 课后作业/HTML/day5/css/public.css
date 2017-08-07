@@ -1,0 +1,64 @@
+
+/*设置垂直居中*/
+.vertical_align_middle{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+/*设为内联块*/
+.inline_block{
+    display: inline-block;
+}
+
+
+/*清除边距*/
+.no_padding{           /*四周*/
+    padding: 0px;
+}
+.no_side_padding{      /*侧边*/
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.no_upDown_padding{    /*上下*/
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.no_up_padding{        /*上*/
+    padding-top: 0px;
+}
+.no_right_padding{     /*右*/
+    padding-right: 0px;
+}
+.no_down_padding{      /*下*/
+    padding-bottom: 0px;
+}
+.no_left_padding{     /*左*/
+    padding-left: 0px;
+}
+
+
+/*自定义表格(table)*/
+.table {              /*表格*/
+    display: table;
+    border-collapse: collapse;
+    line-height: normal;
+}
+.table .table-title {        /*表格标题*/
+    margin: 0px;
+    padding: 0px;
+    font-size: 16px;
+}
+.table .table-row-group {    /*表格行组*/
+    display: table-row-group;
+}
+.table-row-group .table-row {          /*表格行*/
+    display: table-row;
+}
+.table-row .table-cell {         /*单元格*/
+    padding: 10px;
+    display: table-cell;
+}
+
+
+

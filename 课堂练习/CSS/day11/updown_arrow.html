@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="iconfont/demo.css">
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+
+    <style>
+
+        .border1{
+            display: inline-block;
+            padding: 10px;
+            border: 1px solid transparent;
+        }
+        .border1:hover{
+            border-color: #888888;
+        }
+
+        .border1:hover .show{
+            display: none;
+        }
+
+        .border1:hover .hidden{
+            display: inline-block;
+        }
+
+        .title{
+            display: inline-block;
+            font-size: 20px;
+            font-weight: bold;
+            vertical-align: middle;
+        }
+
+        .little_icon{
+            font-size: 30px;
+            vertical-align: middle;
+        }
+
+        .show{
+            display: inline-block;
+        }
+        .hidden{
+            display: none;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="border1">
+    <div class="title">背景</div>
+    <i  class="icon iconfont icon-shangxiajiantou little_icon show"></i>
+    <i class="icon iconfont icon-shangxiajiantou-copy little_icon hidden"></i>
+
+</div>
+
+</body>
+</html>

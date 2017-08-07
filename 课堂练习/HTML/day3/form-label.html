@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+
+<!--q	name，所有表单元素都具有，如果需要提交数据必须填写-->
+<!--q	value，所有表单元素都具有，就是元素的内容-->
+<!--q	selected，select的option具有，表示option被选中-->
+<!--q	checked，radio和checkbox具有，表示被选中-->
+<!--q	readonly，所有元素都具有，表示元素只读-->
+<!--q	multiple，select具有，设置为多选下拉框-->
+<!--q	size，multiple select具有，控制显示option的数量-->
+<!--q	cols和rows，textarea具有，控制大小-->
+<!--q	disabled，所有表单元素具有，表示禁用，禁用的元素不能被提交-->
+<!--q	accept，file元素具有，表示可用选择的文件类型-->
+<!--q	maxlength，输入框具有，表示可用输入的最大字符数量-->
+<!--q	minlength，输入框具有，表示可用输入的最小字符数量-->
+
+<body>
+<form action="" method="get">
+    用户名：<input type="text" width="100" name="username" value="用户名"><br><br>
+    密码：<input type="password" name="password"><br><br>
+    兴趣爱好：<input type="checkbox" name="hobby" checked>篮球 <input type="checkbox" name="hobby">打游戏
+    <input type="checkbox" name="hobby">学习<br><br>
+    性别：<input type="radio" checked name="sex">男<input name="sex" type="radio">女<br><br>
+    选择文件：<input type="file"><br><br>
+    <input type="image" name="headIcon" src="1_14157_3.jpg"><br><br>
+    <input type="button" name="register" value="注册">
+    <input type="hidden" name="device" value="pc">
+    <input type="reset" name="">
+    <input type="submit" name="">
+</form>
+
+
+
+
+</body>
+</html>

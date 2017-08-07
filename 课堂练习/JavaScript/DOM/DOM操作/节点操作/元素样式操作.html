@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>classList操作</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background: lightgray;
+        }
+
+        .color-red{
+            color: red;
+        }
+        .color-blue{
+            color: blue;
+        }
+
+        .border-solid{
+            border: solid 2px #888;
+        }
+        .border-dotted{
+            border: dotted 2px #888;
+        }
+
+        .radius-10{
+            border-radius: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="box" id="rect1">
+    <h1>
+        Hello World!
+    </h1>
+</div>
+
+<button id ='btn1'>切换样式</button>
+<script>
+    //classList操作
+    var rect1 = document.getElementById('rect1');
+    console.log(rect1.classList);
+    rect1.classList.add('color-red');
+    rect1.classList.add('color-blue');
+    console.log('1. add()操作(添加color-red和color-blue):');
+    console.log(rect1.classList);
+    rect1.classList.remove('color-red');
+    console.log('2. remove()操作(移除color-red):');
+    console.log(rect1.classList);
+    console.log('3. contains(color-blue):'+rect1.classList.contains('color-blue')+'\n'+'contains(color-red):'+rect1.classList.contains('color-red'));
+    console.log();
+
+    console.log('4. length:'+rect1.classList.length);
+
+    console.log('5. item(0):'+rect1.classList.item(0));
+
+
+
+    btn1.onclick = function(){
+        rect1.classList.toggle('color-blue');
+        rect1.classList.toggle('color-red');
+        console.log(rect1.classList);
+    };
+</script>
+</body>
+</html>

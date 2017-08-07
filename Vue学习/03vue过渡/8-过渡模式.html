@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            padding: 100px;
+        }
+        button{
+            position: absolute;
+        }
+        .fade-enter-active,
+        .fade-leave-active,
+        .fade1-enter-active,
+        .fade1-leave-active,
+        .fade2-enter-active,
+        .fade2-leave-active
+        {
+            transition: all 1s;
+        }
+        /*.fade-enter-to,
+        .fade-leave{
+            transform: translateX(0);
+            opacity: 1;
+        }*/
+        .fade-enter,.fade1-enter,.fade2-enter{
+            transform: translateX(30px);
+            opacity: 0;
+        }
+        .fade-leave-to,.fade1-leave-to,.fade2-leave-to{
+            transform: translateX(-30px);
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!--过渡模式 ，key使用-->
+        <transition name="fade" >
+            <button v-if="on" @click="on=!on" key="on">on</button>
+            <button v-else @click="on=!on" key="off">off</button>
+        </transition>
+        <br>
+        <br>
+        <br>
+        <transition name="fade1" mode="in-out">
+            <button v-if="on1" @click="on1=!on1" key="on">on</button>
+            <button v-else @click="on1=!on1" key="off">off</button>
+        </transition>
+        <br>
+        <br>
+        <br>
+        <transition name="fade2" mode="out-in">
+            <button v-if="on2" @click="on2=!on2" key="on">on</button>
+            <button v-else @click="on2=!on2" key="off">off</button>
+        </transition>
+    </div>
+    <script src="../vue.min.js"></script>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                on:true,
+                on1:true,
+                on2:true
+            }
+        })
+    </script>
+</body>
+</html>

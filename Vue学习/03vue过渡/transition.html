@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <style>
+        .box1{
+            background: black;
+            width: 200px;
+            height: 200px;
+        }
+        .fade-enter-active, .fade-leave-active{
+            transition: all 2s;
+
+        }
+
+        .fade-enter, .fade-leave-to{
+            opacity:0;
+            transform: translate(200px,0px);
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <button @click="show=!show">toggle</button>
+    <transition name="fade">
+        <div v-if="show" class="box1">
+
+        </div>
+    </transition>
+</div>
+
+<script>
+    new Vue({
+       el:'#app',
+        data:{
+           show:false
+        }
+    });
+</script>
+
+</body>
+</html>

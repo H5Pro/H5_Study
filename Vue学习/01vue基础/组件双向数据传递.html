@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$Title$</title>
+
+    <script src="../node_modules/vue/dist/vue.min.js"></script>
+    <script src="../node_modules/vue-router/dist/vue-router.min.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <sup-vue></sup-vue>
+</div>
+
+<template id="sup">
+    <div>
+        <child-vue :value="users[0]"></child-vue>
+        <div>
+           父组件<input type="text" v-model="users[0].text">
+        </div>
+
+    </div>
+</template>
+
+<template id="child">
+    <div>
+        子组件<input type="text" v-model="value.text">
+    </div>
+</template>
+
+<script>
+    Vue.component('child-vue', {
+        template:'#child',
+        props:['value'],
+        data(){
+            return{
+
+            }
+        },
+       watch:{
+           value(newV){
+               this.$emit('input',newV);
+               console.log(newV);
+           }
+       }
+    });
+
+    Vue.component('sup-vue', {
+        template:'#sup',
+        data(){
+            return{
+                users:[
+                    { name:'fjl',
+                        text:'wwwwww'
+                    },
+                    { name:'fjl',
+                        text:'wwwwww'
+                    },
+                ]
+
+            }
+        },
+    });
+    var app = new Vue({
+        el:'#app',
+        data:{
+
+        },
+
+    })
+</script>
+
+</body>
+</html>

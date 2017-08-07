@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .alert{
+            position: fixed;
+            top:0;
+            left:0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .alert-wrapper{
+            width: 300px;
+            box-shadow: 0 0 5px #ccc;
+            background-color: #fff;
+        }
+        .alert-title{
+            line-height: 40px;
+            font-size: 16px;
+            background-color: lightskyblue;
+            color:#fff;
+            padding: 0 20px;
+        }
+        .alert-content{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 20px;
+            min-height: 100px;
+        }
+        .alert-footer{
+            display: flex;
+            width: 100%;
+            height: 70px;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .alert-footer a{
+            background-color: lightskyblue;
+            color:#fff;
+            padding: 10px;
+            display: inline-block;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+<div id="app">
+    <input type="button" value="show" @click="show">
+</div>
+
+<script src="../vue.min.js"></script>
+<script>
+    var Alert={
+        install(Vue,options){
+            //1
+            Vue.myGlobalMethod = function () {
+            }
+            // 2. 添加全局资源
+            Vue.directive('my-directive', {
+                bind (el, binding, vnode, oldVnode) {
+                }
+            })
+            // 3. 注入组件
+            Vue.mixin({
+                created: function () {
+                }
+            })
+            // 4. 添加实例方法
+            Vue.prototype.$alert = function (mess) {
+                var template=`<div class="alert">
+                    <div class="alert-wrapper">
+                    <div class="alert-title">提示</div>
+                    <div class="alert-content">
+                    <div>${mess}</div>
+                    </div>
+                        <div class="alert-footer">
+                            <a class="ok" href="javascript:;">确定</a>
+                            <a class="cancel" href="javascript:;">取消</a>
+                        </div>
+                    </div>
+                    </div>`
+                 var temp=document.createElement('div');
+                temp.innerHTML=template;
+                var node=temp.firstElementChild;
+                document.body.appendChild(node);
+                node.querySelector('.ok').onclick=function () {
+                    document.body.removeChild(node);
+                    alert('ok')
+                }
+                node.querySelector('.cancel').onclick=function () {
+                    document.body.removeChild(node);
+                    alert('cancel')
+                }
+            }
+        }
+    }
+    Vue.use(Alert)
+    new Vue({
+        el:'#app',
+        methods:{
+            show(){
+                this.$alert('hello')
+            }
+        }
+    })
+</script>
+</body>
+</html>

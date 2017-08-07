@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算属性</title>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<!--1. 基本例子-->
+<div id="app-1">
+    <p>Original message: {{message}}</p>
+    <p>computed reversed message: {{reverseMessage}}</p>
+</div>
+
+<!--2. 计算setter-->
+<div id="app-2">
+    <h4>fullName:{{fullname}}</h4>
+</div>
+
+<!--3. 观察watcher-->
+<div id="app-3">
+    Ask a question:
+    <input v-model="question">
+    <p>{{ answer }}</p>
+</div>
+
+<script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
+<script src="https://unpkg.com/lodash@4.13.1/lodash.min.js"></script>
+
+<script>
+    //1. 基本示例
+    var app1 = new Vue({
+        el: '#app-1',
+        data: {
+            message: 'Hello'
+        },
+        computed: {
+            reverseMessage: function () {
+                return this.message.split('').reverse().join('');
+            }
+        }
+    })
+
+    //2. 计算setter
+    var app2 = new Vue({
+        el: '#app-2',
+        data: {
+            first: 'fu',
+            last: 'jinliang'
+        },
+        computed: {
+            fullname: {
+                get: function () {
+                    return this.first + ' ' + this.last;
+                },
+                set: function (value) {
+                    if (value) {
+                        var arr = value.split(' ');
+                        this.first = arr[0];
+                        this.last = arr[1];
+                    }
+                }
+            }
+        }
+    })
+
+    //3. 观察watcher
+    var app3 = new Vue({
+        el: '#app-3',
+        data: {
+            question: '',
+            answer: 'I cannot give you an answer until you ask a question!'
+        },
+        watch: {
+            question: function (newValue) {
+                this.answer = 'Wait for you to stop a typing ....';
+                this.getAnswer();
+            }
+        },
+        methods: {
+            getAnswer: _.debounce(function () {
+//                if(this.question.indexOf('?') == -1){
+//                    this.answer = 'Questions usually contain a question mark. ;-)';
+//                    return;
+//                }
+                if (this.question.length == 0) {
+                    return;
+                }
+                this.answer = 'Thinking...';
+                var paramStr = 'key=fbe171e7ead34fc980dbe3300768896d&loc=北京市中关村&userid=123456&info=' + this.question;
+                var _this = this;
+
+                axios.get('http://www.tuling123.com/openapi/api?' + paramStr).then(function (response) {
+                    _this.answer = response.data.text;
+
+                }).catch(function (error) {
+                    _this.answer = 'Error! Could not reach the API. ' + error;
+                });
+
+
+            }, 500),
+        }
+    })
+
+</script>
+
+</body>
+</html>

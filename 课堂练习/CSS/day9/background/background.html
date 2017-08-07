@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html,body{
+            height: 100%;
+        }
+        div{
+            width: 100%;
+            height: 100%;
+            border: 1px solid #888888;
+
+            /*通过以下方法可以完成图片的拼接*/
+            background:
+                    url("img/1.png"),
+                    url("img/2.png") 1238px 0px,
+                    url("img/3.png") 0px 595px;
+            background-color: #ccc;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+
+</body>
+</html>

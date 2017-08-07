@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+
+        *{
+            box-sizing: border-box;
+        }
+
+
+        .data_list{
+           margin: 0px;
+           padding: 0px;
+        }
+
+        .data_list>li{
+            background-color: #ccc;
+            padding: 10px 0px;
+            display: flex;
+            margin: 10px;
+        }
+
+
+
+        .data_list .icon{
+            height: 100px;
+            flex: 0 0 100px;
+            margin: 0 10px;
+            background-color: #a71d5d;
+            border-radius: 15px;
+            order: 1;
+
+            align-self: center;
+        }
+
+        .data_list>li:first-child .icon{
+            order: 0;
+        }
+
+        .data_list .detail{
+            flex: 1;
+            padding: 0 10px;
+        }
+
+        .data_list .title{
+            font-size: 22px;
+            font-weight: bolder;
+            color: #222;
+        }
+        .data_list .summary{
+            font-size: 16px;
+            color: #555;
+        }
+
+
+
+
+        .data_list .little_icon{
+            height: 30px;
+            flex: 0 0 30px;
+            margin: 0 10px;
+            background-color: #df5000;
+            border-radius: 7px;
+        }
+
+        .data_list .information{
+
+            flex: 1;
+           line-height: 30px;
+            font-size: 15px;
+            color: #333;
+            padding: 0 10px;
+
+            white-space: nowrap;
+            word-break: keep-all;
+            text-overflow: ellipsis;
+            overflow: hidden;
+         }
+
+
+    </style>
+
+</head>
+<body>
+<ul class="data_list">
+    <li>
+        <div class="icon"></div>
+        <div class="detail">
+            <div class="title">Media Heading</div>
+            <div class="summary">Cras sit amet nibn libero, in gravida nulla,
+                Hulla vermetus scelerisque ante sollicitudin commodo.</div>
+        </div>
+    </li>
+    <li>
+        <div class="icon"></div>
+        <div class="detail">
+            <div class="title">Media Heading</div>
+            <div class="summary">Cras sit amet nibn libero, in gravida nulla,
+                Hulla vermetus scelerisque ante sollicitudin commodo.</div>
+        </div>
+    </li>
+    <li>
+        <div class="icon"></div>
+        <div class="detail">
+            <div class="title">Media Heading</div>
+            <div class="summary">Cras sit amet nibn libero, in gravida nulla,
+                Hulla vermetus scelerisque ante sollicitudin commodo.</div>
+        </div>
+    </li>
+
+    <li>
+        <div class="little_icon"></div>
+        <div class="information">
+            Media Heading Media Heading Media Heading Media Heading Media Heading
+        </div>
+        <div class="little_icon"></div>
+    </li>
+
+</ul>
+
+
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.css">
+
+    <style>
+        .box{
+            background-color: #e6e2eb;
+            border: 1px solid #ccc;
+        }
+    </style>
+
+</head>
+<body>
+
+<!--
+为了使用内置的栅格系统将内容再次嵌套，
+可以通过添加一个新的 .row 元素和一系列 .col-sm-* 元素到已经存在的 .col-sm-* 元素内。
+被嵌套的行（row）所包含的列（column）的个数不能超过12（其实，没有要求你必须占满12列）。
+-->
+
+<div class="row">
+    <div class="col-sm-9 box">
+        Level 1: .col-sm-9
+        <div class="row">
+            <div class="col-xs-8 col-sm-6 box">
+                Level 2: .col-xs-8 .col-sm-6
+            </div>
+            <div class="col-xs-4 col-sm-6 box">
+                Level 2: .col-xs-4 .col-sm-6
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

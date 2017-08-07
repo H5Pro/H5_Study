@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            background-color: red;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+
+
+
+<div id="div1"></div>
+
+
+<script>
+    var div1 = document.getElementById('div1');
+
+    setStyle(div1,{
+        'backgroundColor':"#00ff00",
+        'width':'100px',
+        'height':'100px'
+    });
+
+    function setStyle(obj,styles) {
+        for (var o in styles){
+            obj.style[o] = styles[o];
+        }
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .nav {
+            display: table;
+            width: 100%;
+        }
+
+        .nav > * {
+            display: table-cell;
+            width: 33%;
+            line-height: 50px;
+            text-align: center;
+        }
+
+        .page {
+            height: 400px;
+        }
+
+        .page-home {
+            background-color: red;
+        }
+cd
+        .page-user {
+            background-color: #ccc;
+        }
+
+        .page-score {
+            background-color: blue;
+        }
+
+        .page-pwd {
+            background-color: lightcoral;
+        }
+
+        .page a {
+            line-height: 30px;
+            display: block;
+        }
+
+        .child-view {
+            position: absolute;
+            width: 100%;
+            transition: all 1s;
+        }
+
+        .slide-left-enter, .slide-right-leave-to {
+            transform: translate(100%, 0);
+        }
+
+        .slide-left-leave-to, .slide-right-enter {
+
+            transform: translate(-100%, 0);
+        }
+
+        .fade-enter {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div class="nav">
+        <router-link to="/">home</router-link>
+        <router-link to="/user">user</router-link>
+    </div>
+    <router-view></router-view>
+</div>
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script src="../node_modules/vue-router/dist/vue-router.js"></script>
+
+<template id="childview">
+    <div>
+        <transition :name="transitionName">
+            <router-view class="child-view"></router-view>
+        </transition>
+    </div>
+
+</template>
+
+<template id="home">
+    <div class="page page-home">
+    </div>
+</template>
+<template id="pwd">
+    <div class="page page-pwd">
+        <header>
+            <input type="button" @click="$router.goBack()" value="返回">
+        </header>
+    </div>
+</template>
+<template id="score">
+    <div class="page page-score">
+        <input type="button" @click="$router.goBack()" value="返回">
+    </div>
+</template>
+<template id="profile">
+    <div class="page page-user">
+        <router-link to="/user/pwd">密码修改</router-link>
+        <router-link to="/user/score">用户积分</router-link>
+    </div>
+</template>
+<script>
+    /*带有动画的routerview组件*/
+    var ChildView = {
+        template: '#childview',
+        data(){
+            return {
+                transitionName: 'slide-left',
+            }
+        },
+        beforeRouteUpdate (to, from, next) {
+            console.log(to.path)
+            let isBack = this.$router.isBack
+            if (isBack) {
+                this.transitionName = 'slide-right'
+            } else {
+                this.transitionName = 'slide-left'
+            }
+            this.$router.isBack = false
+            next()
+        }
+    }
+    var Home = {template: '#home'}
+    var Pwd = {template: '#pwd'}
+    var Score = {template: '#score'}
+    var Profile = {template: '#profile'}
+    var routes = [
+        {
+            path: '/',
+            component: Home
+        },
+        {
+            path: '/user',
+            component: ChildView,/*使用自定义组件*/
+            children: [
+                {
+                    path: '',
+                    component: Profile
+                },
+                {
+                    path: 'pwd',
+                    component: Pwd
+                },
+                {
+                    path: 'score',
+                    component: Score
+                }
+            ]
+        },
+
+    ]
+    /*自定义方法*/
+    VueRouter.prototype.goBack = function () {
+        this.isBack = true
+        window.history.go(-1)
+    }
+    var router = new VueRouter({
+        routes,
+    })
+    new Vue({
+        el: '#app',
+        router,
+    })
+</script>
+</body>
+</html>

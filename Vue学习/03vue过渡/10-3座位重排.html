@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .list{
+            display: flex;
+            flex-wrap: wrap;
+            width: 500px;
+            list-style: none;
+        }
+        .list-item{
+            width: 20%;
+            line-height: 50px;
+            text-align: center;
+            background-color: lightcoral;
+            margin:10px 20% 10px 0;
+        }
+        .list-item:nth-child(3n){
+            margin-right: 0;
+        }
+        .list-move{
+            transition: all 1s;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="sort" @click="sort">
+        <transition-group class="list" name="list" tag="ul">
+            <li class="list-item" v-for="item in items" :key="item">
+                {{item}}
+            </li>
+        </transition-group>
+    </div>
+    <script src="../vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js"></script>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{items:['AAA',"BBB","CCC","DD","EE","FF","GG","HHH","II","JJJ","KKK","LL","MM","NN","OO","PP","QQ","RR","SS"]},
+            methods:{
+                sort(){
+                  this.items = _.shuffle(this.items)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

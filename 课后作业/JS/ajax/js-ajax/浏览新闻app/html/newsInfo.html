@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新闻详情</title>
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/newsInfo.css">
+    <script src="../js/UrlReq.js"></script>
+</head>
+<body id="news_info">
+
+
+
+<script src="../js/juicer-min.js"></script>
+<script id="news_content" type="text/template">
+
+    <div class="title">${item.title}</div>
+    <img src=${item.pic} class="pic">
+    <div class="content">${item.titledesc}</div>
+    $${item.content}
+</script>
+<script src="../js/newsInfo.js"></script>
+</body>
+</html>

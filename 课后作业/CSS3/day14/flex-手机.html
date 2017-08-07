@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+
+        html,body{
+            margin: 0px;
+            height: 100%;
+
+        }
+
+        .container{
+            display: flex;
+            height: 100%;
+            flex-direction: column;
+        }
+
+
+
+        .header{
+            flex: 0 0 44px;
+            background-color: lightgreen;
+        }
+
+
+
+        .main{
+            flex: 1 ;
+            overflow: auto;
+        }
+
+        .main::-webkit-scrollbar{
+            display: none;
+        }
+
+        .footer{
+            flex: 0 0 49px;
+            background-color: lightgray;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+    <div class="header"></div>
+    <div class="main">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>8</li>
+            <li>8</li>
+            <li>8</li>
+            <li>8</li>
+
+
+        </ul>
+    </div>
+    <div class="footer"></div>
+</div>
+</body>
+</html>

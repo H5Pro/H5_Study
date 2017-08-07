@@ -1,0 +1,228 @@
+
+/*设置html的样式*/
+html{
+    height: 100%;
+}
+
+body{
+    text-align:center;
+    height: 100%;
+    background:#fff;
+
+}
+
+
+
+.label{
+    display: inline-block;
+    line-height: 60px;
+    margin: 0px 5px 0px 5px;
+}
+
+.mainNv {
+    display: inline;
+    float: left;
+}
+
+.rightNv {
+    display: inline;
+    float: right;
+
+}
+
+
+.border1 {
+    padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid gray;
+}
+
+.radiusBorder {
+    border: 1px solid gray;
+    background: lightgray;
+    padding-left: 12px;
+    padding-right: 12px;
+    border-radius: 12px;
+    line-height: 24px;
+    font-size: 13px;
+}
+
+
+.a_light {
+    color: rgb(151, 178, 198);
+}
+
+.overFlowDiv {
+    margin-left: -10px;
+    width: calc(100% + 20px);
+}
+
+.div_aboutUs {
+    margin-top: 18px;
+    margin-bottom: 18px;
+    color: rgb(163, 163, 163);
+    font-size: 13px
+}
+
+.div_footerTitle {
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    height: 25px;
+    line-height: 25px
+}
+
+.button {
+    background: white;
+    border: 1px solid #236799;
+    color: #236799;
+    border-radius: 2px;
+    font-size: 15px;
+}
+
+.hr_bottom_dashed {
+    margin-top: 20px;
+    border-style: dashed;
+}
+
+.hr_top_solid {
+    margin-bottom: 20px;
+    border-style: solid;
+}
+
+.hr_divide_thin{      /*细灰分割线*/
+    border: 0.5px solid rgb(238,238,238)
+}
+
+
+main {
+    width: 1000px;
+    vertical-align: middle;
+    display: inline-block;
+    margin:auto;
+    text-align:left;
+}
+
+article {
+    margin: 20px;
+    width: 65%;
+    float: left;
+}
+
+aside {
+    width: calc(35% - 90px);
+    margin-left: 20px;
+    float: left;
+}
+
+footer {
+    display: inline-block;
+    width: 100%;
+    background: rgb(45, 50, 55);
+    clear: both;
+}
+
+#textMark {
+    color: coral;
+}
+
+hr {
+    clear: both;
+    border-color: #cccccc;
+}
+
+textarea {
+    font-size: 16px;
+    max-width: 100%;
+    min-width: 100%;
+    margin-bottom: 10px;
+}
+
+a {
+    color: rgb(100, 100, 100);
+    text-decoration: none;
+
+}
+
+a:hover {
+    color: rgb(84, 148, 245);
+}
+
+.fullWidth {
+    width: 100%;
+}
+
+.footer_littleIcon {
+    height: 15px;
+    margin-right: 30px;
+    margin-bottom: 18px;
+}
+
+.footer_up {
+    display: inline-block;
+    margin: 0px 70px 0px 70px;
+    padding: 10px 0px 10px 0px;
+    vertical-align: middle;
+
+}
+
+
+
+ul{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+.hiddenItem{
+    padding: 20px 15px 15px 15px;
+    position: absolute;
+    top: 60px;
+    z-index:2;
+    display: none;
+    background: #fff;
+    border: 3px solid rgba(144,144,144,0.3);
+
+
+}
+
+.hoverItem:hover .hiddenItem{
+
+    display: block;
+}
+
+.padding_hiddenItem_cell{
+    padding: 5px 0px 5px 0px;
+
+}
+
+.inline_block{
+    display: inline-block;
+}
+
+.footer_down {
+    height: 45px;
+    line-height: 45px;
+    font-size: 0px;
+    text-align: center;
+    background: rgb(35, 40, 45)
+}
+
+.footer_down_text{
+    display: inline-block;
+    font-size: 13px;
+    vertical-align: middle;
+    line-height: 20px;
+    color: rgb(163,163,163);
+}
+
+
+.footer_down_nav{
+    display: inline-block;
+    margin-left: 60px;
+    vertical-align: middle;
+}
+
+
+

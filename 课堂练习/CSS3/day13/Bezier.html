@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="author" href="humans.txt">
+
+    <style>
+
+        .content{
+            width: 540px;
+            height: 440px;
+            border: 1px solid #000;
+            position: relative;
+            margin-top: 200px;
+        }
+
+        .box{
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 40px;
+            height: 40px;
+            background: red;
+
+
+            /*自带的五种速度曲线*/
+            /*ease: cubic-bezier(0.25, 0.1, 0.25, 1.0)
+            linear: cubic-bezier(0.0, 0.0, 1.0, 1.0)
+            ease-in: cubic-bezier(0.42, 0, 1.0, 1.0)
+            ease-out: cubic-bezier(0, 0, 0.58, 1.0)
+            ease-in-out: cubic-bezier(0.42, 0, 0.58, 1.0)
+            */
+
+            /*自定义速度曲线*/
+            transition: all 1s cubic-bezier(0.2,-2,0.8, 3);
+        }
+
+
+        .box1{
+            width: 40px;
+            height: 40px;
+            background: #000;
+            border-radius: 20px;
+
+            transition: all 1s linear;
+        }
+
+        .content:hover .box{
+            transform: translate(0px, 400px);
+
+        }
+        .content:hover .box1{
+            transform: translate(500px, 0px);
+
+
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+
+    <div class="box">
+
+        <div class="box1">
+
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

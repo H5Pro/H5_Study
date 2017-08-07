@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .black_background {
+            height: 170px;
+            width: 840px;
+            text-align: center;
+            background-color: rgb(31, 31, 35);
+            margin: auto;
+            padding: 0px 10px;
+        }
+
+        .course-schedule {
+            position: relative;
+            display: table;
+            width: 100%;
+            margin: auto;
+            font-size: 15px;
+            color: white;
+            background-color: inherit;
+            border-bottom: 2px solid rgb(22,68,93);
+        }
+
+        .course-schedule:after {
+            content: '';
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            right: 0px;
+            left: 0px;
+            background-color: inherit;
+        }
+
+        .course-schedule .cell {
+            position: relative;
+            padding: 20px 8px 30px 8px;
+            display: table-cell;
+        }
+
+        .course-schedule .cell > *,
+        .course-schedule .cell:after,
+        .course-schedule .cell:before {
+            z-index: 2;
+        }
+
+        .course-schedule .cell:after, .course-schedule .cell:before {
+            content: '';
+            position: absolute;
+            background-color: inherit;
+            left: 0px;
+            right: 0px;
+            top: 100%;
+            border-radius: 50%;
+            margin: auto;
+        }
+
+        .course-schedule .cell:before {
+            opacity: 0.5;
+            width: 16px;
+            height: 16px;
+            margin-top: -7px;
+        }
+
+        .course-schedule .cell:after {
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            top: 100%;
+            margin-top: -4px;
+
+        }
+
+        .course-schedule .cell:nth-child(1) {
+            background-color: rgb(242,46,59);
+            border-color: rgb(242,46,59);
+        }
+
+        .course-schedule .cell:nth-child(2) {
+            background-color: rgb(38,138,210);
+            border-color: rgb(38,138,210);
+        }
+
+        .course-schedule .cell:nth-child(3) {
+            background-color: rgb(247,160,19);
+            border-color: rgb(247,160,19);
+        }
+
+        .course-schedule .cell:nth-child(4) {
+            background-color: rgb(212,120,121);
+            border-color: rgb(212,120,121);
+        }
+
+        .course-schedule .cell:nth-child(5) {
+            background-color: rgb(96,193,199);
+            border-color: rgb(96,193,199);
+        }
+
+        .course-schedule .box {
+            position: relative;
+            background-color: inherit;
+            border-color: inherit;
+            padding: 15px 0px;
+            border-radius: 4px;
+        }
+
+        .course-schedule .box:after {
+            content: '';
+            position: absolute;
+            width: 0px;
+            height: 0px;
+            margin: auto;
+            border: 11px solid transparent;
+        }
+
+        .course-schedule .bottom:after {
+            left: 0px;
+            right: 0px;
+            top: 100%;
+            border-top-color: inherit;
+        }
+
+        /*  .course-schedule .top:after{
+              left: 0px;
+              right: 0px;
+              bottom:100%;
+              border-bottom-color: inherit;
+          }
+
+          .course-schedule .left:after{
+              top: 0px;
+              bottom: 0px;
+              right:100%;
+              border-right-color: inherit;
+          }
+
+          .course-schedule .left:after{
+              top: 0px;
+              bottom: 0px;
+              left:100%;
+              border-left-color: inherit;
+          }*/
+
+        .course-schedule .text {
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            margin: auto;
+            bottom: -50px;
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+<div class="black_background">
+    <div class="course-schedule">
+        <div class="cell">
+            <div class="box bottom">
+                网页基础
+            </div>
+            <div class="text">第一阶段</div>
+        </div>
+        <div class="cell">
+            <div class="box bottom">
+                Javascript基础
+            </div>
+            <div class="text">第二阶段</div>
+        </div>
+        <div class="cell">
+            <div class="box bottom">
+                Javascript进阶
+            </div>
+            <div class="text">第三阶段</div>
+        </div>
+        <div class="cell">
+            <div class="box bottom">
+                PC端开发
+            </div>
+            <div class="text">第四阶段</div>
+        </div>
+        <div class="cell">
+            <div class="box bottom">
+                移动端开发
+            </div>
+            <div class="text">第五阶段</div>
+        </div>
+    </div>
+
+
+</body>
+</html>

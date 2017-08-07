@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="css/animate.css">
+
+
+    <style>
+
+
+        *{
+            box-sizing: border-box;
+        }
+
+       html,body{
+            height: 100%;
+        }
+
+
+
+       .all_run{
+
+           position: fixed;
+           right: 0;
+
+           width: 80px;
+           height: 40px;
+           line-height: 40px;
+           text-align: center;
+           background-color: red;
+           color: white;
+           font-size: 18px;
+           font-weight: bolder;
+           border-radius: 4px;
+       }
+
+       .all_run:hover{
+           background-color: green;
+       }
+
+       .right_nav{
+           position: fixed;
+
+           z-index: 2;
+           top:0;
+           bottom: 0;
+           right: 0px;
+           margin: auto;
+           height: 500px;
+           background-color: rgba(0,0,0,0.7);
+           color: white;
+           font-weight: bold;
+           font-size: 16px;
+
+           padding: 30px 20px;
+           list-style-type: none;
+
+           opacity: 0.3;
+           transition: all 0.5s ease ;
+
+           border-radius: 4px;
+       }
+
+
+       .right_nav:hover{
+           opacity: 1;
+
+       }
+
+       .right_nav li>a{
+           color: inherit;
+           text-decoration: none;
+           line-height: 40px;
+       }
+
+       .right_nav li>a:hover{
+           color: #a71d5d;
+       }
+
+
+
+       h1{
+
+           text-align: center;
+       }
+
+        .item_n{
+
+            min-height: 900px;
+            font-size: 0;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+
+
+        .item_n li{
+            display: inline-block;
+            width: 25%;
+
+            color: #333333;
+            font-weight: bolder;
+            text-align: center;
+            border: 1px solid #cccccc;
+            padding: 20px;
+            font-size: 18px;
+        }
+
+
+
+        .item_n .hover_running{
+            display: inline-block;
+            padding: 0px 10px;
+        }
+
+        section:hover .hover_running div:nth-child(2){
+            animation-play-state: paused;
+
+        }
+
+
+
+
+        .item_n .hover_running div:nth-child(2){
+            margin: auto;
+            width: 100px;
+            height: 100px;
+            background-color: lightgreen;
+            animation-iteration-count: Infinite;
+
+
+            animation-play-state: running;
+        }
+
+        .item_n .hover_running:hover div:nth-child(2){
+            animation-play-state: running;
+
+        }
+
+
+        .item_n .hover_running div:first-child{
+            position: relative;
+            z-index: 1;
+        }
+        .item_n .hover_running div:last-child{
+            position: relative;
+            z-index: 1;
+        }
+
+
+
+
+
+    </style>
+
+</head>
+<body>
+
+
+<div class="all_run">
+    全部开始
+</div>
+
+<section>
+
+    <ul class="right_nav">
+
+        <li><a href="#ASE" title="渴求关注">Attention</a></li>
+        <li><a href="#BEN" title="弹动进入">Bounce-Enter</a></li>
+        <li><a href="#BEX" title="弹动离开">Bounce-Exits</a></li>
+        <li><a href="#FEN" title="渐变进入">Fade-Enter</a></li>
+        <li><a href="#FEX" title="渐变离开">Fade-Exits</a></li>
+        <li><a href="#FLI" title="翻筋斗">Flippers</a></li>
+        <li><a href="#LIG" title="轻轻的加速(进入或离开)">Lightspeed</a></li>
+        <li><a href="#REN" title="旋转进入">Rotate-Enter</a></li>
+        <li><a href="#REX" title="旋转离开">Rotate-Exits</a></li>
+        <li><a href="#SLI" title="滑动(进入或离开)">Sliders</a></li>
+        <li><a href="#SPE" title="特别效果">Specials</a></li>
+    </ul>
+
+    <div>
+        <h1 id="ASE">Attention Seekers(渴求关注)</h1>
+        <ul class="item_n">
+
+            <li>
+                <div class="hover_running">
+                    <div>bounce</div>
+                    <div class="animated bounce"></div>
+                    <div>弹动</div>
+                </div>
+            </li>
+            <li>
+                <div class="hover_running">
+                    <div>flash</div>
+                    <div class="animated flash"></div>
+                    <div>闪光</div>
+                </div>
+
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>pulse</div>
+                    <div class="animated pulse"></div>
+                    <div>跳动</div>
+                </div>
+
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>rubberBand</div>
+                    <div class="animated rubberBand"></div>
+                    <div>橡皮带</div>
+                </div>
+
+            </li>
+
+
+
+            <li>
+                <div class="hover_running">
+                    <div>shake</div>
+                    <div class="animated shake"></div>
+                    <div>摇动</div>
+                </div>
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>swing</div>
+                    <div class="animated swing"></div>
+                    <div>摇摆</div>
+                </div>
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>tada</div>
+                    <div class="animated tada"></div>
+                    <div>拨动</div>
+                </div>
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>wobble</div>
+                    <div class="animated wobble"></div>
+                    <div>颤动</div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+
+    <div>
+        <h1 id="BEN">Bouncing Entrances(弹动进入)</h1>
+        <ul class="item_n">
+
+            <li>
+                <div class="hover_running">
+                    <div>bounceInUp</div>
+                    <div class="animated bounceInUp"></div>
+                    <div>向上弹入</div>
+                </div>
+
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>bounceInRight</div>
+                    <div class="animated bounceInRight"></div>
+                    <div>右侧弹入</div>
+                </div>
+
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>bounceInDown</div>
+                    <div class="animated bounceInDown"></div>
+                    <div>向下弹入</div>
+                </div>
+
+            </li>
+
+
+
+            <li>
+                <div class="hover_running">
+                    <div>bounceInLeft</div>
+                    <div class="animated bounceInLeft"></div>
+                    <div>左侧弹入</div>
+                </div>
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>bounceIn</div>
+                    <div class="animated bounceIn"></div>
+                    <div>弹入</div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+
+    <div>
+        <h1 id="BEX">Bouncing Exits(弹动离开)</h1>
+        <ul class="item_n">
+
+
+            <li>
+                <div class="hover_running">
+                    <div>bounceOutUp</div>
+                    <div class="animated bounceOutUp"></div>
+                    <div>向上弹出</div>
+                </div>
+
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>bounceOutRight</div>
+                    <div class="animated bounceOutRight"></div>
+                    <div>右侧弹出</div>
+                </div>
+
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>bounceOutDown</div>
+                    <div class="animated bounceOutDown"></div>
+                    <div>向下弹出</div>
+                </div>
+
+            </li>
+
+
+
+            <li>
+                <div class="hover_running">
+                    <div>bounceOutLeft</div>
+                    <div class="animated bounceOutLeft"></div>
+                    <div>左侧弹出</div>
+                </div>
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>bounceOut</div>
+                    <div class="animated bounceOut"></div>
+                    <div>弹出</div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+
+
+    <div>
+        <h1 id="FEN">Fading Entrances(渐变进入)</h1>
+        <ul class="item_n">
+
+            <li>
+                <div class="hover_running">
+                    <div>fadeInUp</div>
+                    <div class="animated fadeInUp"></div>
+                    <div>向上褪色-入</div>
+                </div>
+
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>fadeInRight</div>
+                    <div class="animated fadeInRight"></div>
+                    <div>右侧褪色-入</div>
+                </div>
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>fadeInDown</div>
+                    <div class="animated fadeInDown"></div>
+                    <div>向下褪色-入</div>
+                </div>
+
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>fadeInLeft</div>
+                    <div class="animated fadeInLeft"></div>
+                    <div>左侧褪色-入</div>
+                </div>
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>fadeInUpBig</div>
+                    <div class="animated fadeInUpBig"></div>
+                    <div>向上褪色-入(大幅度)</div>
+                </div>
+
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>fadeInRightBig</div>
+                    <div class="animated fadeInRightBig"></div>
+                    <div>右侧褪色-入(大幅度)</div>
+                </div>
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>fadeInDownBig</div>
+                    <div class="animated fadeInDownBig"></div>
+                    <div>向下褪色-入(大幅度)</div>
+                </div>
+
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>fadeInLeftBig</div>
+                    <div class="animated fadeInLeftBig"></div>
+                    <div>左侧褪色-入(大幅度)</div>
+                </div>
+            </li>
+
+
+            <li>
+                <div class="hover_running">
+                    <div>fadeIn</div>
+                    <div class="animated fadeIn"></div>
+                    <div>褪色-入</div>
+                </div>
+            </li>
+
+
+
+
+
+
+
+        </ul>
+    </div>
+
+
+    <div>
+        <h1 id="FEX">Fading Exits(渐变进入)</h1>
+        <ul class="item_n">
+
+            <li>
+                <div class="hover_running">
+                    <div>fadeOutUp</div>
+                    <div class="animated fadeOutUp"></div>
+                    <div>向上褪色-出</div>
+                </div>
+
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>fadeInRight</div>
+                    <div class="animated fadeOutRight"></div>
+                    <div>右侧褪色-出</div>
+                </div>
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>fadeInDown</div>
+                    <div class="animated fadeOutDown"></div>
+                    <div>向下褪色-出</div>
+                </div>
+
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>fadeInLeft</div>
+                    <div class="animated fadeOutLeft"></div>
+                    <div>左侧褪色-出</div>
+                </div>
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>fadeInUpBig</div>
+                    <div class="animated fadeOutUpBig"></div>
+                    <div>向上褪色-出(大幅度)</div>
+                </div>
+
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>fadeInRightBig</div>
+                    <div class="animated fadeOutRightBig"></div>
+                    <div>右侧褪色-出(大幅度)</div>
+                </div>
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>fadeInDownBig</div>
+                    <div class="animated fadeOutDownBig"></div>
+                    <div>向下褪色-出(大幅度)</div>
+                </div>
+
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>fadeInLeftBig</div>
+                    <div class="animated fadeOutLeftBig"></div>
+                    <div>左侧褪色-出(大幅度)</div>
+                </div>
+            </li>
+
+
+            <li>
+                <div class="hover_running">
+                    <div>fadeIn</div>
+                    <div class="animated fadeOut"></div>
+                    <div>褪色-出</div>
+                </div>
+            </li>
+
+
+
+
+
+
+
+        </ul>
+    </div>
+
+
+    <div>
+        <h1 id="FLI">Flippers(翻筋斗)</h1>
+        <ul class="item_n">
+
+            <li>
+                <div class="hover_running">
+                    <div>flipInX</div>
+                    <div class="animated flipInX"></div>
+                    <div>沿着X轴翻筋斗-入</div>
+                </div>
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>flipInY</div>
+                    <div class="animated flipInY"></div>
+                    <div>沿着Y轴翻筋斗-入</div>
+                </div>
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>flipOutX</div>
+                    <div class="animated flipOutX"></div>
+                    <div>沿着X轴翻筋斗-出</div>
+                </div>
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>flipOutY</div>
+                    <div class="animated flipOutY"></div>
+                    <div>沿着Y轴翻筋斗-出</div>
+                </div>
+            </li>
+
+
+
+            <li>
+                <div class="hover_running">
+                    <div>flip</div>
+                    <div class="animated flip"></div>
+                    <div>翻筋斗</div>
+                </div>
+            </li>
+
+
+
+        </ul>
+    </div>
+
+    <div>
+        <h1 id="LIG">Lightspeed(轻轻的加速)</h1>
+        <ul class="item_n">
+
+            <li>
+                <div class="hover_running">
+                    <div>lightSpeedIn</div>
+                    <div class="animated lightSpeedIn"></div>
+                    <div>轻轻的加速进入</div>
+                </div>
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>lightSpeedOut</div>
+                    <div class="animated lightSpeedOut"></div>
+                    <div>轻轻的加速离开</div>
+                </div>
+            </li>
+
+
+
+        </ul>
+    </div>
+
+    <div>
+        <h1 id="REN">Rotating Entrances(旋转进入)</h1>
+        <ul class="item_n">
+
+            <li>
+                <div class="hover_running">
+                    <div>rotateInUpLeft</div>
+                    <div class="animated rotateInUpLeft"></div>
+                    <div>从左上旋转进入</div>
+                </div>
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>rotateInUpRight</div>
+                    <div class="animated rotateInUpRight"></div>
+                    <div>从右上旋转进入</div>
+                </div>
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>rotateInDownLeft</div>
+                    <div class="animated rotateInDownLeft"></div>
+                    <div>从左下旋转进入</div>
+                </div>
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>rotateInDownRight</div>
+                    <div class="animated rotateInDownRight"></div>
+                    <div>从右下旋转进入</div>
+                </div>
+            </li>
+
+
+            <li>
+                <div class="hover_running">
+                    <div>rotateIn</div>
+                    <div class="animated rotateIn"></div>
+                    <div>旋转进入</div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+
+
+
+    <div>
+        <h1 id="REX">Rotating Exits(旋转离开)</h1>
+        <ul class="item_n">
+
+            <li>
+                <div class="hover_running">
+                    <div>rotateOutUpLeft</div>
+                    <div class="animated rotateOutUpLeft"></div>
+                    <div>从左上旋转离开</div>
+                </div>
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>rotateOutUpRight</div>
+                    <div class="animated rotateOutUpRight"></div>
+                    <div>从右上旋转离开</div>
+                </div>
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>rotateOutDownLeft</div>
+                    <div class="animated rotateOutDownLeft"></div>
+                    <div>从左下旋转离开</div>
+                </div>
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>rotateOutDownRight</div>
+                    <div class="animated rotateOutDownRight"></div>
+                    <div>从右下旋转离开</div>
+                </div>
+            </li>
+
+
+            <li>
+                <div class="hover_running">
+                    <div>rotateOut</div>
+                    <div class="animated rotateOut"></div>
+                    <div>旋转离开</div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+
+
+    <div>
+        <h1 id="SLI">Sliders(滑动)</h1>
+        <ul class="item_n">
+
+            <li>
+                <div class="hover_running">
+                    <div>slideInUp</div>
+                    <div class="animated slideInUp"></div>
+                    <div>顶部滑入</div>
+                </div>
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>slideInRight</div>
+                    <div class="animated slideInRight"></div>
+                    <div>右侧滑入</div>
+                </div>
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>slideInDown</div>
+                    <div class="animated slideInDown"></div>
+                    <div>底部滑入</div>
+                </div>
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>slideInLeft</div>
+                    <div class="animated slideInLeft"></div>
+                    <div>左侧滑入</div>
+                </div>
+            </li>
+
+
+            <li>
+                <div class="hover_running">
+                    <div>slideOutUp</div>
+                    <div class="animated slideOutUp"></div>
+                    <div>顶部滑出</div>
+                </div>
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>slideOutRight</div>
+                    <div class="animated slideOutRight"></div>
+                    <div>右侧滑出</div>
+                </div>
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>slideOutDown</div>
+                    <div class="animated slideOutDown"></div>
+                    <div>底部滑出</div>
+                </div>
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>slideOutLeft</div>
+                    <div class="animated slideOutLeft"></div>
+                    <div>左侧滑出</div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+
+
+    <div>
+        <h1 id="SPE">Specials(特殊效果)</h1>
+        <ul class="item_n">
+
+            <li>
+                <div class="hover_running">
+                    <div>hinge</div>
+                    <div class="animated hinge"></div>
+                    <div>脱钉-坠落</div>
+                </div>
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>rollIn</div>
+                    <div class="animated rollIn"></div>
+                    <div>滚入</div>
+                </div>
+            </li>
+
+            <li>
+                <div class="hover_running">
+                    <div>rollOut</div>
+                    <div class="animated rollOut"></div>
+                    <div>滚出</div>
+                </div>
+            </li>
+
+
+        </ul>
+    </div>
+
+
+    
+</section>
+
+
+</body>
+</html>

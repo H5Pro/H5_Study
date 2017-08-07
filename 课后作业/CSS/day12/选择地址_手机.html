@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        a {
+            color: inherit;
+        }
+
+        * {
+            box-sizing: border-box;
+
+        }
+
+        ul {
+            margin: 0px;
+            padding: 0px;
+            list-style-type: none;
+        }
+
+        header {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            text-align: center;
+            line-height: 44px;
+            height: 44px;
+            color: #fff;
+            font-size: 18px;
+            font-weight: normal;
+            background-color: rgb(47, 142, 226);
+            z-index: 1;
+        }
+
+        .back {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 13px;
+            text-decoration: none;
+        }
+
+        main {
+            position: relative;
+            padding: 44px 0px 0px 0px;
+        }
+
+        .serach {
+            position: fixed;
+            top: 44px;
+            left: 0px;
+            width: 100%;
+            height: 44px;
+            background-color: #f0f0f0;
+            padding: 7px 0px;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .serach_field_container {
+            position: absolute;
+            left: 10px;
+            right: 10px;
+            margin: auto;
+        }
+
+        .serach_field {
+            text-align: center;
+            width: 100%;
+            color: rgb(141, 153, 160);
+            border: 1px solid rgb(220, 220, 220);
+            background-color: #fff;
+            height: 30px;
+            line-height: 30px;
+            border-radius: 15px;
+            outline: none; /*获取焦点后 消除蓝色边框*/
+            font-size: 14px;
+        }
+
+        .country_list {
+            top: 100px;
+            width: 100%;
+            padding: 44px 25px 10px 10px;
+
+        }
+
+        .country_same_captain > li {
+            position: relative;
+            font-size: 14px;
+            color: rgb(115, 115, 115);
+            height: 35px;
+            line-height: 35px;
+            border-bottom: 1px solid #EEE;
+        }
+
+        .country_same_captain > li:after {
+            content: attr(alt);
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            right: 0px;
+        }
+
+        .country_same_captain > li:hover {
+            background-color: #F0F0F0;
+        }
+
+        .country_same_captain > li:first-child:hover {
+            background-color: lightskyblue;
+        }
+
+        .country_same_captain > li:first-child {
+            font-size: 16px;
+            font-weight: bold;
+            height: 40px;
+            color: black;
+            line-height: 40px;
+        }
+
+        .rightNv {
+            position: fixed;
+            top: 0px;
+            bottom: 0px;
+            right: 5px;
+            height: 360px;
+            color: rgb(102, 176, 233);
+            margin: auto;
+            text-align: center;
+        }
+
+        .rightNv a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+<header>
+    <nav>选择国家和地区</nav>
+    <a href="" class="back">&lt;&nbsp;返回</a>
+</header>
+
+<main>
+    <div class="serach">
+        <div class="serach_field_container">
+            <input type="text" class="serach_field" placeholder="搜索">
+        </div>
+    </div>
+    <ul class="country_list">
+        <li>
+            <ul class="country_same_captain" id="A">
+                <li>A</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+            </ul>
+        </li>
+
+        <li>
+            <ul class="country_same_captain" id="B">
+                <li>B</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+            </ul>
+        </li>
+
+        <li>
+            <ul class="country_same_captain" id="C">
+                <li>C</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+            </ul>
+        </li>
+
+        <li>
+            <ul class="country_same_captain" id="D">
+                <li>D</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+            </ul>
+        </li>
+
+        <li>
+            <ul class="country_same_captain" id="E">
+                <li>D</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+            </ul>
+        </li>
+
+        <li>
+            <ul class="country_same_captain" id="F">
+                <li>F</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+            </ul>
+        </li>
+
+        <li>
+            <ul class="country_same_captain" id="G">
+                <li>G</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+            </ul>
+        </li>
+
+        <li>
+            <ul class="country_same_captain" id="H">
+                <li>H</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+            </ul>
+        </li>
+
+        <li>
+            <ul class="country_same_captain" id="I">
+                <li>I</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+            </ul>
+        </li>
+
+
+        <li>
+            <ul class="country_same_captain" id="J">
+                <li>J</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+            </ul>
+        </li>
+
+        <li>
+            <ul class="country_same_captain" id="K">
+                <li>K</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+            </ul>
+        </li>
+
+        <li>
+            <ul class="country_same_captain" id="L">
+                <li>L</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+            </ul>
+        </li>
+
+        <li>
+            <ul class="country_same_captain" id="M">
+                <li>M</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+            </ul>
+        </li>
+
+        <li>
+            <ul class="country_same_captain" id="N">
+                <li>N</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+            </ul>
+        </li>
+
+        <li>
+            <ul class="country_same_captain" id="P">
+                <li>P</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+            </ul>
+        </li>
+
+        <li>
+            <ul class="country_same_captain" id="Q">
+                <li>Q</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+            </ul>
+        </li>
+
+        <li>
+            <ul class="country_same_captain" id="R">
+                <li>R</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+            </ul>
+        </li>
+
+        <li>
+            <ul class="country_same_captain" id="S">
+                <li>S</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+            </ul>
+        </li>
+
+        <li>
+            <ul class="country_same_captain" id="T">
+                <li>T</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+            </ul>
+        </li>
+
+        <li>
+            <ul class="country_same_captain" id="W">
+                <li>W</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+            </ul>
+        </li>
+
+        <li>
+            <ul class="country_same_captain" id="X">
+                <li>X</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+            </ul>
+        </li>
+
+        <li>
+            <ul class="country_same_captain" id="Y">
+                <li>Y</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+            </ul>
+        </li>
+
+        <li>
+            <ul class="country_same_captain" id="Z">
+                <li>Z</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+                <li alt="+355">阿尔巴尼亚</li>
+                <li alt="+212">阿富汗</li>
+                <li alt="+93">爱尔兰</li>
+            </ul>
+        </li>
+    </ul>
+
+    <ul class="rightNv">
+        <li>*</li>
+        <li><a href="#A">A</a></li>
+        <li><a href="#B">B</a></li>
+        <li><a href="#C">C</a></li>
+        <li><a href="#D">D</a></li>
+        <li><a href="#E">E</a></li>
+        <li><a href="#F">F</a></li>
+        <li><a href="#G">G</a></li>
+        <li><a href="#H">H</a></li>
+
+        <li><a href="#I">I</a></li>
+        <li><a href="#J">J</a></li>
+        <li><a href="#K">K</a></li>
+        <li><a href="#L">L</a></li>
+        <li><a href="#M">M</a></li>
+        <li><a href="#N">N</a></li>
+        <li><a href="#P">P</a></li>
+        <li><a href="#R">R</a></li>
+
+        <li><a href="#S">S</a></li>
+        <li><a href="#T">T</a></li>
+        <li><a href="#W">W</a></li>
+        <li><a href="#X">X</a></li>
+        <li><a href="#Y">Y</a></li>
+        <li><a href="#Z">Z</a></li>
+    </ul>
+</main>
+
+
+</body>
+</html>

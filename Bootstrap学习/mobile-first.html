@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+ 1. 移动设备优先
+在 Bootstrap 2 中，我们对框架中的某些关键部分增加了对移动设备友好的样式。
+而在 Bootstrap 3 中，我们重写了整个框架，使其一开始就是对移动设备友好的。
+这次不是简单的增加一些可选的针对移动设备的样式，而是直接融合进了框架的内核中。
+也就是说，Bootstrap 是移动设备优先的。针对移动设备的样式融合进了框架的每个角落，
+而不是增加一个额外的文件。
+
+为了确保适当的绘制和触屏缩放，需要在 <head> 之中添加 viewport 元数据标签。
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    在移动设备浏览器上，通过为视口（viewport）设置 meta 属性为 user-scalable=no
+    可以禁用其缩放（zooming）功能。这样禁用缩放功能后，用户只能滚动屏幕，
+    就能让你的网站看上去更像原生应用的感觉。注意，这种方式我们并不推荐所有网站使用，
+    还是要看你自己的情况而定！
+    <meta name="viewport" content="width=device-width,
+    initial-scale=1, maximum-scale=1, user-scalable=no">
+-->
+
+<!--
+2. 布局容器
+Bootstrap 需要为页面内容和栅格系统包裹一个 .container 容器。我们提供了两个作此用处的类。注意，由于 padding 等属性的原因，这两种 容器类不能互相嵌套。
+
+.container 类用于固定宽度并支持响应式布局的容器。
+
+<div class="container">
+    ...
+</div>
+.container-fluid 类用于 100% 宽度，占据全部视口（viewport）的容器。
+
+<div class="container-fluid">
+    ...
+</div>
+-->
+
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,maximun-scale=1,user-scalable=no">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
+
+
+    <style>
+
+        .container{
+            background-color: lightblue;
+        }
+
+    </style>
+
+
+
+
+
+</head>
+<body>
+
+<div class="container">
+
+
+
+</div>
+
+
+</body>
+</html>

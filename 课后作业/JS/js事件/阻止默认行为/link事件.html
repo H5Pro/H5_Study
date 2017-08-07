@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>link事件</title>
+</head>
+<body>
+<a id="link1" href="http://www.baidu.com">百度</a>
+
+<script>
+    var link1 = document.getElementById('link1');
+    link1.onclick = function(e){
+        alert("点击了百度");
+
+        //阻止点击链接的默认行为
+        //方式一(推荐使用)
+        return false;
+        //方式二
+        e.preventDefault();
+    }
+</script>
+</body>
+</html>

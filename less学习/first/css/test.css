@@ -1,0 +1,9 @@
+.box1 {
+  background: red;
+}
+.container {
+  background: red;
+}
+.container .box2 {
+  color: blue;
+}

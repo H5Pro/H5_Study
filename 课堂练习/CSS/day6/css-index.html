@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--1	引入css的三种方式
+•	行内样式（style属性）
+•	内部样式（style标签）
+•	外部样式（link标签）-->
+
+<!--2	css基本语法
+CSS样式都有两部分构成：
+•	选择器
+•	声明块，由若干个声明组成，每个声明由属性和属性值组成-->
+
+<!--
+3  css选择器
+3.1 标签选择器
+3.2	类选择器
+3.3	ID选择器
+3.4	通配符选择器
+  *{
+     color:red;
+   }
+
+3.5	分组选择器
+  h1,p,box{
+     color:red;
+  }
+
+3.6 后代选择器
+  .box p{
+    color:orange;
+   }
+3.7 并列选择器
+    p.class1.class2#id{
+    color:yellow;
+    }
+3.8 子代选择器
+
+
+
+注意
+•	后代选择器使用的空格， 不是逗号
+•	使用后代选择器，选中的是某个元素的后代元素， 比如 div p  表示选中的是p元素，而不是div，如果想选中div和p， 要用分组选择器。
+•	后代选择器没有层次限制
+
+3.9	伪类选择器
+
+目前我们只需要知道一个伪类选择器就行，就是hover伪类
+
+hover， 表示鼠标放到a上面时的状态
+格式：a:hover
+基本使用：
+
+a:hover{
+    color:red;
+}
+
+注意细节：hover
+1，并不存在一个class=”hover”这么一个属性，所以才叫做伪类
+2，对于hover，目前只需要掌握在a标签上的用法就行
+
+
+3.10 兄弟选择器
+   1. E+F：直接下一个同级元素
+   2. E~F: 同级的后面所有元素
+
+
+3.11 焦点选择器
+foucus：适用于能获取焦点的元素（如input）
+用法：
+.textField:foucus {
+border:2px solid red;
+}
+-->
+
+
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        /*子代选择器*/
+        .parent>.son{
+        background-color: #23ff45;
+        }
+        /*后代选择器*/
+        .parent .grandson{
+            background-color: pink;
+        }
+        /*组合选择器*/
+        .parent,.son,.grandson{
+            background-color: black;
+            color: white;
+        }
+        /*并列选择器*/
+        .parent.son{
+            background-color: rebeccapurple;
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+
+<div class="grandson">
+我是grandson(第一代)
+</div>
+
+<div class="parent son">
+    我是parent和son(三代)
+</div>
+
+<div class="parent">
+    <div class="son">
+        我是son(二代)
+       <div class="grandson">
+           我是grandson(三代)
+       </div>
+    </div>
+
+</div>
+
+</body>
+</html>

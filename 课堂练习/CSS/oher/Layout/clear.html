@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!--语法：-->
+<!--clear：none | left | right | both-->
+<!--默认值：none-->
+<!--适用于：块级元素-->
+<!--继承性：无-->
+<!--动画性：否-->
+<!--计算值：指定值-->
+
+
+<!--取值：-->
+<!--none：-->
+<!--允许两边都可以有浮动对象-->
+<!--both：-->
+<!--不允许有浮动对象-->
+<!--left：-->
+<!--不允许左边有浮动对象-->
+<!--right：-->
+<!--不允许右边有浮动对象-->
+
+
+<!--说明：-->
+<!--该属性的值指出了不允许有浮动对象的边。请参阅float属性-->
+<!--对应的脚本特性为clear。-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .test1{
+            float: right;
+            background: #8912ff;
+        }
+        .test2{
+            clear: right;
+            background: #23ff45;
+        }
+    </style>
+</head>
+<body>
+
+<div class="test1">我是test1</div>
+<div class="test2">我是test2</div>
+
+
+</body>
+</html>

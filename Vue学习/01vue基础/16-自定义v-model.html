@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .content{
+            background-color: lightsalmon;
+            line-height: 50px;
+        }
+    </style>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+      子组件：<test v-model="content"></test>
+      <div class="content">{{content}}</div>
+      父组件：<input type="text" v-model="content">
+  </div>
+
+  <template id="test">
+      <input type="text" v-model="text">
+  </template>
+
+  <script>
+      Vue.component('test',{
+          props:['value'],
+          data(){
+              return {
+                  text:''
+              }
+          },
+          created(){
+              this.text=this.value;
+          },
+          watch:{
+            value(v){
+                this.text=v;
+            },
+            text(v){
+                this.$emit('input',v)
+            }
+
+          },
+          template:'#test'
+      })
+
+      new Vue({
+          el:'#app',
+          data:{
+              content:'hello'
+          },
+      })
+  </script>
+</body>
+</html>

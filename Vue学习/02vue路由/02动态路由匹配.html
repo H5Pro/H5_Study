@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="../node_modules/vue/dist/vue.min.js"></script>
+    <script src="../node_modules/vue-router/dist/vue-router.min.js"></script>
+
+</head>
+
+<body>
+
+<div id="app">
+    <h1>Hello App!</h1>
+    <router-link :to="{name:'user',params:{'id':'456'}}">first</router-link>
+    <router-link to="/user/first">first</router-link>
+    <router-link to="/user/second">second</router-link>
+
+    <router-view></router-view>
+</div>
+
+<script>
+    var user = {
+        template:'<div>User {{this.$route.params.id}}</div>',
+        watch:{
+            '$route'(to,from){
+                console.log(from.params.id+'->'+to.params.id);
+            }
+        }
+    }
+    var routes = [
+        {
+            path:'/user/:id',
+            name:'user',
+            component:user
+        }
+    ];
+
+    var router = new VueRouter({
+        routes
+    })
+    const app = new Vue({
+        router
+    }).$mount("#app");
+</script>
+
+</body>
+</html>

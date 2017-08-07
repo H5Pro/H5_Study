@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: lightgreen;
+        }
+
+        .time_line{
+
+            --ul_top_magin:40px;               /*ul的顶部外边距*/
+            --vetical_line_width:2px;          /*竖直线的宽度*/
+            --circle_diameter: 36px;           /*圆圈的直径*/
+            --triangle_height: 12px;           /*三角箭头的高度*/
+            --line_content_distance:40px;      /*内容和竖直线之间的距离*/
+            --offset_triangle_content:10px;    /*三角形偏移内容的距离*/
+
+            --content_max_width: 400px;        /*内容的最大宽度*/
+            --content_fontsize: 18px;          /*内容的字体大小*/
+            --content_lineheight: 22px;        /*内容的行高*/
+            --content_padding: 12px;           /*内容的内边距*/
+            --content_radius: 4px;             /*内容的圆角大小*/
+
+
+            --vetical_line_color : #fff;     /*竖直线的颜色*/
+            --triangle_color : #fff;         /*三角箭头的颜色*/
+            --circle_color : #fff;           /*圆圈的颜色*/
+            --content_backcolor :#fff;      /*内容的背景颜色*/
+
+
+
+            position: relative;
+            padding: 0;
+            margin: var(--ul_top_magin) 0;
+            width: 100%;
+            list-style-type: none;
+
+        }
+         /*在ul中间贯穿一条竖线*/
+        .time_line:before{
+            content: '';
+            position: absolute;
+            width: var(--vetical_line_width);
+            top: 0px;
+            bottom: 0px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            background-color: var(--vetical_line_color);
+        }
+        /*解决浮动时父容器的塌陷问题*/
+        .time_line:after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .time_line li{
+            float: left;
+            width: 50%;
+        }
+
+        /*将偶数位置的列表项放在最右侧*/
+        .time_line li:nth-child(2n){
+            margin-left: 50%;
+        }
+
+        /*定义列表项中的容器*/
+        .time_line .container{
+            padding: 0px var(--line_content_distance) 30px;
+            position: relative;
+
+        }
+
+        /*定义三角箭头*/
+        .time_line .container:before{
+            content: '';
+            position: absolute;
+            width: 0px;
+            height: 0px;
+            top:  calc(var(--circle_diameter)/2 - var(--triangle_height));
+            border: var(--triangle_height) solid transparent;
+        }
+
+
+        /*定义中心竖线上的圆*/
+        .time_line .container:after{
+            content: '';
+            position: absolute;
+            width: var(--circle_diameter);
+            height: var(--circle_diameter);
+            top: 0px;
+            border-radius: 50%;
+            background-color: var(--vetical_line_color);
+        }
+        /*左边容器的圆*/
+        .time_line li:nth-child(2n+1) .container:after{
+            right: calc(-1*var(--circle_diameter)/2);
+        }
+        /*右边容器的圆*/
+        .time_line li:nth-child(2n) .container:after{
+            left: calc(-1*var(--circle_diameter)/2);
+        }
+        /*左边容器的三角*/
+        .time_line li:nth-child(2n+1) .container:before{
+            left: 100%;
+            margin-left:calc(-1*var(--line_content_distance));
+            border-left-color: var(--triangle_color);
+        }
+        /*右边容器的三角*/
+        .time_line li:nth-child(2n) .container:before{
+            right: 100%;
+            margin-right:calc(-1*var(--line_content_distance));
+            border-right-color: var(--triangle_color);
+        }
+
+
+        /*左边容器的内容设置居右*/
+        .time_line li:nth-child(2n+1) .container{
+            text-align: right;
+        }
+
+
+
+
+        .time_line .content{
+            margin-top: calc(-1*var(--offset_triangle_content));
+            display: inline-block;
+            background-color: var(--content_backcolor);
+            text-indent: 2em;
+            color: #555;
+            font-size: var(--content_fontsize);
+            line-height: var(--content_lineheight);
+            padding: var(--content_padding);
+            border-radius: var(--content_radius);
+
+            text-align: left;
+
+            max-width: var(--content_max_width);
+
+
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+<ul class="time_line">
+    <li>
+        <div class="container">
+            <div class="content">
+                莫听穿林打叶声，何妨吟啸且徐行。竹杖芒鞋轻胜马，谁怕？一蓑烟雨任平生。不知苏东坡心中对未来有着怎样的期望和向往，但他心里一定是从容不迫的，不论遇到怎样的艰险，他留给我们的永远都是鬓微霜，又何妨的豪情，菊残犹有傲霜枝的坚定，和人生如梦，一樽还酹江月的潇洒。这位宋朝才子，读书人心中的模范，他对待生活永远都是那么的自如，历经宦海沉浮，不论是乌台诗案的被贬，亦或流落儋州的不幸，最后也都能坦然以对。被贬黄州，他写下了《赤壁赋》、《后赤壁赋》和《念奴娇·赤壁怀古》等千古名作，在公务之余带领家人开垦城东的一块坡地，种田帮补生计得名“东坡居士”。流落儋州，他把儋州当成了自己的第二故乡，“我本儋耳氏，寄生西蜀州”。他在这里办学堂，介学风，以致许多人不远千里，追至儋州，从苏轼学。在后代文人的心中，他不仅是文学巨匠，还是一位心灵的导师。
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="container">
+            <div class="content">
+                岁月流转，时光易逝，昨日黄花正盛开，今朝却已是春回大地，万物自然。感慨于旧日的一去不复返时，突然想到多少的日子就这样慢慢的过去了，在蹉跎的时间里，或许曾经迷茫与彷徨，或许曾经高兴与快乐，也或许曾经忧愁与悲伤，可那些回忆终究只是回忆，留给我们的只有未来的期望和向往。
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="container">
+            <div class="content">
+                　曾国藩曾道，古人称立德、立功、立言为三不朽。立德最难，自周汉以后，罕见德传者。像苏轼这样的人能有几个呢？月有阴晴圆缺，人有悲欢离合，此事古难全。我想每一个人，每一个独立的生命个体都会遇到不同的遭遇和历程，没有波澜不惊的航海，没有一路平坦的大道，没有一尘不变的风景，该遇到的终将会遇到，该分离的终将会分离，我们无法预料未来会发生什么，然而不论如何的无可奈何与漠然的悲哀，希望总是属于明天的，即便绝望之为虚妄，正与希望相同，你不能说明天一定是让人失望的，也不能说明天一定天随人愿。
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="container">
+            <div class="content">
+                《中庸》道，君子上不怨天，下不尤人。怨声载道喋喋不休不能解决问题，只能耗费时间，将事情变得更加糟糕，因此，埋怨可见并不是一个高明的做法。在绝望里歇斯底里，莫如留给自己一个希望，即使虚妄，也没有坏处，并不吃亏。有了希望，静下心来，认真思考，不准于危难之间反败为胜起死回生，尤未可知。
+            </div>
+        </div>
+    </li>
+
+</ul>
+
+</body>
+</html>

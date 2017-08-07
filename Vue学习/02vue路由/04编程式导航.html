@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../node_modules/vue/dist/vue.min.js"></script>
+    <script src="../node_modules/vue-router/dist/vue-router.min.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <h1>Hello App!</h1>
+    <button v-on:click="go('/user/first')">first</button>
+    <button v-on:click="go('/user/first/info')">info</button>
+    <button v-on:click="go('/user/first/intro')">intro</button>
+    <button v-on:click="back">back</button>
+    <button v-on:click="forward">forward</button>
+
+    <button v-on:click="replace('/user/first')">replace</button>
+
+    <router-view></router-view>
+</div>
+
+<script>
+
+    const user = {
+        template:`
+        <div class="user">
+        <h2>User {{$route.params.id}}</h2>
+        <router-view></router-view>
+        </div>
+        `
+    }
+
+    const home = {
+        template:'<div>fjl</div>'
+    }
+
+    const info = {
+        template:'<div>sex:man</div>'
+    }
+
+    const intro = {
+        template:'<div>graduate from: huast</div>'
+    }
+
+    const router = new VueRouter({
+        routes:[
+            {
+                path:'/user/:id',
+                component:user,
+                children:[
+                    {
+                        path:'',
+                        component:home
+                    },
+
+                    {
+                        path:'info',
+                        component:info
+                    },
+
+                    {
+                        path:'intro',
+                        component:intro
+                    }
+                ]
+            }
+        ]
+    })
+
+    const app = new Vue({
+        router,
+        methods:{
+            replace(target){
+                router.replace(target);
+            },
+
+            go(target){
+                router.push(target);
+            },
+
+            back(){
+                router.go(-1);
+            },
+            forward(){
+                router.go(1);
+            },
+        }
+    }).$mount('#app');
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>what to buy</h1>
+<p title="a gentle reminder">Don`t forget to buy this stuff.</p>
+<ul id="purchases">
+    <li>A tin of beans</li>
+    <li class="sale">Cheese</li>
+    <li class="sale important">Milk</li>
+</ul>
+
+<script>
+    //id
+    var element_id = document.getElementById('purchases');
+    alert(typeof element_id);
+    //标签
+    var element_tag = document.getElementsByTagName('li');
+    alert(element_tag.length);
+    //类名
+    var element_class1 = document.getElementsByTagName('sale');
+    alert(typeof  element_class1);
+    var element_class2 = document.getElementsByClassName('sale important');
+    //通配符*
+    var all = document.getElementsByTagName('*');
+    alert(all.length);
+
+
+</script>
+</body>
+</html>

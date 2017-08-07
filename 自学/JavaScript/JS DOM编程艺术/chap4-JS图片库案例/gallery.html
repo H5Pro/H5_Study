@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<ul>
+    <li><a href="img/1.png" title="A fireworks display" onclick="showPic(this);return false;">image1</a></li>
+    <li><a href="img/2.png" title="A cup of black coffee" onclick="showPic(this);return false;">image2</a></li>
+    <li><a href="img/3.png" title="A red, red rose"  onclick="showPic(this);return false;">image3</a></li>
+    <li><a href="img/4.png" title="A famous clock" onclick="showPic(this);return false;">image4</a></li>
+</ul>
+
+<img id="placeholder" src="img/placeholder.jpeg" alt = 'my image gallery'>
+<p id="description">choose an image.</p>
+<script>
+    function showPic(whichPic) {
+        var placeholder = document.getElementById('placeholder');
+        var source = whichPic.getAttribute('href');
+        var description = document.getElementById('description');
+        var title = whichPic.getAttribute('title');
+        placeholder.setAttribute('src', source);
+        description.firstChild.nodeValue = title;
+    }
+</script>
+
+</body>
+</html>

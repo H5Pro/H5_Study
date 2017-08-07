@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .nav{
+            display: table;
+            width: 100%;
+        }
+        .nav>*{
+            display: table-cell;
+            width: 33%;
+            line-height: 50px;
+            text-align: center;
+        }
+        .c{
+            height: 300px;
+            width: 100%;
+            position: fixed;
+            left:0;
+            top:60px;
+        }
+        .c-a{
+            background-color: lightsalmon;
+        }
+        .c-b{
+            background-color: lightskyblue;
+        }
+        .c-c{
+            background-color: lightcoral;
+        }
+        .flip-enter-active,
+        .flip-leave-active{
+            transition: all 1s;
+        }
+        .flip-enter{
+            transform: translateX(100%);
+        }
+        .flip-leave-to{
+            transform: translateX(-100%);
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+</head>
+<body>
+   <div id="app">
+       <div class="nav">
+           <div @click="change('test-a',0)">A1</div>
+           <div @click="change('test-b',1)">A2</div>
+           <div @click="change('test-c',2)">A3</div>
+       </div>
+       <transition  v-on:before-enter="beforeEnter"
+                    v-on:enter="enter"
+                    v-on:leave="leave"
+                    v-bind:css="false"  >
+           <component v-bind:is="name">
+
+           </component>
+       </transition>
+   </div>
+   <script src="../vue.min.js"></script>
+   <script>
+       var A={template:'<div class="c c-a"></div>'}
+       var B={template:'<div class="c c-b"></div>'}
+       var C={template:'<div class="c c-c"></div>'}
+       new Vue({
+           el:'#app',
+           data:{
+               name:'test-a',
+               index:0,
+               prevIndex:0
+           },
+           methods:{
+               change(name,index){
+                   this.prevIndex=this.index;
+                   this.index=index;
+                   if(this.index!=this.prevIndex){
+                       this.name=name;
+                   }
+               },
+               enter(el,done){
+                   Velocity(el, {'left': '0px' }, {duration: 1000, complete: done })
+               },
+               leave(el,done){
+                   if(this.index<this.prevIndex){
+                       Velocity(el, {'left': '100%' }, {duration: 1000, complete: done })
+                   }else{
+                       Velocity(el, {'left': '-100%' }, {duration: 1000, complete: done })
+                   }
+               },
+               beforeEnter(el){
+                   /*左-右*/
+                    if(this.index<this.prevIndex){
+                        el.style.left='-100%'
+                    }else{
+                        el.style.left="100%"
+                    }
+               }
+           },
+           components:{
+               'test-a':A,
+               'test-b':B,
+               'test-c':C
+           }
+       })
+   </script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        ul{
+            margin: 0px;
+            padding: 0px;
+            list-style-type: none;
+        }
+
+        .taobao_menu{
+            --menu_border_color:rgb(242,50,0);/*菜单边框颜色*/
+            --item_border_color:rgb(242,50,0);/*菜单选项边框色*/
+            --menu_border_width: 1px;         /*菜单边框宽度*/
+            --item_border_width: 2px;         /*菜单选项边框宽度*/
+            --menu_backcolor: rgb(12,233,56); /*菜单背景颜色*/
+            --item_highlight_backcolor:#ccc;  /*菜单选项高亮背景色*/
+
+            position: relative;
+            border: var(--menu_border_width) solid transparent;
+            padding: 20px 0px;
+            width: 200px;
+            background-color: var(--menu_backcolor);
+
+        }
+
+
+
+
+
+
+
+        .taobao_menu li{
+            text-align: center;
+            line-height: 50px;
+            height: 50px;
+        }
+
+        /*列表项边框设置*/
+        .taobao_menu .li_border{
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            line-height: 50px;
+            height: 50px;
+            margin-left:calc(-1*var(--menu_border_width));
+            margin-right:calc(-1*var(--item_border_width));
+            border: var(--item_border_width) solid transparent;
+        }
+
+
+        /*统一设置菜单边框颜色*/
+        .taobao_menu{
+            border-color: var(--menu_border_color);
+        }
+        .taobao_menu li:hover .li_border,
+        .taobao_menu li:hover .content{
+           border-color: var(--item_border_color);
+            background-color: var(--item_highlight_backcolor);
+        }
+
+        /*列表项右侧边框设置*/
+        .taobao_menu li:hover .li_border{
+            border-right-color: var(--item_highlight_backcolor);
+        }
+
+
+        /*右侧内容部分*/
+        .taobao_menu li .content{
+            content: '';
+            position: absolute;
+            top: calc(-1*var(--menu_border_width));
+            bottom: calc(-1*var(--menu_border_width));
+            left: 100%;
+            width: 300px;
+            border: var(--item_border_width) solid transparent;
+            display: none;
+        }
+        /*列表项悬浮，显示右侧内容部分*/
+        .taobao_menu li:hover .content{
+            display: block;
+        }
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+
+    <ul class="taobao_menu">
+        <li>
+            <div class="li_border">项目列表1</div>
+            <div class="content">内容1</div>
+        </li>
+        <li>
+            <div class="li_border">项目列表1</div>
+            <div class="content">11111</div>
+        </li>
+        <li>
+            <div class="li_border">项目列表1</div>
+            <div class="content">11111</div>
+        </li>
+        <li>
+            <div class="li_border">项目列表1</div>
+            <div class="content">11111</div>
+        </li>
+        <li>
+            <div class="li_border">项目列表1</div>
+            <div class="content">11111</div>
+        </li>
+        <li>
+            <div class="li_border">项目列表1</div>
+            <div class="content">11111</div>
+        </li>
+    </ul>
+
+
+</body>
+</html>

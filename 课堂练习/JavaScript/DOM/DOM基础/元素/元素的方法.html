@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>元素的方法</title>
+</head>
+<body>
+<h1>我的收藏</h1>
+<ul class="booklist">
+    <li class="bookInfo">未来简史</li>
+    <li class="bookInfo">人类简史</li>
+    <li class="bookInfo">人工智能</li>
+</ul>
+<div class="bookTypes">
+    <input type="radio" name="bookType" checked value="1">人文社科
+    <input type="radio" name="bookType" value="2">悬疑推理
+    <input type="radio" name="bookType" value="3">科幻小说
+</div>
+你喜欢的书:<input id="bookSearch">
+</input>
+
+<button id ='btn1'>移除样式</button>
+
+<script>
+    var h1 = document.getElementsByTagName('h1');
+    var bookInfo = document.getElementsByClassName('bookInfo');
+    var bookSearch = document.getElementById('bookSearch');
+    var bookType = document.getElementsByName('bookType');
+    var btn1 = document.getElementById('btn1');
+
+    var clickCount = 0;
+        btn1.onclick = function(){
+            clickCount ++;
+        if(clickCount%2){
+            this.innerHTML = '恢复样式';
+            bookSearch.removeAttribute('style');
+            console.log(bookSearch.getAttribute('style'));
+        }else {
+            this.innerHTML = '移除样式';
+            bookSearch.setAttribute('style','background:lightgray;color:red');
+            console.log(bookSearch.getAttribute('style'));
+        }
+
+    };
+   // bookSearch.setAttribute('style','background:lightgray;color:red');
+   // bookSearch.style = 'background:lightgray;color:red';
+   // bookSearch.style.cssText = 'background:lightgray;color:red';
+    bookSearch.style.background = 'lightgray';
+    bookSearch.style.color = 'red';
+
+    console.log('getElementById(\'bookSearch\');');
+    console.log(bookSearch);
+    console.log('document.getElementsByTagName(\'h1\')');
+    console.log(h1);
+    console.log('getElementsByClassName(\'bookInfo\')');
+    console.log(bookInfo);
+    console.log('getElementById(\'bookSearch\')');
+    console.log(bookType);
+
+    console.log('getAttribute(\'style\')');
+    console.log(bookSearch.getAttribute('style'));
+
+
+
+
+</script>
+
+</body>
+</html>

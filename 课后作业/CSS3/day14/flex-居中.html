@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。
+值	        描述
+flex-start	与侧轴的起点对齐
+flex-end	与侧轴的终点对齐
+center	与侧轴的中点对齐
+space-between	与侧轴两端对齐，轴线之间的间隔平均分布
+space-around	每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍
+stretch	（默认值），轴线占满整个侧轴
+
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container {
+            height: 400px;
+            width: 400px;
+            display: flex;
+            border: 2px solid #aaa;
+
+        }
+
+
+
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: lightgreen;
+            border: 1px solid black;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="box">1</div>
+
+
+</div>
+
+</body>
+</html>

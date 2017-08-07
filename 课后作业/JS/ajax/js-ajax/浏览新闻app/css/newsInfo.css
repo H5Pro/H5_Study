@@ -1,0 +1,27 @@
+
+body{
+    text-align: center;
+}
+
+#news_info .title{
+
+    font-size: 22px;
+    margin-top : 10px;
+}
+
+#news_info .pic{
+   margin: 10px 0px;
+    height: 300px;
+    width: 450px;
+    background-color: red;
+}
+
+#news_info .content{
+    text-align: left;
+    font-size: 18px;
+    color: #666;
+    line-height: 30px;
+    margin: 0px 10px;
+}
+
+

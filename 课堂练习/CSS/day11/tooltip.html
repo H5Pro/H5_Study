@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+     <style>
+         body{
+             padding: 200px 20px;
+             text-align: center;
+             background-color: lightblue;
+         }
+
+         /*待提示按钮样式*/
+         .tooltip{
+             position: relative;
+             display: inline-block;
+             padding: 10px 12px;
+             margin: 20px 5px;
+             border: 1px solid #999;
+             color: #333;
+             border-radius: 4px;
+             background-color: white;
+         }
+
+         .tooltip:hover{
+             background-color: #ccc;
+         }
+
+         /*提示框和三角形的公共属性*/
+         .tooltip:before,
+         .tooltip:after {
+             display: none;
+             position: absolute;
+         }
+
+         /*悬浮显示提示*/
+         .tooltip:hover:before,
+         .tooltip:hover:after{
+             display: block;
+         }
+
+         /*定义提示框部分*/
+         .tooltip:before{
+             content: attr(alt);/*读取alt属性值赋值给contnet*/
+             width: 100px;
+             line-height: 24px;
+             height: 24px;
+             text-align: center;
+             background-color: #333333;
+             border-radius: 3px;
+             color: white;
+
+         }
+         /*定义提示框部分*/
+         .tooltip:after{
+             content: '';
+             position: absolute;
+             display: none;
+             width: 0px;
+             height: 0px;
+             border: 6px solid transparent;
+         }
+
+
+         /*左边的提示框*/
+         .tooltip.left:before{
+             left: -120px;
+
+             top: 0px;
+             bottom: 0px;
+             margin: auto;
+
+         }
+         /*左边的提示三角形部分*/
+         .tooltip.left::after{
+             border-left-color: #333333;
+             left: -20px;
+             top: 0px;
+             bottom: 0px;
+             margin: auto;
+
+         }
+
+         /*右边的提示框*/
+         .tooltip.right::before{
+             right: -120px;
+
+             top: 0px;
+             bottom: 0px;
+             margin: auto;
+         }
+         /*右边的提示三角形部分*/
+         .tooltip.right::after{
+             border-right-color: #333333;
+             right: -20px;
+             top: 0px;
+             bottom: 0px;
+             margin: auto;
+         }
+
+         /*上边的提示框*/
+         .tooltip.top::before{
+             top: -36px;
+
+             left: 0px;
+             right: 0px;
+             margin: auto;
+         }
+         /*上边的提示三角形部分*/
+         .tooltip.top::after{
+             border-top-color: #333333;
+             top: -12px;
+             left: 0px;
+             right: 0px;
+             margin: auto;
+         }
+
+         /*下边边的提示框*/
+         .tooltip.bottom::before{
+
+             bottom: -36px;
+
+             left: 0px;
+             right: 0px;
+             margin: auto;
+
+         }
+         /*下边的提示三角形部分*/
+         .tooltip.bottom::after{
+             border-bottom-color: #333333;
+             bottom: -12px;
+             left: 0px;
+             right: 0px;
+             margin: auto;
+         }
+
+     </style>
+</head>
+<body>
+<h2>使用postion、before、after、border编写tooltip样式</h2>
+<span class="tooltip left" alt="left">tooltip left</span>
+<span class="tooltip top" alt="top">tooltip top</span>
+<span class="tooltip bottom" alt="bottom">tooltip bottom</span>
+<span class="tooltip right" alt="right">tooltip right</span>
+
+</body>
+</html>

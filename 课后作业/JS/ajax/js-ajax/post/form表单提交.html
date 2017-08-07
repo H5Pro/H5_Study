@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form id="login_form" action="http://hhdj.tunnel.2bdata.com/hhdj/user/userLogin.do" method="post">
+
+    <input type="text" name="id_card" class="textField" placeholder="身份证号:" id="card">
+    <input name="password" type="text" class="textField" placeholder="密码:" id="password">
+    <input class="login_btn" type="submit">
+</form>
+
+<script>
+    document.getElementById('login_form').onsubmit = function(){
+        console.log('123');
+       // document.getElementById('login_form').submit();
+        return false;
+    };
+</script>
+
+</body>
+</html>

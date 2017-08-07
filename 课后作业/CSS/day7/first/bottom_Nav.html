@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .app_tabbar {
+            display: inline-block;
+            line-height: 100px;
+            width: 600px;
+            font-size: 0px;
+            border: 1px solid rgb(138, 190, 207);
+        }
+
+        .app_tabbar .tabitem {
+            display: inline-block;
+            width: 25%;
+            line-height: normal;
+            font-size: 16px;
+            vertical-align: middle;
+            text-align: center;
+            color: rgb(135, 135, 135);
+        }
+
+        .app_tabbar .tabitem:hover {
+            color: black;
+        }
+
+        .app_tabbar .tabitem:hover .normal {
+            display: none;
+        }
+
+        .app_tabbar .tabitem:hover .highlight {
+            display: inline-block;
+        }
+
+        .tabitem .normal {
+            display: inline-block;
+        }
+
+        .tabitem .highlight {
+            display: none;
+        }
+
+        .tabitem img {
+            display: inline-block;
+            margin-bottom: 10px;
+            height: 35px;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="app_tabbar">
+    <div class="tabitem">
+        <img class="normal" src="img/11.png">
+        <img class="highlight" src="img/12.png">
+        <div>新闻</div>
+    </div>
+
+    <div class="tabitem">
+        <img class="normal" src="img/21.png">
+        <img class="highlight" src="img/22.png">
+        <div>新闻</div>
+    </div>
+
+    <div class="tabitem">
+        <img class="normal" src="img/31.png">
+        <img class="highlight" src="img/32.png">
+        <div>新闻</div>
+    </div>
+
+    <div class="tabitem">
+        <img class="normal" src="img/41.png">
+        <img class="highlight" src="img/42.png">
+        <div>新闻</div>
+    </div>
+</div>
+
+</body>
+</html>

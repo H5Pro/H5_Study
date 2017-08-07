@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="../node_modules/vue/dist/vue.js"></script>
+
+</head>
+<body>
+
+<div id="app-1">
+
+    <input @keyup.ctrl.67="clear">
+    <div @click.meta="alert">alert</div>
+
+    <input v-model.lazy="msg" >
+    {{msg}}
+</div>
+
+
+<script>
+
+    var app1 =new Vue({
+        el:'#app-1',
+        data:{
+            msg:'hello'
+        },
+        methods:{
+            clear: function(e){
+               e.target.value = '';
+            },
+            alert:function(e){
+                alert(e.target.innerText)
+            }
+        }
+
+    })
+
+</script>
+
+</body>
+</html>

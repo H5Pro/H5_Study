@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        html,body{
+            height: 100%;
+        }
+
+
+
+        .header{
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 44px;
+            line-height: 44px;
+            background-color: #444;
+            z-index: 1;
+
+
+            font-size: 16px;
+            color: white;
+
+        }
+
+         .float_left{
+            float: left;
+        }
+
+         .float_right{
+             float: right;
+         }
+
+        .header .header_title{
+            padding: 0px 12px;
+        }
+
+        .header .header_search{
+            font-size: 19px;
+            color: white;
+            padding: 0px 15px;
+        }
+
+        .header .header_add{
+            font-size: 30px;
+            color: white;
+            padding:0 15px;
+            margin-top: -3px;
+        }
+        .main{
+
+            padding: 44px 0px 49px;
+
+        }
+
+        .footer{
+
+            position: fixed;
+            left: 0px;
+            bottom: 0px;
+            width: 100%;
+            height: 49px;
+
+            line-height: 49px;
+
+            border-top: 1px solid #ccc;
+            display: flex;
+            color: #888;
+            z-index: 1;
+            background-color: white;
+        }
+
+
+
+
+        .footer a{
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            flex: 1;
+            display: flex;
+
+            font-size: 12px;
+            line-height: 12px;
+
+        }
+
+        .footer .content{
+            text-align: center;
+            line-height: normal;
+            margin: auto;
+
+        }
+
+        .footer a:hover{
+            color: lawngreen;
+        }
+
+        .footer i{
+            display: block;
+            font-size: 30px;
+            color: inherit;
+        }
+
+
+
+        .liaotian_list{
+            list-style-type: none;
+        }
+
+        .liaotian_list>li{
+            border-bottom: 1px solid #bbb;
+            display: flex;
+            padding: 7px 14px;
+
+        }
+
+        .liaotian_list>li:hover{
+            background-color: #ccc;
+        }
+
+        .liaotian_list .img{
+            height: 45px;
+            background-color: red;
+            align-self: center;
+            flex: 0 0 45px;
+            margin-right: 16px;
+        }
+
+        .liaotian_list .body{
+            flex: 1;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+
+        }
+
+        .liaotian_list .time_blank{
+            position: relative;
+            align-self: stretch;
+            flex: 0 0 40px;
+
+        }
+
+
+
+        .liaotian_list .time{
+
+            position: absolute;
+            right: 0px;
+            top: 0px;
+
+            font-size: 11px;
+            color: #bbb;
+
+            white-space: nowrap;
+
+        }
+
+        .liaotian_list .title{
+           font-size: 16px;
+            padding: 0px;
+            font-weight: bolder;
+        }
+
+        .liaotian_list .summary{
+            display: inline;
+            color: #666;
+            font-size: 13px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+
+    <div class="header">
+        <div class="float_left header_title">微信(41)</div>
+        <div class="float_right header_add iconfont icon-jiahao"></div>
+        <div class="float_right header_search iconfont icon-sousuo"></div>
+    </div>
+    <div class="main">
+        <ul class="liaotian_list">
+
+            <li>
+                <img class="img" src="">
+                <div class="body">
+                    <div class="title">订阅号</div>
+                    <div class="summary">CocoaChina:iOS中书协代码规范35条小建议CocoaChina:iOS中书协代码规范35条小建议CocoaChina:iOS中书协代码规范35条小建议</div>
+                </div>
+
+                <div class="time_blank">
+                    <div class="time">19:10</div>
+                </div>
+            </li>
+            <li>
+                <img class="img" src="">
+                <div class="body">
+                    <div class="title">订阅号</div>
+                    <div class="summary">CocoaChina:iOS中书协代码规范35条小建议CocoaChina:iOS中书协代码规范35条小建议CocoaChina:iOS中书协代码规范35条小建议</div>
+                </div>
+
+                <div class="time_blank">
+                   <div class="time">3月12号</div>
+                </div>
+            </li>
+            <li>
+                <img class="img" src="">
+                <div class="body">
+                    <div class="title">订阅号</div>
+                    <div class="summary">CocoaChina:iOS中书协代码规范35条小建议CocoaChina:iOS中书协代码规范35条小建议CocoaChina:iOS中书协代码规范35条小建议</div>
+                </div>
+
+                <div class="time_blank">
+                    <div class="time">2016年11月30号</div>
+                </div>
+            </li>
+
+            <li>
+                <img class="img" src="">
+                <div class="body">
+                    <div class="title">订阅号</div>
+                    <div class="summary">CocoaChina:iOS中书协代码规范35条小建议CocoaChina:iOS中书协代码规范35条小建议CocoaChina:iOS中书协代码规范35条小建议</div>
+                </div>
+
+                <div class="time_blank">
+                    <div class="time">19:10</div>
+                </div>
+            </li>
+            <li>
+                <img class="img" src="">
+                <div class="body">
+                    <div class="title">订阅号</div>
+                    <div class="summary">CocoaChina:iOS中书协代码规范35条小建议CocoaChina:iOS中书协代码规范35条小建议CocoaChina:iOS中书协代码规范35条小建议</div>
+                </div>
+
+                <div class="time_blank">
+                    <div class="time">3月12号</div>
+                </div>
+            </li>
+            <li>
+                <img class="img" src="">
+                <div class="body">
+                    <div class="title">订阅号</div>
+                    <div class="summary">CocoaChina:iOS中书协代码规范35条小建议CocoaChina:iOS中书协代码规范35条小建议CocoaChina:iOS中书协代码规范35条小建议</div>
+                </div>
+
+                <div class="time_blank">
+                    <div class="time">2016年11月30号</div>
+                </div>
+            </li>
+
+            <li>
+                <img class="img" src="">
+                <div class="body">
+                    <div class="title">订阅号</div>
+                    <div class="summary">CocoaChina:iOS中书协代码规范35条小建议CocoaChina:iOS中书协代码规范35条小建议CocoaChina:iOS中书协代码规范35条小建议</div>
+                </div>
+
+                <div class="time_blank">
+                    <div class="time">19:10</div>
+                </div>
+            </li>
+            <li>
+                <img class="img" src="">
+                <div class="body">
+                    <div class="title">订阅号</div>
+                    <div class="summary">CocoaChina:iOS中书协代码规范35条小建议CocoaChina:iOS中书协代码规范35条小建议CocoaChina:iOS中书协代码规范35条小建议</div>
+                </div>
+
+                <div class="time_blank">
+                    <div class="time">3月12号</div>
+                </div>
+            </li>
+            <li>
+                <img class="img" src="">
+                <div class="body">
+                    <div class="title">订阅号</div>
+                    <div class="summary">CocoaChina:iOS中书协代码规范35条小建议CocoaChina:iOS中书协代码规范35条小建议CocoaChina:iOS中书协代码规范35条小建议</div>
+                </div>
+
+                <div class="time_blank">
+                    <div class="time">2016年11月30号</div>
+                </div>
+            </li>
+
+            <li>
+                <img class="img" src="">
+                <div class="body">
+                    <div class="title">订阅号</div>
+                    <div class="summary">CocoaChina:iOS中书协代码规范35条小建议CocoaChina:iOS中书协代码规范35条小建议CocoaChina:iOS中书协代码规范35条小建议</div>
+                </div>
+
+                <div class="time_blank">
+                    <div class="time">19:10</div>
+                </div>
+            </li>
+            <li>
+                <img class="img" src="">
+                <div class="body">
+                    <div class="title">订阅号</div>
+                    <div class="summary">CocoaChina:iOS中书协代码规范35条小建议CocoaChina:iOS中书协代码规范35条小建议CocoaChina:iOS中书协代码规范35条小建议</div>
+                </div>
+
+                <div class="time_blank">
+                    <div class="time">3月12号</div>
+                </div>
+            </li>
+            <li>
+                <img class="img" src="">
+                <div class="body">
+                    <div class="title">订阅号</div>
+                    <div class="summary">CocoaChina:iOS中书协代码规范35条小建议CocoaChina:iOS中书协代码规范35条小建议CocoaChina:iOS中书协代码规范35条小建议</div>
+                </div>
+
+                <div class="time_blank">
+                    <div class="time">2016年11月30号</div>
+                </div>
+            </li>
+
+            <li>
+                <img class="img" src="">
+                <div class="body">
+                    <div class="title">订阅号</div>
+                    <div class="summary">CocoaChina:iOS中书协代码规范35条小建议CocoaChina:iOS中书协代码规范35条小建议CocoaChina:iOS中书协代码规范35条小建议</div>
+                </div>
+
+                <div class="time_blank">
+                    <div class="time">19:10</div>
+                </div>
+            </li>
+            <li>
+                <img class="img" src="">
+                <div class="body">
+                    <div class="title">订阅号</div>
+                    <div class="summary">CocoaChina:iOS中书协代码规范35条小建议CocoaChina:iOS中书协代码规范35条小建议CocoaChina:iOS中书协代码规范35条小建议</div>
+                </div>
+
+                <div class="time_blank">
+                    <div class="time">3月12号</div>
+                </div>
+            </li>
+            <li>
+                <img class="img" src="">
+                <div class="body">
+                    <div class="title">订阅号</div>
+                    <div class="summary">CocoaChina:iOS中书协代码规范35条小建议CocoaChina:iOS中书协代码规范35条小建议CocoaChina:iOS中书协代码规范35条小建议</div>
+                </div>
+
+                <div class="time_blank">
+                    <div class="time">2016年11月30号</div>
+                </div>
+            </li>
+
+
+        </ul>
+    </div>
+    <div class="footer">
+        <a class="hover_host" href="">
+            <div class="content">
+                <i class="iconfont icon-1"></i>
+               <div>
+                   首页
+               </div>
+            </div>
+
+        </a>
+        <a href="">
+            <div class="content">
+                <i class="iconfont icon-address-book"></i>
+                <div>
+                    通讯录
+                </div>
+            </div>
+        </a>
+        <a href="">
+            <div class="content">
+                <i class="iconfont icon-faxian"></i>
+                <div>
+                    发现
+                </div>
+            </div>
+        </a>
+        <a href="">
+            <div class="content">
+                <i class="iconfont icon-iconfontwohover"></i>
+                <div>
+                    我的
+                </div>
+            </div>
+        </a>
+    </div>
+
+
+</body>
+</html>

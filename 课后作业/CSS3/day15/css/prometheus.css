@@ -1,0 +1,305 @@
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0px;
+}
+
+ul{
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+}
+
+/*.container{*/
+
+    /*margin: auto;*/
+/*}*/
+
+/*.container:after{*/
+    /*content: '';*/
+    /*display: block;*/
+    /*clear: both;*/
+/*}*/
+
+.flex-v-align{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+
+.header{
+
+}
+
+.header_top{
+}
+
+ /*.header_top .container{*/
+     /*padding: 0 0px 0px 15px;*/
+/*}*/
+
+/*.header_top .left_logo{*/
+    /*float: left;*/
+    /*font-size: 22px;*/
+    /*display: flex;*/
+    /*align-items: center;*/
+/*}*/
+
+
+
+/*.header_top .logo_icon{*/
+    /*width: 50px;*/
+    /*height: 50px;*/
+    /*margin-right: 2px;*/
+/*}*/
+
+
+
+/*.header_top a{*/
+    /*display: inline-block;*/
+    /*line-height: 50px;*/
+    /*padding: 0px 15px;*/
+    /*margin: 0px;*/
+    /*color: #9d9d9d;*/
+    /*font-size: inherit;*/
+
+    /*text-decoration: none;*/
+/*}*/
+
+
+/*.header_top a:hover{*/
+    /*color: #fff;*/
+
+/*}*/
+
+/*.header_top .right_nav{*/
+    /*float: right;*/
+    /*font-size: 15px;*/
+/*}*/
+
+/*.header_top .right_nav_folded{*/
+    /*float: right;*/
+    /*display: none;*/
+/*}*/
+
+/*.header_top .right_nav_folded img{*/
+    /*vertical-align: middle;*/
+/*}*/
+
+
+
+/*.header_top .right_nav>li{*/
+    /*display: inline-block;*/
+
+/*}*/
+
+.header_middle{
+    padding: 60px 15px;
+    background-color: #e65530;
+    text-align: center;
+    margin-top: -20px;
+}
+
+.header_middle .title{
+    font-size: 48px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.header_middle .detail{
+    font-size: 30px;
+    color: #fadcd5;
+
+}
+
+.header_middle .buttons{
+    margin-top: 40px;
+}
+
+.header_middle .button{
+    display: inline-block;
+    padding: 22px 30px;
+    font-size: 17px;
+    color: #fff;
+    background-color: #c44625;
+    border-radius: 7px;
+}
+
+.header_middle .button:first-child{
+    margin-right: 20px ;
+}
+
+.header_bottom{
+    background-color: #eee;
+    padding: 25px 0;
+    text-align: center;
+}
+
+.header_bottom .title{
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    font-size: 24px;
+    color: #333;
+}
+
+.header_bottom a{
+    text-decoration: none;
+    color: #337ab7;
+}
+.header_bottom a:hover{
+    text-decoration: underline;
+    color: #315881;
+}
+
+.main{
+}
+
+.main .hr{
+    height: 1.4px;
+    background-color: #eee;
+    margin: 40px 0px;
+}
+
+.main .hr:last-child{
+    margin-bottom: 0px;
+}
+
+.main .data_list{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.data_list>li{
+    font-size: 15px;
+    color: #4a4a4a;
+}
+
+.data_list a:hover{
+    background-color: #fad9d1;
+}
+
+.data_list>li a{
+    display: inline-block;
+    width: 100%;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 15px 10px 10px;
+    color: inherit;
+}
+
+.data_list .title{
+    font-size: 24px;
+    color: #333;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+
+.icon_list{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.icon_list li{
+    display: flex;
+    height: 64px;
+}
+
+.icon_list img{
+
+    vertical-align: middle;
+    max-height: 64px;
+    margin: auto;
+}
+
+
+
+
+
+.footer{
+    line-height: 40px;
+    font-size: 14px;
+    color: #444;
+}
+
+
+
+
+/*@media  (max-width: 768px) {*/
+
+
+    /*.header_top .right_nav_folded {*/
+        /*display: block;*/
+    /*}*/
+
+    /*.header_top .right_nav {*/
+        /*display: none;*/
+    /*}*/
+
+    /*.container {*/
+        /*width: 100%;*/
+    /*}*/
+
+    /*.data_list>li{*/
+        /*width: 100%;*/
+    /*}*/
+
+
+    /*.icon_list li{*/
+        /*width: 50%;*/
+    /*}*/
+
+/*}*/
+
+
+/*@media  (min-width: 768px){*/
+    /*.container{*/
+        /*width: 750px;*/
+    /*}*/
+
+    /*.data_list>li{*/
+
+        /*width: 50%;*/
+
+    /*}*/
+
+    /*.icon_list li{*/
+        /*width: 33.3333%;*/
+        /*text-align: center;*/
+    /*}*/
+
+/*}*/
+
+
+/*@media (min-width: 992px){*/
+    /*.container{*/
+        /*width: 970px;*/
+    /*}*/
+
+    /*.data_list>li{*/
+        /*width: 25%;*/
+    /*}*/
+
+    /*.icon_list li{*/
+        /*width: 16.6666%;*/
+    /*}*/
+
+/*}*/
+
+/*@media  (min-width: 1200px){*/
+    /*.container{*/
+        /*width: 1170px;*/
+    /*}*/
+
+
+/*}*/
+
+

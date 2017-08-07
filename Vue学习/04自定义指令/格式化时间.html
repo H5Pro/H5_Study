@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <div v-date = "{date:now,format:'YYYY月MM月DD日 hh:mm:ss SS'}"></div>
+    <div v-fill_zero="{before:4,after:2,num:12.6666}"></div>
+    <!--<button @click="now = new Date()">add</button>-->
+</div>
+<script>
+
+    //格式化数字（补零操作）
+    function fillZero(num,after,before) {
+        before = before || 0;
+        var str = '';
+        if(typeof num == 'number') {
+            if(after || after==0){
+                num = Math.round(num * Math.pow(10,after));
+                num +='';
+                var arr = num.split('');
+                for(var i=0;i<after-arr.length;i++){
+                    arr.unshift('0');
+                }
+                if(after !=0){
+                    arr.splice(arr.length-after,0,'.');
+                }
+                str = arr.join('');
+            }else {
+                str = num +'';
+            }
+
+
+            var l = before-str.split('.')[0].length;
+            for(var i=0;i<l;i++){
+                str = '0' + str;
+            }
+        }
+        return str;
+    }
+    //位数不够补零（如果小数点后的位数过长，就截取固定长度(四舍五入)）
+    Vue.directive('fill_zero',
+        function (el,binding,vnode) {
+            var num = binding.value.num;
+            var after = binding.value.after;
+            var before = binding.value.before;
+
+            el.innerText = fillZero(num,after,before);
+
+        }
+    )
+
+    //格式化日期
+    Vue.directive('date',
+        //函数简写(bind 和 update)
+        function(el,binding,vnode){
+            var date = binding.value.date;
+            var format = binding.value.format;
+
+            var Y = date.getFullYear();
+            var M = date.getMonth()+1;
+            var D = date.getDate();
+            var h = date.getHours();
+            var m = date.getMinutes();
+            var s = date.getSeconds();
+
+            var S = date.getMilliseconds();
+
+            var fDate = format.replace(/[A-Za-z]{2}/g,'{{}}');
+
+            fDate = fDate.replace(/{{}}{{}}/,Y);
+            fDate = fDate.replace(/{{}}/,fillZero(M,0,2));
+            fDate = fDate.replace(/{{}}/,fillZero(D,0,2));
+            fDate = fDate.replace(/{{}}/,fillZero(h,0,2));
+            fDate = fDate.replace(/{{}}/,fillZero(m,0,2));
+            fDate = fDate.replace(/{{}}/,fillZero(s,0,2));
+            fDate = fDate.replace(/{{}}/,fillZero(S,0,3));
+            el.innerText = fDate;
+        })
+
+    var app = new Vue({
+        el:'#app',
+        data:{
+            now:new Date()
+        }
+    })
+</script>
+</body>
+</html>
