@@ -1,0 +1,5 @@
+<div class="lee-notify">
+  <div class="traffic-light" [@signal]="'go'"></div>
+  <app-lee-notify-item (lifeEnd)="deleteItem(index)" [message]="item" [life]="life" *ngFor="let item of value; let index=index">
+  </app-lee-notify-item>
+</div>

@@ -1,0 +1,20 @@
+
+:host /deep/ {
+  .lee-cascader_input {
+    background-color: red!important;
+  }
+}
+:host {
+  .lee-sidebar-left-content,.lee-sidebar-right-content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    background-color: #5ccc94;
+  }
+  .lee-sidebar-right-content {
+    left: 50%;
+    background-color: #8c8c8c;
+  }
+}

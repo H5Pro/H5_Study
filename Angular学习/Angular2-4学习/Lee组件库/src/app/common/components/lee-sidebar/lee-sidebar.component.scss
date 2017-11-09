@@ -1,0 +1,31 @@
+.lee-sidebar-mask{
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right:  0;
+  margin: auto;
+  opacity: 0.4;
+  background-color: #030303;
+}
+
+.lee-sidebar-container{
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 790px;
+  margin: auto;
+  .lee-sidebar-left-content,.lee-sidebar-right-content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    background-color: #eeeeee;
+  }
+  .lee-sidebar-right-content {
+    left: 50%;
+    background-color: #8c8c8c;
+  }
+}

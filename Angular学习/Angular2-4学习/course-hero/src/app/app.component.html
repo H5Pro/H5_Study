@@ -1,0 +1,6 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="head-nav">
+  <a (click)="current=index" routerLinkActive="selected" class="head-nav-item" *ngFor="let item of navs; let index = index" [routerLink]="item.path">{{item.name}}</a>
+</div>
+<router-outlet></router-outlet>
+

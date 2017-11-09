@@ -1,0 +1,9 @@
+<app-lee-cascader (clickAddNewItem)="addNewItem($event)" [configs]="configs" [data]="data" [(ngModel)]="value"></app-lee-cascader>
+
+<app-lee-dialog [title]="dialogTitle" [size]="'small'" [(visible)]="isShow">
+  <app-add-unit-content [supData]="addedSup" *ngIf="isShow" [unitTypeId]="addedSup.id" (cancel)="isShow = false" (AddSucess)="fillNewItem($event)"></app-add-unit-content>
+</app-lee-dialog>
+<app-lee-dialog [title]="dialogTitle" [size]="'small'" [(visible)]="isShowType">
+  <app-add-unit-type-content [supData]="addedSup" [cfgs]="configs" *ngIf="isShowType"  (cancel)="isShowType = false" (AddSucess)="fillNewItem($event)"></app-add-unit-type-content>
+</app-lee-dialog>
+

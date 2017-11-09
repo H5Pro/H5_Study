@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="btn">点击调用</button>
+
+</body>
+<script>
+    var btn = document.getElementById('btn')
+    btn.onclick = function () {
+        console.log(window.parent.window)
+        console.log(window.parent.window.myOnclick)
+        window.parent.window.myOnclick();
+
+    }
+</script>
+</html>

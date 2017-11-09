@@ -1,0 +1,12 @@
+<p [@animate]="'fadeIn'" [hidden]="!show">fadeIn</p>
+
+<button (click)="show = !show">toggle</button>
+
+
+<button (click)="onAdd()">add</button>
+<ul>
+  <li *ngFor="let item of list;let i = index;" [@animate]="'fadeInLeft'">
+    {{item}}
+    <button (click)="onRemove(i)">X</button>
+  </li>
+</ul>

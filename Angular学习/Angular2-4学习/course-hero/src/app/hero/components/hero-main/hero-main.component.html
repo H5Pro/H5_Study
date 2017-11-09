@@ -1,0 +1,17 @@
+<a routerLink="./">登录</a>
+<ul>
+  <li [class.selected]="item === selectItem"
+      (click)="select(item,index)"
+      *ngFor="let item of heroes; let index=index">
+    <span>{{item.id}}</span>
+    <span>{{item.name}}</span>
+    <span>{{index}}</span>
+  </li>
+</ul>
+
+<!--通知弹出框-->
+<app-hero-detail [hero]="selectItem"></app-hero-detail>
+<button (click)="addMessage('success')">成功</button>
+<button (click)="addMessage('info')">信息</button>
+<button (click)="addMessage('warn')">警告</button>
+<button (click)="addMessage('error')">失败</button>

@@ -1,0 +1,16 @@
+<div [hidden]="!visible" class="lee-dialog-mark-layer">
+  <div appFixedCenter [ngClass]="dialogClass">
+    <div class="lee-dialog-header">
+      <div class="lee-dialog-header-title">
+        {{title}}
+      </div>
+      <div class="lee-dialog-header-close">
+          <i (click)="closeDialog()" class="fa fa-close"></i>
+      </div>
+    </div>
+    <div class="lee-dialog-body">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>
+

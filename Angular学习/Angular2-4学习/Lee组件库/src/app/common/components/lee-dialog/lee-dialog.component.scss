@@ -1,0 +1,67 @@
+$lee-dialog-mini-width: 300px;
+$lee-dialog-small-width: 410px;
+$lee-dialog-normal-width: 600px;
+$lee-dialog-large-width: 800px;
+$lee-dialog-full-width: 1000px;
+
+$lee-dialog-header-height: 36px;
+.lee-dialog-mark-layer{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  margin: auto;
+  z-index: 100;
+  overflow-y: auto;
+  .lee-dialog{
+    width: $lee-dialog-normal-width;
+    margin: 100px auto 100px;
+    background: #fff;
+    border-radius: 2px;
+    .lee-dialog-header{
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #c0c0c0;
+      .lee-dialog-header-title{
+        flex: 4;
+        line-height: $lee-dialog-header-height;
+        height: $lee-dialog-header-height;
+        margin-left: 20px;
+        font-size: 16px;
+        color: #505050;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+      }
+      .lee-dialog-header-close{
+        flex: 0 40px;
+        text-align: center;
+        height: 100%;
+        >i{
+          font-size: 18px;
+          color: #8c8c8c;
+        }
+      }
+    }
+    .lee-dialog-body{
+      padding: 30px;
+    }
+    .lee-dialog-mini{
+      width: $lee-dialog-mini-width;
+    }
+    &.lee-dialog-small{
+      width: $lee-dialog-small-width;
+    }
+    &.lee-dialog-normal{
+      width: $lee-dialog-normal-width;
+    }
+    &.lee-dialog-large{
+      width: $lee-dialog-large-width;
+    }
+    &.lee-dialog-full{
+      width: $lee-dialog-full-width;
+    }
+  }
+}

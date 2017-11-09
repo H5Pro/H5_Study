@@ -1,0 +1,62 @@
+@import "../iconfont/iconfont.css";
+.lee-notify-item{
+  $box-padding: 20px;
+  position: relative;
+  width: 330px;
+  margin-bottom: 16px;
+  padding: $box-padding;
+  box-sizing: border-box;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
+  background-color: #fff;
+  color: #505050;
+  .lee-notify-icon{
+    >i{
+      position: absolute;
+      left: $box-padding;
+      top: $box-padding;
+      font-size: 40px;
+      line-height: 40px;
+      &.icon-el-icon-circle-check{
+        color: #13ce66;
+      }
+      &.icon-el-icon-information{
+        color: #50bfff;
+      }
+      &.icon-el-icon-warning{
+        color: #f7ba2a;
+      }
+      &.icon-el-icon-circle-cross{
+        color: #ff4949;
+      }
+    }
+
+  }
+  .lee-notify-main{
+    margin-left: 55px;
+    margin-right: 55px;
+    .lee-notify-title{
+     margin-top: 3px;
+      font-size: 24px;
+      color: #505050;
+      font-weight: 400;
+    }
+    .lee-notify-message{
+      font-size: 14px;
+      color: #8c8c8c;
+      margin-top: 5px;
+    }
+  }
+  .lee-notify-close{
+    cursor:pointer;
+    >i{
+      position: absolute;
+      right: $box-padding;
+      top:$box-padding;
+      font-size: 14px;
+      color: #8c8c8c;
+    }
+  }
+}
+
+

@@ -1,0 +1,12 @@
+<form>
+  <div class="form-item">
+    <label>名称</label><input [(ngModel)]="params.name" [ngModelOptions]="{standalone: true}" type="text" pInputText/>
+  </div>
+  <div class="form-item">
+    <label>描述</label><input [(ngModel)]="params.remark" [ngModelOptions]="{standalone: true}" placeholder="选填" type="text" pInputText />
+  </div>
+  <div class="btns">
+    <button class="btn-cancel" type="success" (click)="clickCancel()" pButton type="button" label="取消"></button>
+    <button class="btn-ensure" (click)="clickSave()" pButton type="button" label="保存"></button>
+  </div>
+</form>

@@ -1,0 +1,19 @@
+<div class="lee-notify-item">
+  <div class="lee-notify-icon">
+    <i [ngClass]="{
+    'iconfont':true,
+    'icon-el-icon-circle-check':message.type==='success',
+    'icon-el-icon-information':message.type==='info',
+    'icon-el-icon-warning':message.type==='warn',
+    'icon-el-icon-circle-cross':message.type==='error'
+    }">
+    </i>
+  </div>
+  <div class="lee-notify-main">
+    <div class="lee-notify-title">{{message.title}}</div>
+    <div class="lee-notify-message">{{message.message}}</div>
+  </div>
+  <div (click)="clickClose()" class="lee-notify-close">
+    <i class="iconfont icon-el-icon-close"></i>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+import { Pipe, PipeTransform } from '@angular/core';
+import {formatDate} from './date';
+@Pipe({
+  name: 'formatDate'
+})
+export class FormatDatePipe implements PipeTransform {
+
+  transform(value: any, args?: any): any {
+    return formatDate(value, args[0]);
+  }
+}

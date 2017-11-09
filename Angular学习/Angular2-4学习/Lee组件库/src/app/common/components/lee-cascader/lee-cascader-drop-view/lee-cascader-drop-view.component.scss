@@ -1,0 +1,64 @@
+@import "../lee-cascader-vars";
+.sub-list{
+  overflow-y: auto;
+  .classify-item{
+    color: $default-color;
+    font-size: 14px;
+    padding: 6px 10px;
+    background-color: #fff;
+    &.is-selected{
+      background-color: $selected-backcolor!important;
+      color: #fff;
+      >.detail{
+        color: #fff;
+      }
+    }
+    &:hover{
+      background-color: $hover-backcolor!important;
+      color: $text-hover-color;
+      >.detail{
+        color: $text-hover-color;
+      }
+
+    }
+    &:nth-child(2n+1){
+      background-color: #F8F9FA;
+    }
+    &.is-selected:hover{
+      background-color: $selected-hover-backcolor!important;
+    }
+    .title,.detail{
+      overflow: hidden;
+      text-overflow:ellipsis;
+      white-space: nowrap;
+    }
+    .detail{
+      font-size: 12px;
+      color: $gray-text-color;
+      margin-top: 3px;
+    }
+    .lee-cascader-sub-classify{
+      position: absolute;
+      left:100%;
+      top: -1px;
+      border: 1px solid $border-color;
+      box-shadow: 0 5px 10px #888;
+      z-index: 999;
+    }
+  }
+}
+
+.lee-cascader-add{
+  border-top: 1px solid $primary-color;
+  width: 100%;
+  padding: 6px 10px;
+  font-size: 14px;
+  color: $primary-color;
+  background-color: $stripe-back-color;
+  &:hover{
+    background-color: $hover-backcolor;
+    color: $text-hover-color;
+  }
+}
+
+

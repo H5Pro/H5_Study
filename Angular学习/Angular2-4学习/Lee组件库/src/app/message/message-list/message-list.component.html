@@ -1,0 +1,49 @@
+<header class="message-list-header">
+  <app-lee-tab-menu class="message-tab-menu" [(ngModel)]="selectedType" [items] = "messageTypes"></app-lee-tab-menu>
+</header>
+<div *ngIf="isBeginEdit" class="message-list-edit">
+  <div (click)="toggleAll()" class="check">
+    <i *ngIf="isSelectAll" class="checked iconfont icon-radio-checked"></i>
+    <i *ngIf="!isSelectAll" class="unchecked iconfont icon-danxuan"></i>
+    <div class="check-text">全选</div>
+  </div>
+  <div class="fold" *ngIf="isUnfold" (click)="clickFold()">
+    <i class="iconfont icon-xiangyouzhankai"></i>
+  </div>
+  <div *ngIf="!isUnfold" (click)="toggleEditState(false)" class="quxiao">
+    <i *ngIf="isBeginEdit" class="iconfont icon-quxiao"></i>
+  </div>
+  <div (click)="clickDelete()"  *ngIf="isBeginEdit" class="delete">
+    <i class="iconfont icon-lajixiang"></i>
+  </div>
+</div>
+<div (click)="toggleEditState(true)" *ngIf="!isBeginEdit" class="message-list-edit-btn edit">
+  <i class="iconfont icon-bianji"></i>
+</div>
+<main class="message-list-content">
+  <section class="section message-classify" *ngFor="let classify of messages; let section=index">
+    <header class="section-header">
+      <div class="message-time-title">{{ classify.date | curDate }}</div>
+      <div></div>
+    </header>
+    <main class="section-content message-classify-list">
+      <li (click)="selectMessage(item, section, cell)" *ngFor="let item of classify.children; let cell = index" class="message-item">
+        <header class="message-item-header">
+          <div class="message-item-title">{{item.title}}</div>
+          <div class="message-item-time">{{ item.create_time | curTime }}</div>
+        </header>
+        <main class="message-item-content">
+          <span>{{item.description}}</span>
+        </main>
+        <div *ngIf="isBeginEdit" (click)="toggleSimgle(section,cell)" class="simgle-check">
+          <i *ngIf="item.isCheck" class="simgle-checked iconfont icon-radio-checked"></i>
+          <i *ngIf="!item.isCheck" class="simgle-unchecked iconfont icon-danxuan"></i>
+        </div>
+      </li>
+    </main>
+  </section>
+</main>
+
+
+
+
