@@ -5,18 +5,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  _loading = false;
-  set loading (v: boolean) {
-    if (this._loading !== v) {
-      this._loading = v;
-      setTimeout(() => {
-        this.loading = false;
-      }, 500);
-    }
-  }
-  get loading () {
-    return this._loading;
-  }
   unit = 'yizhi';
   name = 'hello';
   isShow = false;
@@ -29,6 +17,5 @@ export class AppComponent {
   ];
   selectedCity1 = 1;
   onChange () {
-    alert(1);
   }
 }

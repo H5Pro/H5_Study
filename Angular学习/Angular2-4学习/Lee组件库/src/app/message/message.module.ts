@@ -7,6 +7,8 @@ import { MessageDetailComponent } from './message-detail/message-detail.componen
 import { LeeSidebarComponent } from '../common/components/lee-sidebar/lee-sidebar.component';
 import { LeeTabMenuModule } from '../common/components/lee-tab-menu/lee-tab-menu.module';
 import { CurDatePipe, CurTimePipe, FormatDatePipe } from './datePipe';
+import { WhenScrolledDirective } from './message-directive/when-scrolled.directive';
+import { ScrollFixTopDirective } from './message-directive/scroll-fix-top.directive';
 const MODULES = [
   LeeTabMenuModule
 ];
@@ -17,7 +19,9 @@ const COMPONENTS = [
   LeeSidebarComponent,
   CurTimePipe,
   CurDatePipe,
-  FormatDatePipe
+  FormatDatePipe,
+  WhenScrolledDirective,
+  ScrollFixTopDirective
 ];
 @NgModule({
   imports: [

@@ -13,7 +13,6 @@ import { LeeDialogComponent } from './common/components/lee-dialog/lee-dialog.co
 import { FixedCenterDirective } from './common/directive/fixed-center.directive';
 import { DialogModule } from 'primeng/primeng';
 import { MessageModule } from './message/message.module';
-import { WhenScrolledDirective } from './common/directive/when-scrolled.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,8 +22,7 @@ import { WhenScrolledDirective } from './common/directive/when-scrolled.directiv
     AddUnitContentComponent,
     AddUnitTypeContentComponent,
     LeeDialogComponent,
-    FixedCenterDirective,
-    WhenScrolledDirective
+    FixedCenterDirective
   ],
   imports: [
     BrowserModule,

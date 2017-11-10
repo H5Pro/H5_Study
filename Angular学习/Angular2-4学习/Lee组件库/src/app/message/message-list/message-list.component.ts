@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MenuItem } from '../../common/components/lee-tab-menu/menu-item';
 import { MessageHandled } from '../message-handled';
+import {Message} from "../message";
 @Component({
   selector: 'app-message-list',
   templateUrl: './message-list.component.html',
@@ -18,6 +19,46 @@ export class MessageListComponent implements OnInit {
     { label: '应用', value: '1' },
     { label: '通知', value: '2' }
   ];
+  // 位于顶部的区块的下标
+  topSection = 0;
+  get topText () {
+    if (this.messages && this.messages.length > this.topSection && this.topSection >= 0) {
+      return this.messages[this.topSection].date;
+    }
+    return '';
+  }
+  // 位于顶部的区块的文字
+  _isNoMore = false;
+  @Output() isNoMoreChange: EventEmitter<any> = new  EventEmitter();
+  @Output() loadMore: EventEmitter<any> = new EventEmitter();
+  @Input()
+  set isNoMore (v: boolean) {
+    this._isNoMore = v;
+    this.isNoMoreChange.emit(v);
+  }
+  get isNoMore () {
+    return this._isNoMore;
+  }
+  _loading = false;
+  @Output() loadingChange: EventEmitter<any> = new EventEmitter();
+  @Input()
+  set loading (v: boolean) {
+    if (this._loading !== v) {
+      this._loading = v;
+      this.loadingChange.emit(v);
+    }
+  }
+  get loading () {
+    return this._loading;
+  }
+  // 当居于顶部的区块（section）发生改变时触发
+  onTop (index) {
+    this.topSection = index;
+  }
+  // 点击加载更多
+  clickLoadMore () {
+    this.loadMore.emit();
+  }
   // 点击折叠按钮
   clickFold () {
     this.onFold.emit();
@@ -58,7 +99,7 @@ export class MessageListComponent implements OnInit {
   // 选中某个消息
   selectMessage (item, section, cell) {
     if (this.isBeginEdit) {
-     item.isCheck = !item.isCheck;
+     this.toggleSimgle(item, section, cell);
     } else {
       this.onSelect.emit(item);
     }
@@ -75,8 +116,8 @@ export class MessageListComponent implements OnInit {
     }
   }
   // 切换单个
-  toggleSimgle (section: number, cell: number) {
-    this.messages[section].children[cell].isCheck = !this.messages[section].children[cell].isCheck;
+  toggleSimgle (item: Message, section: number, cell: number) {
+    item.isCheck = !item.isCheck;
     for (let i = 0; i < this.messages.length; i++) {
       const obj = this.messages[i];
       for (let j = 0; j < obj.children.length; j++) {

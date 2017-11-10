@@ -1,0 +1,14 @@
+{
+  "name": "iscroll-study",
+  "version": "1.0.0",
+  "description": "iscroll 学习",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "iscroll": "^5.2.0"
+  }
+}

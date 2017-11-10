@@ -7,6 +7,20 @@ import {ConfirmationService} from 'primeng/primeng';
   providers: [ConfirmationService]
 })
 export class AppComponent {
+  public list: string[] = [
+    'qqqqq',
+    'qqqqq',
+    'qqqqq',
+    'qqqqq',
+    'qqqqq',
+    'qqqqq',
+    'qqqqq',
+    'qqqqq',
+  ];
+
+  loadData(): void {
+    // .. load more data for 'this.list'
+  }
   constructor (private confirmationService: ConfirmationService) {
   }
   items = [

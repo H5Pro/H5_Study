@@ -6,8 +6,66 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    #div1{
+      position: absolute;
+      left: 100px;
+      top:100px;
+      height:100px;
+      width:100px;
+      background:red;
+    }
+  </style>
 </head>
 <body>
-  <app-root></app-root>
+<div id="div1"></div>
+<script>
+  var move=function(obj, attrs, duration, fx, callback) {//运动对象，属性，持续时间，运动方式，回调函数
+      clearInterval(obj.iTimer);
+      //var startTime = Date.now();
+      var startTime = new Date();
+      var j = {};
+      for (var attr in attrs) {
+        j[attr] = {};
+        if (attr == 'opacity') {
+          j[attr].b = Math.round(css(obj, attr) * 100);
+        } else {
+          j[attr].b = parseInt(css(obj, attr));
+        }
+        j[attr].c = attrs[attr] - j[attr].b;
+      }
+      var d = duration;
+      obj.iTimer = setInterval(function() {
+        var t = new Date() - startTime;
+        if (t >= d) {
+          t = d;
+          clearInterval(obj.iTimer);
+        }
+        for (var attr in attrs) {
+          var v = Tween[fx](t, j[attr].b, j[attr].c, d);
+          if (attr == 'opacity') {
+            obj.style.opacity = v / 100;
+            obj.style.filter = 'alpha(opacity='+v+')';
+          } else {
+            obj.style[attr] = v + 'px';
+          }
+        }
+        if (t == d) {
+          callback && callback();
+        }
+      }, 16);
+    },
+    css=function(obj, attr) {
+      if (obj.currentStyle) {
+        return obj.currentStyle[attr];
+      } else {
+        return getComputedStyle(obj, false)[attr];
+      }
+    }
+
+  var oDiv=document.getElementById("div1");
+  move(oDiv,{"left":200,"top":200},1000,"backOut")
+
+</script>
 </body>
 </html>
