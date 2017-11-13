@@ -1,11 +1,15 @@
-<app-lee-sidebar #messageSidebar [(visible)]="isShow">
+<lee-sidebar #messageSidebar [(visible)]="isShow">
   <div class="left message-list">
-    <app-message-list (loadMore)="clickLoadMore()" *ngIf="isShow" [(isNoMore)]="isNoMore" [(loading)]="loading" (onFold)="onFold(messageSidebar)" [isUnfold]="isUnfold" (onSelect)="onSelect($event, messageSidebar)" [messages]="handledMessage">
-    </app-message-list>
+    <message-list (loadMore)="clickLoadMore()" *ngIf="isShow" [(isNoMore)]="isNoMore" [(loading)]="loading" (onFold)="onFold(messageSidebar)" [isUnfold]="isUnfold" (onSelect)="onSelect($event, messageSidebar)" [messages]="handledMessage">
+    </message-list>
   </div>
   <div class="right message-detail">
-    <app-message-detail *ngIf="isShow" [message]="selectedMessage"></app-message-detail>
+    <message-detail *ngIf="isShow" [message]="selectedMessage"></message-detail>
   </div>
-</app-lee-sidebar>
-<button (click)="isShow = true">显示右侧边栏</button>
-<button (click)="selectedType=messageTypes[1]">切换</button>
+</lee-sidebar>
+<div *ngIf="isShow">
+  ssss
+</div>
+<span (click)="isShow = true">
+  <ng-content></ng-content>
+</span>

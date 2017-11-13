@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 @Component({
-  selector: 'app-add-unit-content',
+  selector: 'add-unit-content',
   templateUrl: './add-unit-content.component.html',
   styleUrls: ['./add-unit-content.component.scss']
 })

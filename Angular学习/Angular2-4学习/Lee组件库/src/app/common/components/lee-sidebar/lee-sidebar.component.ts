@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 @Component({
-  selector: 'app-lee-sidebar',
+  selector: 'lee-sidebar',
   templateUrl: './lee-sidebar.component.html',
   styleUrls: ['./lee-sidebar.component.scss'],
   animations: [

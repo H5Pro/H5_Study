@@ -2,7 +2,7 @@ import { forwardRef, Component, Output, EventEmitter, Input, OnInit, ElementRef 
 import {ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
-  selector: 'app-lee-cascader-drop-view',
+  selector: 'lee-cascader-drop-view',
   templateUrl: './lee-cascader-drop-view.component.html',
   styleUrls: ['./lee-cascader-drop-view.component.scss']
 })

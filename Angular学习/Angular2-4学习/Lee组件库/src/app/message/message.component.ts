@@ -3,7 +3,7 @@ import { Message } from './message';
 import { MessageHandled } from './message-handled';
 import {messages} from './messages';
 @Component({
-  selector: 'app-message',
+  selector: 'message',
   templateUrl: './message.component.html',
   styleUrls: ['./message.component.scss']
 })
@@ -12,8 +12,11 @@ export class MessageComponent implements OnInit {
   set isShow (v: boolean) {
     if (this._isShow !== v) {
       this._isShow = v;
-      if (this._isShow === false) {
+      if (v) {
+        this.isNoMore = false;
         this.isUnfold = false;
+        this.loading = false;
+        this.selectedMessage = null;
       }
     }
   }

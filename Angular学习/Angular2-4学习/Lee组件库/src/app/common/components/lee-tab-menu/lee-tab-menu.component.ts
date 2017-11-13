@@ -2,7 +2,7 @@ import { Component, OnInit, forwardRef, Input, Output, EventEmitter } from '@ang
 import {ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import {MenuItem} from './menu-item';
 @Component({
-  selector: 'app-lee-tab-menu',
+  selector: 'lee-tab-menu',
   templateUrl: './lee-tab-menu.component.html',
   styleUrls: ['./lee-tab-menu.component.scss'],
   providers: [

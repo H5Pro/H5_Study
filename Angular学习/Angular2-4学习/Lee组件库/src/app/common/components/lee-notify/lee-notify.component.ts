@@ -2,14 +2,13 @@ import { Component, Input, OnInit } from '@angular/core';
 import { LeeNotifyMessage } from './lee-notify-message';
 import {trigger, state, style, animate, transition} from '@angular/animations';
 @Component({
-  selector: 'app-lee-notify',
+  selector: 'lee-notify',
   templateUrl: './lee-notify.component.html',
   styleUrls: ['./lee-notify.component.scss'],
   animations: [
-    trigger('signal', [
-      state('go', style({
-        'background-color': 'green'
-      }))
+    trigger('notifyLeaveAnimete', [
+      state('void', style({height: 0, opacity: 0})),
+      transition('* => void', [animate('250ms')])
     ])
   ]
 })

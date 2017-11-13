@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-lee-confirm',
+  selector: 'lee-confirm',
   templateUrl: './unit-cascder.component.html',
   styleUrls: ['./unit-cascder.component.css']
 })

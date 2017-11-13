@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-lee-dialog',
+  selector: 'lee-dialog',
   templateUrl: './lee-dialog.component.html',
   styleUrls: ['./lee-dialog.component.scss']
 })

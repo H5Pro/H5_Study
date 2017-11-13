@@ -2,7 +2,7 @@ import { Component, forwardRef, OnInit, Input } from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { ConfirmationService } from 'primeng/primeng';
 @Component({
-  selector: 'app-unit-cascader',
+  selector: 'unit-cascader',
   templateUrl: './unit-cascader.component.html',
   styleUrls: ['./unit-cascader.component.css'],
   providers: [

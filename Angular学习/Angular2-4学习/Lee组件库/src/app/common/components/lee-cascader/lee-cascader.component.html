@@ -5,7 +5,7 @@
   <i (click)="changeDrop($event)" [ngStyle]="{'line-height': sizeSets[size].height - 2 + 'px'}" class="lee-input_icon ui-clickable fa fa-fw fa-angle-down"></i>
 </div>
 
-<app-lee-cascader-drop-view
+<lee-cascader-drop-view
   [ngStyle]="{display:isDrop?'block':'none',width:cfgs.firstWidth?cfgs.firstWidth+'px':'100%'}"
   class="sub-classify lee-cascader-drop-view"
   [isFirstLevel]="true"
@@ -15,4 +15,4 @@
   [selects]="selects"
   [cfgs]="cfgs"
   [data]="data">
-</app-lee-cascader-drop-view>
+</lee-cascader-drop-view>

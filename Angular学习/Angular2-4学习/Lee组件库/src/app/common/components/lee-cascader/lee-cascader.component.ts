@@ -2,7 +2,7 @@ import { Component, forwardRef, ElementRef, Input, Output, OnInit, EventEmitter 
 import {ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
-  selector: 'app-lee-cascader',
+  selector: 'lee-cascader',
   templateUrl: './lee-cascader.component.html',
   styleUrls: ['./lee-cascader.component.scss'],
   providers: [

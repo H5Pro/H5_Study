@@ -89,11 +89,9 @@
     flex: 1;
     height: calc(100% - 40px);
     position: relative;
+    overflow: auto;
     >.message-list-content{
-      height: 100%;
-      width: 100%;
       padding: 0px 20px 20px;
-      overflow: auto;
       >.message-list-content-header{
         position: absolute;
         left: 0;
@@ -131,17 +129,23 @@
         >.message-classify-list{
           >.message-item{
             cursor: pointer;
-            width: 355.4px;
+            width: 355px;
             border-radius: 4px;
             background-color: #ffffff;
-            border: solid 1px #d8d8d8;
+            border: solid 2px #d8d8d8;
             position: relative;
             margin-bottom: 10px;
+            transition: 0.2s;
+            &.actived{
+              &:hover{
+                width: 355px;
+              }
+            }
             &:nth-last-child(1){
               margin-bottom: 0px;
             }
             &:hover{
-              border-color: #5ccc94;
+              //width: 340px;
             }
             &:hover .simgle-unchecked{
               color: #5ccc94;

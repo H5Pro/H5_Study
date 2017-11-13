@@ -2,7 +2,7 @@
   <li (mouseover)="mouseOver($event, index)" (click)="clickItem(index)" [ngClass]="{'classify-item': true, 'is-selected':(curSelect == index && (isFirstLevel || isSelectSup))}" *ngFor="let item of data[cfgs.children]; let index=index">
     <div *ngIf="item[cfgs.label]" class="title">{{item[cfgs.label]}}</div>
     <div *ngIf="item[cfgs.detail]" class="detail">{{item[cfgs.detail]}}</div>
-    <app-lee-cascader-drop-view
+    <lee-cascader-drop-view
       [ngStyle]="{display:hovered===index?'block':'none',width:cfgs.otherWidth?cfgs.otherWidth+'px':'150px'}"
       class="sub-classify lee-cascader-sub-classify"
       [isFirstLevel]="false"
@@ -15,7 +15,7 @@
       [data]="item"
       [cfgs]="cfgs"
       *ngIf="judgeNext(item)">
-    </app-lee-cascader-drop-view>
+    </lee-cascader-drop-view>
   </li>
 </ul>
 <div (mouseover)="hovered = -1" (click)="addNewItem(data)" class="lee-cascader-add" *ngIf="data[cfgs.canAdd]">

@@ -1,4 +1,9 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<app-unit-cascader [(ngModel)]="unit"></app-unit-cascader>
+<unit-cascader [(ngModel)]="unit"></unit-cascader>
 <div appFixedCenter style="width: 100px; height: 100px"></div>
-<app-message></app-message>
+<message>
+  <button>点击出现</button>
+</message>
+
+<lee-notify [life]="3000" [value]="messages"></lee-notify>
+<button (click)="notify()">提示</button>

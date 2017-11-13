@@ -1,5 +1,5 @@
 <header class="message-list-header">
-  <app-lee-tab-menu class="message-tab-menu" [(ngModel)]="selectedType" [items] = "messageTypes"></app-lee-tab-menu>
+  <lee-tab-menu class="message-tab-menu" [(ngModel)]="selectedType" [items] = "messageTypes"></lee-tab-menu>
 </header>
 <div *ngIf="isBeginEdit" class="message-list-edit">
   <div (click)="toggleAll()" class="check">
@@ -28,12 +28,12 @@
       </div>
     </header>
     <div style="height: 30px" *ngIf="!messages || messages.length === 0"></div>
-    <section class="section message-classify" *ngFor="let classify of messages; let section=index">
+    <section @messageOutInAnimete class="section message-classify" *ngFor="let classify of messages; let section=index">
       <header class="section-header">
         <div class="message-time-title">{{ classify.date | curDate }}</div>
       </header>
       <main class="section-content message-classify-list">
-        <li (click)="selectMessage(item, section, cell)" *ngFor="let item of classify.children; let cell = index" class="message-item">
+        <li @messageOutInAnimete [@messageActivedAnimete]="curSelect === item ? 'actived' : 'inactived'" [ngClass]="{'actived':curSelect === item}" (click)="selectMessage(item, section, cell)" *ngFor="let item of classify.children; let cell = index" class="message-item">
           <header class="message-item-header">
             <div *ngIf="!item.readed" class="message-unread-red-point"></div>
             <div class="message-item-title">{{item.title}}</div>

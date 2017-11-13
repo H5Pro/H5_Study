@@ -1,11 +1,13 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MenuItem } from '../../common/components/lee-tab-menu/menu-item';
 import { MessageHandled } from '../message-handled';
-import {Message} from "../message";
+import {Message} from '../message';
+import { messageOutInAnimete, messageActivedAnimete } from '../message-animate';
 @Component({
-  selector: 'app-message-list',
+  selector: 'message-list',
   templateUrl: './message-list.component.html',
-  styleUrls: ['./message-list.component.scss']
+  styleUrls: ['./message-list.component.scss'],
+  animations: [messageOutInAnimete, messageActivedAnimete]
 })
 export class MessageListComponent implements OnInit {
   @Input () isUnfold = false;
@@ -14,6 +16,8 @@ export class MessageListComponent implements OnInit {
   @Output() onFold: EventEmitter<any> = new EventEmitter();
   isSelectAll = false;
   isBeginEdit = false;
+  // 当前选中的消息
+  curSelect = null;
   selectedType: MenuItem;
   messageTypes: MenuItem[] = [
     { label: '应用', value: '1' },
@@ -61,28 +65,21 @@ export class MessageListComponent implements OnInit {
   }
   // 点击折叠按钮
   clickFold () {
+    this.curSelect = null;
     this.onFold.emit();
   }
   // 点击删除按钮
   clickDelete () {
-    const newMessages = [];
     for (let i = 0; i < this.messages.length; i++) {
       const obj = this.messages[i];
-      const newObj = {
-        children: [],
-        date: obj.date
-      };
-      for (let j = 0; j < obj.children.length; j++) {
-        const obj1 = obj.children[j];
-        if (!obj1.isCheck) {
-          newObj.children.push(obj1);
-        }
-      }
-      if (newObj.children.length > 0) {
-        newMessages.push(newObj);
-      }
+      obj.children = obj.children.filter((item) => {
+        return !item.isCheck;
+      });
     }
-    this.messages = newMessages;
+    this.messages = this.messages.filter((item) => {
+      return item.children.length > 0;
+    });
+    console.log(this.messages);
   }
   // 切换编辑状态
   toggleEditState (isBeginEdit) {
@@ -101,8 +98,12 @@ export class MessageListComponent implements OnInit {
     if (this.isBeginEdit) {
      this.toggleSimgle(item, section, cell);
     } else {
+      this.curSelect = item;
       this.onSelect.emit(item);
     }
+  }
+  hover () {
+    alert(123);
   }
   // 全选切换
   toggleAll () {

@@ -13,6 +13,7 @@ import { LeeDialogComponent } from './common/components/lee-dialog/lee-dialog.co
 import { FixedCenterDirective } from './common/directive/fixed-center.directive';
 import { DialogModule } from 'primeng/primeng';
 import { MessageModule } from './message/message.module';
+import { LeeNotifyModule } from './common/components/lee-notify/lee-notify.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,8 @@ import { MessageModule } from './message/message.module';
     ConfirmDialogModule,
     DialogModule,
    MessageModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    LeeNotifyModule
   ],
   providers: [],
   bootstrap: [AppComponent]

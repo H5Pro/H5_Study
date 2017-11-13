@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { LeeNotifyMessage } from '../lee-notify-message';
 @Component({
-  selector: 'app-lee-notify-item',
+  selector: 'lee-notify-item',
   templateUrl: './lee-notify-item.component.html',
   styleUrls: ['./lee-notify-item.component.scss']
 })
