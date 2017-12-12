@@ -7,6 +7,7 @@
   margin: auto;
   opacity: 0.4;
   background-color: #030303;
+  z-index: 101;
 }
 
 .lee-sidebar-container{
@@ -16,6 +17,7 @@
   bottom: 0;
   width: 790px;
   margin: auto;
+  z-index: 102;
   .lee-sidebar-left-content,.lee-sidebar-right-content {
     position: absolute;
     left: 0;

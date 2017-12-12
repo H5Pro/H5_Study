@@ -1,33 +1,70 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!doctype html>
 <html>
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <title> main window </title>
-    <script type="text/javascript">
-        // main js function
-        function fMain(){
-            console.log('main function execute success');
-        }
+  <meta charset="utf-8">
+  <meta HTTP-EQUIV="pragma" CONTENT="no-cache">
+  <meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+  <meta HTTP-EQUIV="expires" CONTENT="0">
+  <title>简记</title>
+  <base href="/">
 
-        // exec iframe function
-        function exec_iframe(){
-            if(typeof(exec_obj)=='undefined'){
-                exec_obj = document.createElement('iframe');
-                exec_obj.name = 'tmp_frame';
-                exec_obj.src = 'http://localhost:4000/executeC.html';
-                exec_obj.style.display = 'none';
-                document.body.appendChild(exec_obj);
-            }else{
-                exec_obj.src = 'http://localhost:4000/executeC.html?' + Math.random();
-            }
-        }
-    </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="assets/favicon/favicon-16x16.png">
+  <script>
+    var head = document.getElementsByTagName('head')[0];
+    var angularScript = document.createElement('script');
+    angularScript.type = 'text/javascript';
+    angularScript.src = 'assets/js/jianji-angular2.js?' + Math.random();
+    var commonScript = document.createElement('script');
+    commonScript.type = 'text/javascript';
+    commonScript.src = 'assets/js/jianji-common.js?' + Math.random();
 
+    head.appendChild(angularScript);
+    head.appendChild(commonScript);
+  </script>
+  <script src="//assets.kf5.com/supportbox/main.js" id="kf5-provide-supportBox" kf5-domain="yongzc.kf5.com"></script>
+  <script src="assets/js/jquery-1.12.4.min.js"></script>
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?02ebcf567e4c14887d477aaf7ef7f2b4";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+
+    window.KF5SupportBoxAPI.ready(function()
+    {
+      // 隐藏默认按钮
+      window.KF5SupportBoxAPI.hideButton();
+    });
+  </script>
+  <script>
+    (function(para) {
+      var p = para.sdk_url, n = para.name, w = window, d = document, s = 'script',x = null,y = null;
+      w['sensorsDataAnalytic201505'] = n;
+      w[n] = w[n] || function(a) {return function() {(w[n]._q = w[n]._q || []).push([a, arguments]);}};
+      var ifs = ['track','quick','register','registerPage','registerOnce','clearAllRegister','trackSignup', 'trackAbtest', 'setProfile','setOnceProfile','appendProfile', 'incrementProfile', 'deleteProfile', 'unsetProfile', 'identify','login','logout','trackLink','clearAllRegister'];
+      for (var i = 0; i < ifs.length; i++) {
+        w[n][ifs[i]] = w[n].call(null, ifs[i]);
+      }
+      if (!w[n]._t) {
+        x = d.createElement(s), y = d.getElementsByTagName(s)[0];
+        x.async = 1;
+        x.src = p;
+        y.parentNode.insertBefore(x, y);
+        w[n].para = para;
+      }
+    })({
+      sdk_url: 'https://static.sensorsdata.cn/sdk/1.7.1.2/sensorsdata.min.js',
+      name: 'sa',
+      server_url: 'http://jianji.cloud.sensorsdata.cn:8006/sa?token=41e9964e1c27b1b3'
+    });
+  </script>
 </head>
-
 <body>
-<p>A.html main</p>
-<p><input type="button" value="exec iframe function" onclick="exec_iframe()"></p>
-<iframe src="http://localhost:4000/index.html" name="myframe" width="500" height="100"></iframe>
-</body>
+<jj-app>
+  <div class="loading"></div>
+</jj-app>
+<script type="text/javascript" src="inline.bundle.js"></script><script type="text/javascript" src="styles.bundle.js"></script><script type="text/javascript" src="scripts.bundle.js"></script><script type="text/javascript" src="main.bundle.js"></script></body>
 </html>

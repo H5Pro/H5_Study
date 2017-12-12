@@ -12,8 +12,8 @@ import { AddUnitTypeContentComponent } from './unit-cascder/add-unit-type-conten
 import { LeeDialogComponent } from './common/components/lee-dialog/lee-dialog.component';
 import { FixedCenterDirective } from './common/directive/fixed-center.directive';
 import { DialogModule } from 'primeng/primeng';
-import { MessageModule } from './message/message.module';
 import { LeeNotifyModule } from './common/components/lee-notify/lee-notify.module';
+import { LeeRefreshListModule } from './common/components/lee-refresh-list/lee-refresh-list.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,9 +30,9 @@ import { LeeNotifyModule } from './common/components/lee-notify/lee-notify.modul
     FormsModule,
     ConfirmDialogModule,
     DialogModule,
-   MessageModule,
     BrowserAnimationsModule,
-    LeeNotifyModule
+    LeeNotifyModule,
+    LeeRefreshListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

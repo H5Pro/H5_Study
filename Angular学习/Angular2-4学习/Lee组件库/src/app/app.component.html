@@ -1,9 +1,25 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <unit-cascader [(ngModel)]="unit"></unit-cascader>
 <div appFixedCenter style="width: 100px; height: 100px"></div>
-<message>
-  <button>点击出现</button>
-</message>
 
 <lee-notify [life]="3000" [value]="messages"></lee-notify>
 <button (click)="notify()">提示</button>
+
+<lee-refresh-list>
+  <lee-refresh-list-header>
+    <div>我的消息</div>
+  <lee-refresh-list-content>
+    <lee-refresh-list-section *ngFor="let classify of msgs; let section=index">
+     <!--<div>123</div>-->
+      <lee-refresh-list-section-header>
+        <div>123</div>
+      </lee-refresh-list-section-header>
+      <lee-refresh-list-section-content>
+        <div>ddd</div>
+        <lee-refresh-list-cell>
+        </lee-refresh-list-cell>
+      </lee-refresh-list-section-content>
+    </lee-refresh-list-section>
+  </lee-refresh-list-content>
+</lee-refresh-list>
+

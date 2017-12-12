@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { LeeNotifyMessage } from './common/components/lee-notify/lee-notify-message';
+import { messages } from './messages';
 @Component({
   selector: 'lee-root',
   templateUrl: './app.component.html',
@@ -15,4 +16,5 @@ export class AppComponent {
     };
     this.messages.push(message);
   }
+  msgs = messages;
 }

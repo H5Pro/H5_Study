@@ -1,9 +1,0 @@
-<div [hidden]="!visible" (click)="visible=false" class="lee-sidebar-mask"></div>
-<div *ngIf = "visible" [@message]="messageState" class="lee-sidebar-container">
-  <div class="lee-sidebar-left-content">
-    <ng-content select=".left"></ng-content>
-  </div>
-  <div class="lee-sidebar-right-content">
-    <ng-content select=".right"></ng-content>
-  </div>
-</div>
