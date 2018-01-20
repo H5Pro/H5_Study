@@ -1,14 +1,13 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 
 class SecondComponent extends Component {
   render() {
     return (
-            <h1>Hello SecondComponent</h1>
+            <div className="Second-component">
+              <h1>Hello SecondComponent</h1>
+            </div>
     );
   }
 }
-
-SecondComponent.propTypes = {};
 
 export default SecondComponent;
