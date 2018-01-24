@@ -5,20 +5,26 @@ class Clock extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      date: new Date()
+      date: new Date(),
+      name: 'fjl'
     }
   };
   componentDidMount () {
-    setInterval(() => {
-      this.state.date = new Date();
-      console.log(this.state.date)
+    this.timerID = setInterval(() => {
+      this.setState({
+        date: new Date()
+      });
     }, 1000)
+  }
+  componentWillUnmount() {
+    clearInterval(this.timerID);
   }
   render() {
     return (
             <div className="Clock">
               <h1>Hello Clock</h1>
-              <h2>It is {this.state.date.toLocaleTimeString()}</h2>
+              <h2>It is {this.state.date.toLocaleTimeString()} my name is {this.state.name}</h2>
+
             </div>
     );
   }
