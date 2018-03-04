@@ -1,57 +1,26 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
+import React, {Component} from 'react';
+// import StackNavigator from './components/02advance/02navigator/stackNavigator'
+import TabNavigator from './components/02advance/02navigator/tabNavigator'
+import StackAndTabNavigator from './components/02advance/02navigator/stackAndTabNavigator/navigator/index'
 
-import React, { Component } from 'react';
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
 
-export default class App extends Component<{}> {
+class App extends Component {
+
+
   render() {
+    const onNavigationStateChange = (prevState, newState, action) => {
+      var preRoute = prevState.routes[prevState.routes.length - 1];
+      var newRoute = newState.routes[newState.routes.length - 1];
+      if (preRoute.routeName !== newRoute.routeName) {
+        console.log(preRoute.routeName);
+        console.log(newRoute.routeName);
+      }
+    }
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
-      </View>
-    );
+            <StackAndTabNavigator/>
+    )
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+export default  App;

@@ -22,6 +22,7 @@ class FormInput extends Component {
             <form class="form-input">
               <label>
                 备注
+                {this.state.remark}
                 <textarea value={this.state.remark} onChange={this.handleChange}></textarea>
               </label>
             </form>

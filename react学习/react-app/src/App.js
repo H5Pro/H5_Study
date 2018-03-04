@@ -7,7 +7,6 @@ import ReactRedux from './components/ReactRedux'
 class App extends Component {
   render() {
     return (
-
             <div className="app">
               <header className="app-header">
                 {/*<img src={logo} classyName="app-logo" alt="logo" />*/}
@@ -18,9 +17,8 @@ class App extends Component {
                 To get started, edit <code>src/app.js</code> and save to reload.
               </p>
               */}
-              {/*<ReactStart/>*/}
+              <ReactStart/>
               {/*<ReactRouter/>*/}
-              <ReactRedux/>
             </div>
     );
   }
