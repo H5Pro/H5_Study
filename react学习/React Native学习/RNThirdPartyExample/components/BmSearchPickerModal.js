@@ -5,14 +5,12 @@
 import React, {Component} from 'react'
 import {
   View,
-  Text,
   Modal,
-  Platform,
-  TouchableOpacity,
-  TouchableNativeFeedback
+  TouchableOpacity
 } from 'react-native'
 import BmSearchHeader from './BmSearchHeader'
 import BmSearchList from './BmSearchList'
+const MyButton = TouchableOpacity
 class BmSearchPickerModal extends Component {
   constructor (props) {
     super(props)
@@ -23,7 +21,6 @@ class BmSearchPickerModal extends Component {
   }
   render() {
     let {children} = this.props
-    const MyButton = Platform.OS === 'ios' ? TouchableOpacity : TouchableNativeFeedback
     return (
       <View>
         <Modal
