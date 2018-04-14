@@ -10,33 +10,52 @@ class BmSearchPicker extends Component {
   }
   render() {
     let {
+      // 属性
       labelKey,       // 显示的主要文字
       valueKey,       // 选中的值
       searchKey,      // 查询字段
       iconKey,        // 图标字段
       summaryKey,     // 显示的次要文字
       data,           // 要渲染的数据
-      onValueChange,  // 值改变触发该方法,
-      renderItem      // 自定义列表项
+      selectedValue,  // 当前选中的值
+      renderItem,     // 自定义列表项   (该属性存在时，默认的列表项将被覆盖)
+      children,       // 自定义显示内容 (该属性存在时，选择器的默认呈现将被覆盖)
+      // 回调函数
+      onValueChange,  // 值改变触发该方法
+      onSelect,       // 选择事件的回调
     } = this.props
     labelKey = labelKey || 'label'
     valueKey = valueKey || 'value'
     searchKey = searchKey || labelKey
     iconKey = iconKey || 'icon'
     summaryKey = summaryKey || 'summary'
+
+    if (selectedValue && data) {
+      for (var i = 0; i < data.length; i++) {
+        var obj = data[i]
+        if (obj[valueKey] === selectedValue) {
+          this.state.selectItem = obj
+          break
+        }
+      }
+    }
+
     return (
       <BmSearchPickerModal
         data={data}
         value={this.state.selectItem}
-        onSelect={({item}) => {
-          this.setState({selectItem: item})
+        onSelect={(target) => {
+          let {item} = target
+          if (onSelect && typeof onSelect === 'function') {
+            this.props.onSelect(target)
+          }
           if (onValueChange && typeof onValueChange === 'function') {
             onValueChange(item[valueKey])
           }
         }}
         searchKey={searchKey}
         renderItem={
-          this.props.renderItem ||
+          renderItem ||
           (({item}) => {
             return(
               <View style={styles.bm_search_picker_item}>
@@ -52,24 +71,13 @@ class BmSearchPicker extends Component {
             )
         })}
       >
-        <View style={{width: 100, height: 50, backgroundColor: 'blue'}}>
-          <Text>{this.state.selectItem ? this.state.selectItem[labelKey] : ''}</Text>
-        </View>
+        {
+          children || <View style={{width: 100, height: 50, backgroundColor: 'blue'}}>
+            <Text>{this.state.selectItem ? this.state.selectItem[labelKey] : ''}</Text>
+          </View>
+        }
       </BmSearchPickerModal>
     )
-  }
-  componentWillMount() {
-    let {selectedValue, data, valueKey} = this.props
-    valueKey = valueKey || 'value'
-    if (selectedValue && data) {
-      for (var i = 0; i < data.length; i++) {
-        var obj = data[i]
-        if (obj[valueKey] === selectedValue) {
-          this.state.selectItem = obj
-          break
-        }
-      }
-    }
   }
 }
 

@@ -112,7 +112,6 @@ const styles = StyleSheet.create({
     minWidth: 64,
     height: 64,
     top: -20,
-    // backgroundColor: 'gray',
     paddingTop: 20,
     paddingBottom: 44 - DEFALUT_NAVIGATION_HEIGHT,
     justifyContent: 'center'
