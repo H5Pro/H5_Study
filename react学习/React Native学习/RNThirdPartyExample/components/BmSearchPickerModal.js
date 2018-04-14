@@ -11,6 +11,7 @@ import {
 import BmSearchHeader from './BmSearchHeader'
 import BmSearchList from './BmSearchList'
 const MyButton = TouchableOpacity
+const BACKGROUNG_COLOR = '#F2F2F2'
 class BmSearchPickerModal extends Component {
   constructor (props) {
     super(props)
@@ -21,40 +22,43 @@ class BmSearchPickerModal extends Component {
   }
   render() {
     let {children} = this.props
+    let content = null
+    if (this.state.show) {
+      content = <View style={{flex: 1, backgroundColor: BACKGROUNG_COLOR}}>
+        <BmSearchHeader
+          onCancel={() => {
+            this.setState({show: false})
+          }}
+          value={this.state.searchStr}
+          onChangeText={text => {
+            this.setState({searchStr: text})
+          }}
+        />
+        <BmSearchList
+          onSelect={(item) => {
+            this.setState({show: false}, () => {
+              this.props.onSelect(item)
+            })
+          }}
+          style={{backgroundColor: 'red'}}
+          searchKey={this.props.searchKey}
+          searchStr={this.state.searchStr}
+          data={this.props.data}
+          renderItem={this.props.renderItem}
+        />
+      </View>
+    }
     return (
       <View>
         <Modal
-          animationType={"slide"}
+          animationType={'slide'}
           transparent={false}
           visible={this.state.show}
           onRequestClose={() => {
             this.setState({show: false})
           }}
         >
-          <View style={{flex: 1, backgroundColor: '#f2f2f2'}}>
-            <BmSearchHeader
-              onCancel={() => {
-                this.setState({show: false})
-              }}
-              value={this.state.searchStr}
-              onChangeText={text => {
-                console.log(text)
-                this.setState({searchStr: text})
-              }}
-            />
-            <BmSearchList
-              onSelect={(item) => {
-                this.setState({show: false}, () => {
-                  this.props.onSelect(item)
-                })
-              }}
-              style={{backgroundColor: 'red'}}
-              searchKey={this.props.searchKey}
-              searchStr={this.state.searchStr}
-              data={this.props.data}
-              renderItem={this.props.renderItem}
-            />
-          </View>
+          {content}
         </Modal>
         <MyButton
           onPress={() => {
