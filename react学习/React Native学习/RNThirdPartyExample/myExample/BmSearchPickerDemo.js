@@ -5,6 +5,7 @@
 import React, {Component} from 'react'
 import {View, Text} from 'react-native'
 import BmSearchPicker from '../components/BmSearchPicker'
+import Icon from 'react-native-vector-icons/FontAwesome'
 const data = [
   {
     title: 'btc',
@@ -28,6 +29,7 @@ class BmSearchPickerDemo extends Component {
     let {value: selectedValue = '', title: selectedLabel = ''}= this.state.selectedItem
     return (
       <View style={{marginTop: 20}}>
+        <Icon name="rocket" size={30} color={'#123'} />
         <Text style={{fontSize: 20, padding: 10}}>默认</Text>
         <BmSearchPicker
           selectedValue={selectedValue}
