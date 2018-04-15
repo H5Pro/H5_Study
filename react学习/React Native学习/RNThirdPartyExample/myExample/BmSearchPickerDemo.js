@@ -8,15 +8,365 @@ import BmSearchPicker from '../components/BmSearchPicker'
 import Icon from 'react-native-vector-icons/FontAwesome'
 const data = [
   {
-    title: 'btc',
-    summary: 'ww',
-    value: '2'
+    title: 'BTC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 1
   },
   {
-    title: 'atc',
-    summary: '333',
-    value: '3'
-  }
+    title: 'ATC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 2
+  },
+  {
+    title: 'BTC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 1
+  },
+  {
+    title: 'ATC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 2
+  },
+  {
+    title: 'BTC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 1
+  },
+  {
+    title: 'ATC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 2
+  },
+  {
+    title: 'BTC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 1
+  },
+  {
+    title: 'ATC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 2
+  },
+  {
+    title: 'BTC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 1
+  },
+  {
+    title: 'ATC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 2
+  },
+  {
+    title: 'BTC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 1
+  },
+  {
+    title: 'ATC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 2
+  },
+  {
+    title: 'BTC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 1
+  },
+  {
+    title: 'ATC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 2
+  },
+  {
+    title: 'BTC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 1
+  },
+  {
+    title: 'ATC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 2
+  },
+  {
+    title: 'BTC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 1
+  },
+  {
+    title: 'ATC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 2
+  },
+  {
+    title: 'BTC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 1
+  },
+  {
+    title: 'ATC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 2
+  },
+  {
+    title: 'BTC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 1
+  },
+  {
+    title: 'ATC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 2
+  },
+  {
+    title: 'BTC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 1
+  },
+  {
+    title: 'ATC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 2
+  },
+  {
+    title: 'BTC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 1
+  },
+  {
+    title: 'ATC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 2
+  },
+  {
+    title: 'BTC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 1
+  },
+  {
+    title: 'ATC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 2
+  },
+  {
+    title: 'BTC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 1
+  },
+  {
+    title: 'ATC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 2
+  },
+  {
+    title: 'BTC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 1
+  },
+  {
+    title: 'ATC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 2
+  },
+  {
+    title: 'BTC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 1
+  },
+  {
+    title: 'ATC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 2
+  },
+  {
+    title: 'BTC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 1
+  },
+  {
+    title: 'ATC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 2
+  },
+  {
+    title: 'BTC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 1
+  },
+  {
+    title: 'ATC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 2
+  },
+  {
+    title: 'BTC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 1
+  },
+  {
+    title: 'ATC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 2
+  },
+  {
+    title: 'BTC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 1
+  },
+  {
+    title: 'ATC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 2
+  },
+  {
+    title: 'BTC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 1
+  },
+  {
+    title: 'ATC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 2
+  },
+  {
+    title: 'BTC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 1
+  },
+  {
+    title: 'ATC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 2
+  },
+  {
+    title: 'BTC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 1
+  },
+  {
+    title: 'ATC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 2
+  },
+  {
+    title: 'BTC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 1
+  },
+  {
+    title: 'ATC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 2
+  },
+  {
+    title: 'BTC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 1
+  },
+  {
+    title: 'ATC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 2
+  },
+  {
+    title: 'BTC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 1
+  },
+  {
+    title: 'ATC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 2
+  },
+  {
+    title: 'BTC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 1
+  },
+  {
+    title: 'ATC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 2
+  },
+  {
+    title: 'BTC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 1
+  },
+  {
+    title: 'ATC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 2
+  },
+  {
+    title: 'BTC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 1
+  },
+  {
+    title: 'ATC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 2
+  },
+  {
+    title: 'BTC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 1
+  },
+  {
+    title: 'ATC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 2
+  },
+  {
+    title: 'BTC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 1
+  },
+  {
+    title: 'ATC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 2
+  },
+  {
+    title: 'BTC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 1
+  },
+  {
+    title: 'ATC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 2
+  },
+  {
+    title: 'BTC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 1
+  },
+  {
+    title: 'ATC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 2
+  },
+  {
+    title: 'BTC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 1
+  },
+  {
+    title: 'ATC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 2
+  },
+  {
+    title: 'BTC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 1
+  },
+  {
+    title: 'ATC',
+    icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523768044686&di=897c504b8804a64ce6ebd6a8c781a347&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F16%2F33%2F59q58PICk5w_1024.jpg',
+    value: 2
+  },
 ]
 class BmSearchPickerDemo extends Component {
   constructor (props) {
@@ -36,7 +386,7 @@ class BmSearchPickerDemo extends Component {
           onSelect={({item}) => {
             this.setState({selectedItem: item})
           }}
-          searchKey={'title,summary'}
+          searchKey={'title'}
           labelKey={'title'}
           data={data}
         >
@@ -47,7 +397,7 @@ class BmSearchPickerDemo extends Component {
           onSelect={({item}) => {
             this.setState({selectedItem: item})
           }}
-          searchKey={'title,summary'}
+          searchKey={'title'}
           renderItem={({item}) =>{
             return  (<View style={{backgroundColor: 'red', height: 40}}>
               <Text>{item.title}</Text>

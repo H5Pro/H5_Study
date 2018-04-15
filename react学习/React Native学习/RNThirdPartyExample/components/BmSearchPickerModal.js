@@ -67,7 +67,6 @@ class BmSearchPickerModal extends Component {
         >
           {children}
         </MyButton>
-
       </View>
     );
   }

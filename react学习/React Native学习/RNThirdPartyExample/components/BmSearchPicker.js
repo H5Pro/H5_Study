@@ -4,6 +4,7 @@ import BmSearchPickerModal from './BmSearchPickerModal'
 import Icon from 'react-native-vector-icons/FontAwesome'
 const DEFAULT_FONT_SIZE = 18
 const DEFAULT_ICON_COLOR = '#747474'
+const DEFAULT_ITEM_ICON_WIDTH = 30
 class BmSearchPicker extends Component {
   constructor (props) {
     super(props)
@@ -67,17 +68,27 @@ class BmSearchPicker extends Component {
         searchKey={searchKey}
         renderItem={
           renderItem ||
-          (({item}) => {
+          (({item, index}) => {
+
             return(
-              <View style={styles.bm_search_picker_item}>
-                <View style={styles.bm_search_picker_item_main}>
-                  {
-                    item[iconKey] &&
-                    <Image resource={item[iconKey]} />
-                  }
-                  <Text style={styles.bm_search_picker_item_text}>{item[labelKey]}</Text>
+              <View style={{paddingHorizontal: 10}}>
+                <View style={styles.bm_search_picker_item}>
+                  <View style={styles.bm_search_picker_item_main}>
+                    {
+                      item[iconKey] &&
+                      <Image
+                        style={styles.bm_search_picker_item_icon}
+                        source={{uri:item[iconKey]}}
+                      />
+                    }
+                    <Text style={styles.bm_search_picker_item_text}>{item[labelKey]}</Text>
+                  </View>
+                  <Text style={styles.bm_search_picker_item_summary}>{item[summaryKey]}</Text>
                 </View>
-                <Text style={styles.bm_search_picker_item_summary}>{item[summaryKey]}</Text>
+                {
+                  index !== data.length - 1 &&
+                  <View style={{backgroundColor: '#dfdfdf', height: 1}}></View>
+                }
               </View>
             )
           })}
@@ -100,22 +111,31 @@ class BmSearchPicker extends Component {
 
 const styles = StyleSheet.create({
   bm_search_picker_item: {
-    borderBottomWidth: 0.5,
-    borderBottomColor: '#999',
+    // borderBottomWidth: 0.5,
+    // borderBottomColor: '#999',
     justifyContent: 'space-between',
-    flexDirection: 'row'
+    alignItems: 'center',
+    flexDirection: 'row',
+    height: 44
   },
   bm_search_picker_item_main: {
-
+    flexDirection: 'row',
+    alignItems: 'center'
   },
   bm_search_picker_item_text: {
-    fontSize: 16
+    fontSize: 20,
+    color: '#333',
+    fontWeight: '400'
   },
   bm_search_picker_item_summary: {
-    fontSize: 14
+    fontSize: 16,
+    color: '#999'
   },
   bm_search_picker_item_icon: {
-
+    width: DEFAULT_ITEM_ICON_WIDTH,
+    height: DEFAULT_ITEM_ICON_WIDTH,
+    borderRadius: DEFAULT_ITEM_ICON_WIDTH/2,
+    marginRight: 20
   },
   bm_search_picker_item_checked: {
 
