@@ -372,7 +372,8 @@ class BmSearchPickerDemo extends Component {
   constructor (props) {
     super(props)
     this.state= {
-      selectedItem: (data && data.length > 0) ? data[0] : {}
+      selectedItem: (data && data.length > 0) ? data[0] : {},
+      value: 1,
     }
   }
   render() {
@@ -382,9 +383,9 @@ class BmSearchPickerDemo extends Component {
         <Icon name="rocket" size={30} color={'#123'} />
         <Text style={{fontSize: 20, padding: 10}}>默认</Text>
         <BmSearchPicker
-          selectedValue={selectedValue}
-          onSelect={({item}) => {
-            this.setState({selectedItem: item})
+          selectedValue={this.state.value}
+          onValueChange={(value) => {
+            this.setState({value})
           }}
           searchKey={'title'}
           labelKey={'title'}
