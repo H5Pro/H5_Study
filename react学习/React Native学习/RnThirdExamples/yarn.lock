@@ -4623,6 +4623,10 @@ react-native-modal-popover@^0.0.7:
     lodash.debounce "^4.0.8"
     prop-types "^15.6.0"
 
+react-native-permissions@^1.1.1:
+  version "1.1.1"
+  resolved "http://registry.npm.taobao.org/react-native-permissions/download/react-native-permissions-1.1.1.tgz#4876004681ff8556454613d85249b01baff9b35b"
+
 react-native-popover@^0.2.0:
   version "0.2.0"
   resolved "http://registry.npm.taobao.org/react-native-popover/download/react-native-popover-0.2.0.tgz#bf66a4ce5d0583ff331edb00890380f4a1171f6f"
@@ -4632,6 +4636,13 @@ react-native-popover@^0.2.0:
 react-native-popup-menu@^0.12.5:
   version "0.12.6"
   resolved "http://registry.npm.taobao.org/react-native-popup-menu/download/react-native-popup-menu-0.12.6.tgz#6b599106b3934f672781716242780dc6c562cdf3"
+
+react-native-qrcode-scanner@^1.0.1:
+  version "1.0.1"
+  resolved "http://registry.npm.taobao.org/react-native-qrcode-scanner/download/react-native-qrcode-scanner-1.0.1.tgz#96b18d8058f4b472bda4b34f8a08fddbc33d50eb"
+  dependencies:
+    prop-types "^15.5.10"
+    react-native-permissions "^1.1.1"
 
 react-native-router-flux@^4.0.0-beta.28:
   version "4.0.0-beta.31"

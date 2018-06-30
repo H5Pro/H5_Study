@@ -14,7 +14,7 @@ import {View, Picker} from 'react-native'
 // import PopupMenuExample from './examples/react-native-popup-menu'
 // import NativeBase from '../RnThirdExamples/examples/native-base'
 // import ReactNativeTabView from './examples/react-native-tab-view'
-import QrCodeScannerExample from './examples/react-native-qrcode-scanner/default'
+import QrCodeScannerExample from './examples/react-native-qrcode-scanner'
 export default class App extends Component{
   render() {
     return (

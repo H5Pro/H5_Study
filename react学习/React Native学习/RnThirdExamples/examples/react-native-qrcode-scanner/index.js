@@ -1,3 +1,7 @@
+/**
+ * Created by fjl on 2018/6/30
+ */
+
 'use strict';
 
 import React, { Component } from 'react';
@@ -58,4 +62,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('default', () => ScanScreen);
+export default ScanScreen
