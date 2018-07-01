@@ -1,16 +1,18 @@
 /**
  * Created by fjl on 2018/7/1
  */
+/**
+ * Created by fjl on 2018/7/1
+ */
 import React, {
   Component,
 } from 'react'
 import {
   View,
-  StyleSheet,
   Alert,
 } from 'react-native'
 
-import Barcode from 'react-native-smart-barcode'
+import Barcode from './react-native-smart-barcode'
 import TimerEnhance from 'react-native-smart-timer-enhance'
 
 class BarcodeTest extends Component {
