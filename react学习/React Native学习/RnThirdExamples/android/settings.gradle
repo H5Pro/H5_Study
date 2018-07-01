@@ -1,3 +1,6 @@
 rootProject.name = 'RnThirdExamples'
 
 include ':app'
+
+include ':react-native-smart-barcode'
+project(':react-native-smart-barcode').projectDir = new File(rootProject.projectDir, '../components/BmQrcodeScanner/react-native-smart-barcode/android')

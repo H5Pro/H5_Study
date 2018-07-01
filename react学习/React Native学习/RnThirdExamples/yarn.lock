@@ -4443,6 +4443,10 @@ react-native-search-list@^0.1.0:
   dependencies:
     react-native-search-bar-tst "3.0.0"
 
+react-native-smart-timer-enhance@^1.0.3:
+  version "1.0.3"
+  resolved "http://registry.npm.taobao.org/react-native-smart-timer-enhance/download/react-native-smart-timer-enhance-1.0.3.tgz#47ddc19be5a6c19184449039495f25546bcd94fe"
+
 react-native-tab-view@^0.0.77:
   version "0.0.77"
   resolved "http://registry.npm.taobao.org/react-native-tab-view/download/react-native-tab-view-0.0.77.tgz#11ceb8e7c23100d07e628dc151b57797524d00d4"
