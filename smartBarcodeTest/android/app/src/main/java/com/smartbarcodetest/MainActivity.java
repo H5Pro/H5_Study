@@ -1,6 +1,7 @@
 package com.smartbarcodetest;
 
 import com.facebook.react.ReactActivity;
+import com.reactnativecomponent.barcode.RCTCapturePackage;    //import RCTCapturePackage
 
 public class MainActivity extends ReactActivity {
 
@@ -12,4 +13,25 @@ public class MainActivity extends ReactActivity {
     protected String getMainComponentName() {
         return "smartBarcodeTest";
     }
+    protected void onCreate(Bundle savedInstanceState) {
+        MainApplication application = (MainApplication) this.getApplication();
+        application.setReactNativeHost(new ReactNativeHost(application) {
+            @Override
+            protected boolean getUseDeveloperSupport() {
+                return BuildConfig.DEBUG;
+            }
+
+            @Override
+            protected List<ReactPackage> getPackages() {
+                return Arrays.<ReactPackage>asList(
+                        new MainReactPackage(),
+                        new RCTCapturePackage(MainActivity.this)    //register Module
+                );
+            }
+
+        });
+
+        super.onCreate(savedInstanceState);
+    }
 }
+

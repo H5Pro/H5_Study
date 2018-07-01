@@ -11,7 +11,7 @@ import {
   Text,
   View
 } from 'react-native';
-import SmartBarCodeExample from './SmartBarCodeExample'
+import BmQrcodeScanner from './components/BmQrcodeScanner'
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
     'Cmd+D or shake for dev menu',
@@ -23,7 +23,7 @@ type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
-      <SmartBarCodeExample />
+      <BmQrcodeScanner />
     );
   }
 }
