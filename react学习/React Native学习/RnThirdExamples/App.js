@@ -14,7 +14,7 @@ import {View} from 'react-native'
 // import PopupMenuExample from './examples/react-native-popup-menu'
 // import NativeBase from '../RnThirdExamples/examples/native-base'
 // import ReactNativeTabView from './examples/react-native-tab-view'
-import BmQrcodeScanner from './components/BmQrcodeScanner'
+import BmQrcodeScanner from './components/BmQrcodeScanner' // 扫码功能
 export default class App extends Component{
   render() {
     return (
