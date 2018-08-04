@@ -1,5 +1,0 @@
-rootProject.name = 'smartBarcodeTest'
-
-include ':app'
-include ':react-native-smart-barcode'
-project(':react-native-smart-barcode').projectDir = new File(rootProject.projectDir, '../components/react-native-smart-barcode/android')
