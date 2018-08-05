@@ -13,6 +13,7 @@
     "react-native": "0.55.4",
     "react-native-atoz-listview": "^0.0.7",
     "react-native-input-password": "^1.0.5",
+    "react-native-loader": "^1.2.1",
     "react-native-modal-popover": "^0.0.7",
     "react-native-pay-password": "^0.0.2",
     "react-native-popover": "^0.2.0",
