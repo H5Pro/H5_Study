@@ -41,7 +41,12 @@ class BmLoader extends Component {
 }
 const styles = StyleSheet.create({
   overlay: {
-    flex: 1,
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    width: '100%',
+    height: '100%',
+    zIndex: 100,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: DEFALUT_OVERLAY_COLOR,
