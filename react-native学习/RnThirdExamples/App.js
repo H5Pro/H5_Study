@@ -18,10 +18,11 @@ import ReactNativeSearchBar from './examples/react-native-search-bar'
 // import Web3 from './examples/web3js'
 // import PayPasswordExample from './examples/react-native-pay-password'
 // import BmLoaderDemo from './myExample/BmLoaderDemo'
+import RNPopupDialog from './examples/react-native-popup-dialog'
 class App extends Component {
   render () {
     return (
-      <ReactNativeSearchBar />
+      <RNPopupDialog />
     )
   }
 }
