@@ -48,9 +48,18 @@ export default class App extends Component<{}, { search: string }> {
 
           <Text style={styles.header}>Search Example</Text>
           <SearchBar
+            // barTintColor={'#d6d6d6'}
+            barStyle={'default'}
+            searchBarStyle={'minimal'}
+            textColor={'green'}
+            autoCapitalize={'none'}
+            // tintColor={'yellow'}
+            // textFieldBackgroundColor={'red'}
             text={this.state.search}
             ref={ref => (this.search2 = ref)}
             onChange={e => console.log(e.nativeEvent)}
+            placeholder={'搜索'}
+            cancelButtonText={' 取消 '}
             onChangeText={search => this.setState({ search })}
             onSearchButtonPress={() => this.search2.blur()}
           />
