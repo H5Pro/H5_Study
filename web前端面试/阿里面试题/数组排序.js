@@ -86,7 +86,7 @@ const quickSort = (arr, left, right) => {
         return arr
     }
 }
-const aa = [3,44,38,5,47,15,36,26,27,2,46,4,19,50,48]
+const aa = [3,2,1,4,5,6]
 console.log(bubbleSort(aa))
 console.log(selectionSort(aa))
 console.log(insertionSort(aa))

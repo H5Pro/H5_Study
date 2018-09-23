@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .container{
+
+        }
+        .list1{
+            float: left;
+            margin-top: 0;
+            width: 33%;
+            background: lightgrey;
+        }
+        .list2{
+            margin-top: 0;
+            float: left;
+            width: 33%;
+            background: lightgrey;
+        }
+        .item1, .item2, .item3{
+            background: gray;
+            margin: 10px 0;
+        }
+        .item3{
+            background: chartreuse;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<div id="my-app" class="container">
+    <ul id="ul1" class="list1">
+        <li class="item1">1</li>
+        <li class="item1">2</li>
+        <li class="item1">3</li>
+        <li class="item1">4</li>
+    </ul>
+    <ul id="ul2" class="list2">
+        <li class="item2">a</li>
+        <li class="item2">b</li>
+        <li class="item2">c</li>
+        <li class="item2">d</li>
+    </ul>
+</div>
+<script>
+    function swapNodes(a,b){
+        if(a===b)return
+        // 记录父元素
+        var bp=b.parentNode, ap=a.parentNode
+        // 记录下一个同级元素
+        var an=a.nextElementSibling, bn=b.nextElementSibling
+        if (a.contains(b)) ap.insertBefore(b, an)
+        else if (b.contains(a)) bp.insertBefore(a, bn)
+        else bp.insertBefore(a,bn), ap.insertBefore(b,an)
+    }
+    // 1. 查找节点
+    var myApp = document.getElementById('my-app')
+    var ul1 = document.getElementById('ul1')
+    var ul2 = document.getElementById('ul2')
+    var li1s = ul1.getElementsByTagName('li')
+    var li2s = ul2.getElementsByTagName('li')
+    // swapNodes(li1s[0], li1s[3])
+    // swapNodes(ul2, li1s[3])
+    swapNodes(li1s[0], myApp)
+    // swapNodes(ul1, li1s[3])
+    // ul1.insertBefore(li1s[2], li1s[0])
+</script>
+</body>

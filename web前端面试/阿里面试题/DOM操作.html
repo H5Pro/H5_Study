@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .container{
+
+        }
+        .list1{
+            float: left;
+            margin-top: 0;
+            width: 33%;
+            background: lightgrey;
+        }
+        .list2{
+            margin-top: 0;
+            float: left;
+            width: 33%;
+            background: lightgrey;
+        }
+        .item1, .item2, .item3{
+            background: gray;
+            margin: 10px 0;
+        }
+        .item3{
+            background: chartreuse;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<div id="my-app" class="container">
+    <ul id="ul1" class="list1">
+        <li class="item1">1</li>
+        <li class="item1">2</li>
+        <li class="item1">3</li>
+        <li class="item1">4</li>
+    </ul>
+    <ul id="ul2" class="list2">
+        <li class="item2">a</li>
+        <li class="item2">b</li>
+        <li class="item2">c</li>
+        <li class="item2">d</li>
+    </ul>
+    <div style="background: red">adafsadfsaf adafsadfsaf adafsadfsaf adafsadfsaf
+        adafsadfsaf
+        adafsadfsaf
+        adafsadfsaf
+        adafsadfsafadafsadfsaf
+        adafsadfsafadafsadfsaf
+        adafsadfsaf adafsadfsaf adafsadfsaf adafsadfsaf
+        adafsadfsaf
+        adafsadfsaf
+        adafsadfsaf
+        adafsadfsafadafsadfsaf
+        adafsadfsafadafsadfsaf
+        adafsadfsaf adafsadfsaf adafsadfsaf adafsadfsaf
+        adafsadfsaf
+        adafsadfsaf
+        adafsadfsaf
+        adafsadfsafadafsadfsaf
+        adafsadfsafadafsadfsaf
+
+    </div>
+</div>
+<script>
+    // 1. 查找节点
+    var ul1 = document.getElementById('ul1')
+    var ul2 = document.getElementById('ul2')
+    var item1s = ul1.getElementsByClassName('item1')
+    var li1s = ul1.getElementsByTagName('li')
+    var item2s = ul2.getElementsByClassName('item2')
+    var li2s = ul2.getElementsByTagName('li')
+    console.log(item1s)
+    console.log(li1s)
+    console.log(item2s)
+    console.log(li2s)
+
+    // 2. 新建节点
+    var li = document.createElement('li')
+    var text = document.createTextNode('')
+    text.nodeValue = '123'
+    var attr = document.createAttribute('class')
+    attr.nodeValue = 'item1'
+    console.log('node ', 'Value', 'Name', 'Type')
+    console.log('元素节点', li.nodeValue, li.nodeName, li.nodeType)
+    console.log('文本节点', text.nodeValue, text.nodeName, text.nodeType)
+    console.log('属性节点', attr.nodeValue, attr.nodeName, attr.nodeType)
+
+    // 3. 添加新节点
+    li.innerText='ssssssss'
+    li.setAttributeNode(attr)
+    li.setAttribute('style', "color: #fff")
+    ul1.insertBefore(li, li1s[0])
+    var liClone = li.cloneNode(true)
+    ul1.appendChild(liClone)
+
+    // 4. 删除节点
+    li.removeAttributeNode(attr)
+    li.removeAttribute('style')
+    ul1.removeChild(liClone)
+
+    // 5. 修改节点
+    liClone.setAttribute('class', 'item3')
+    var attrNode = document.createAttribute('style')
+    attrNode.nodeValue='color: blue'
+    liClone.setAttributeNode(attrNode)
+    ul1.replaceChild(liClone, li)
+
+</script>
+</body>
+</html>

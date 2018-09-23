@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .container{
+            margin: 20px;
+            background: #eee;
+        }
+        .container>.box{
+            background: lightgray;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+        }
+        .container.float{
+            background: black;
+            /*display: table;*/
+            /*overflow: hidden;*/
+        }
+        .clearfix:after {
+            content: " ";
+            display: block;
+            clear: both;
+            height: 0;
+            font-size: 0;
+            visibility: hidden;
+        }
+        /*.container.float:after{*/
+            /*content: '';*/
+            /*display: block;*/
+            /*clear: both;*/
+        /*}*/
+        .container.float>.box{
+            background: red;
+        }
+        .container.float>.box.left{
+            float: left;
+        }
+        .container.float>.box.right{
+            float: right;
+        }
+
+    </style>
+</head>
+<body>
+<div id="my-app">
+    <div class="container float clearfix">
+        <div class="box left"></div>
+        <div style="height: 60px" class="box left"></div>
+        <div style="height: 40px" class="box left"></div>
+        <div class="box left"></div>
+        <div class="box left"></div>
+        <div class="box left"></div>
+        <div class="box right"></div>
+        <div class="box right"></div>
+        <div class="box right"></div>
+    </div>
+    <div class="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+</div>
+</body>
+</html>
