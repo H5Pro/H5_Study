@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<canvas id="my_canvas"></canvas>
+
+<script>
+    var canvas = document.getElementById('my_canvas');
+    if(canvas.getContext){
+        var ctx = canvas.getContext('2d');
+        ctx.fillStyle = '#ff0000';
+        ctx.fillRect(0,0,80,80);
+        ctx.clearRect(10,10,60,60);
+        ctx.strokeStyle = '#0000ff';
+        ctx.strokeRect(20,20,40,40);
+    }else {
+      alert('当前浏览器不支持HTML5 CANVAS')
+    }
+
+
+
+</script>
+
+</body>
+</html>

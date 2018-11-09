@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02canvas绘制形状</title>
+    <script>
+        function draw() {
+          // 1. 矩形例子
+          const rCanvas = document.getElementById('rectangle')
+          const rCtx = rCanvas.getContext('2d')
+          rCtx.fillRect(0, 0, 150, 150)
+          rCtx.clearRect(40, 40, 70, 70)
+          rCtx.strokeRect(50, 50, 50, 50)
+
+          // 2. 绘制三角形
+          const tCanvas = document.getElementById('triangle')
+          const tCtx = tCanvas.getContext('2d')
+          tCtx.beginPath()
+          tCtx.moveTo(20, 80)
+          tCtx.lineTo(40, 50)
+          tCtx.lineTo(40, 110)
+          // tCtx.closePath()
+          tCtx.fill()
+
+          // 3. 移动笔触
+          const mCanvas = document.getElementById('move_stroke')
+          const mCtx = mCanvas.getContext('2d')
+          mCtx.beginPath()
+          mCtx.arc(75, 75, 50, 0, Math.PI * 2, true)
+          mCtx.moveTo(40, 75)
+          mCtx.arc(75, 75, 35, Math.PI, 0, true)
+          mCtx.moveTo(65, 65)
+          mCtx.arc(60, 65, 5, 0, Math.PI * 2, true)
+          mCtx.moveTo(95, 65)
+          mCtx.arc(90, 65, 5, 0, Math.PI * 2, true)
+          mCtx.moveTo(200, 75)
+          mCtx.stroke()
+        }
+    </script>
+    <style>
+        .title{
+
+        }
+        canvas{
+            background: #eee;
+        }
+    </style>
+</head>
+<body onload="draw()">
+<h4 class="title">1. 矩形例子</h4>
+<canvas id="rectangle"></canvas>
+<h4 class="title">2. 绘制三角形</h4>
+<canvas id="triangle"></canvas>
+<h4 class="title">3. 移动笔触</h4>
+<canvas id="move_stroke"></canvas>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>05canvas使用图片</title>
+    <style>
+        canvas{
+            background: #eee;
+        }
+    </style>
+    <script>
+        const draw = () => {
+          // 1. 绘制图片
+          const canvas = document.getElementById('use_picture')
+          const context = canvas.getContext('2d')
+          const image = document.images[0]
+          /* const image = new Image()
+          image.src = './assets/images/example_yrzx_3.jpg'
+          image.onload = () => {
+          }*/
+          context.drawImage(image, 0, 0, 300, 150)
+          // 2. 绘制视频
+          context.drawImage(canvas, 0, 0, 150, 150, 0, 0, 150, 150)
+          const cCanvas = document.getElementById('use_video')
+          cCanvas.width = 600
+          cCanvas.height = 300
+          const cCtx = cCanvas.getContext('2d')
+          const video = document.getElementById('video')
+          video.addEventListener('play', () => {
+            cCtx.drawImage(video, 0, 0)
+            setInterval(() => {
+              cCtx.drawImage(video, 0, 0)
+            }, 20)
+          })
+
+        }
+    </script>
+</head>
+<body onload="draw()">
+<h4>1. 绘制图片</h4>
+<img height="300" src="./assets/images/example_yrzx_1.jpg">
+<canvas id="use_picture"></canvas>
+<h4>2. 绘制视频</h4>
+<video id="video" controls src="./assets/images/big_buck_bunny.mp4"></video>
+<canvas id="use_video"></canvas>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas绘制摄像头</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        canvas{
+            background: red;
+        }
+    </style>
+    <script>
+      const NOT_SUPPORT_CAMERA_MSG = '对不起，您的浏览器不支持拍照功能，请使用其他浏览器'
+      const NOT_SUPPORT_CANVAS_MSG = '浏览器不支持HTML5 CANVAS'
+        width = document.documentElement.clientWidth,
+        height = document.documentElement.clientHeight
+      const mount = () => {
+        return new Promise((resolve, reject) => {
+          const video = document.getElementById('video')
+          video.width = width
+          video.height = height
+          if (canvas.getContext) {
+            const context = canvas.getContext('2d')
+            drawCamera(video, context).then(() => {
+              resolve()
+            }).catch(err => reject(err))
+          } else {
+            reject(new Error(NOT_SUPPORT_CANVAS_MSG))
+          }
+        })
+      }
+      // canvas 绘制摄像头内容
+      const drawCamera = (video, context) => {
+        return playCamera(video).then(() => {
+          setInterval(() => {
+            context.drawImage(video, 0, 0)
+          }, 20)
+        })
+      }
+      // video 播放摄像头内容
+      const playCamera = (video) => {
+        return new Promise((resolve, reject) => {
+          // 获取相机视频流
+          getCameraStream().then((stream) => {
+            video.src = URL.createObjectURL(stream)
+            video.onerror = (err) => {
+              reject(err)
+              stream.stop()
+            }
+            stream.onended = (err) => {
+              reject(err)
+            }
+            video.onloadedmetadata = (data) => {
+              resolve(data)
+            }
+          }).catch((err) => {
+            reject(err)
+          })
+        })
+      }
+      // 获取相机视频流
+      const getCameraStream = () => {
+        // 获取媒体对象
+        navigator.getUserMedia = navigator.getUserMedia ||
+          navigator.webkitGetUserMedia ||
+          navigator.mozGetUserMedia ||
+          navigator.msGetUserMedia
+        return new Promise((resolve, reject) => {
+          if (navigator.getUserMedia) {
+            // 参数一获取用户打开权限，参数二成功打开后调用，参数三打开失败后调用
+            navigator.getUserMedia({video: true, audio: false},
+              (stream) => {
+                resolve(stream)
+              },
+              (err) => {
+                reject(err)
+              })
+          } else {
+            reject(new Error(NOT_SUPPORT_CAMERA_MSG))
+          }
+        })
+      }
+    </script>
+</head>
+<body onload="mount()">
+<video id="video" autoplay></video>
+<canvas style="display: none" id="canvas"></canvas>
+</body>
+</html>

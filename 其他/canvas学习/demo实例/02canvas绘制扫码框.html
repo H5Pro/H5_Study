@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02canvas绘制扫码框.html</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        canvas{
+            background: lightcoral;
+        }
+    </style>
+    <script>
+        let dy = 0
+        const width = document.documentElement.clientWidth
+        const height = document.documentElement.clientHeight
+        const scanW = width / 2
+        const scanH =  scanW
+        const borderW = 8
+        const connerW = 60
+        const connerH = 8
+        const borderColor = 'yellow'
+        const connerColor = borderColor
+        const scanLineColor = borderColor
+        const scanLineH = 8
+        const scanCycle = 2 // 扫描周期（扫描动画执行一遍所需时间，单位秒）
+        const decodeFrequency = 50  // 解码频率(每秒解码多少次)
+        function draw() {
+
+        }
+    </script>
+</head>
+<body onload="draw()">
+<canvas id="scan_frame"></canvas>
+</body>
+</html>

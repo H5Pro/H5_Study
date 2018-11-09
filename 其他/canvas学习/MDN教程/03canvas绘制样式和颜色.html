@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03canvas绘制样式和颜色</title>
+    <style>
+        canvas{
+            background: #eee;
+        }
+    </style>
+    <script>
+        const draw = () => {
+          const fCanvas = document.getElementById('fill_rule')
+          fCanvas.height = 300
+          const fCtx = fCanvas.getContext('2d')
+          const img = new Image()
+          img.src = './assets/images/example_yrzx_1.jpg'
+          img.onload = () => {
+            fCtx.drawImage(img, 0, 0, 300, 300)
+            fCtx.rect(0, 0, 300, 300)
+            fCtx.rect(75, 75, 150, 150)
+            fCtx.fill("evenodd")
+          }
+        }
+    </script>
+</head>
+<body onload="draw()">
+<h4>1. canvas 填充规则</h4>
+<canvas id="fill_rule"></canvas>
+</body>
+</html>

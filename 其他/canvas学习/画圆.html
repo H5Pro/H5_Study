@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+    <title>画圆</title>
+</head>
+
+
+<body>
+
+<canvas id="circle" width="500px" height="500px"></canvas>
+
+<script>
+    var canvas = document.getElementById('circle');
+    var ctx = canvas.getContext('2d');
+    //ctx.translate(250,250);
+
+    var d = 10;//小圆的直径
+    var s = 14; //两层圆之间的距离
+    var c = 5;//层数
+    var t = 8;//最小环中小圆的个数
+    for(var i=1;i<= c;i++){
+        var count = t*i;
+        var R = 0 + (parseInt(i*255/c));
+        var G = 255 - (parseInt(i*255/c));
+        var B = 255;
+
+        for(var j = 0;j<count;j++){
+            ctx.save();
+            ctx.translate(canvas.width/2,canvas.height/2);
+            ctx.rotate(2*j*Math.PI/count);
+            ctx.beginPath();
+            ctx.fillStyle =  'rgb('+R+','+G+','+B+')';
+            ctx.arc(2*i*s,0,d,0,Math.PI*2);
+            ctx.fill();
+            ctx.closePath();
+            ctx.restore();
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01canvas基础用法</title>
+    <script>
+        function draw() {
+          const width = document.documentElement.clientWidth
+          const height = document.documentElement.clientHeight
+          console.log(height)
+          const canvas = document.getElementById('tutorial')
+          canvas.width = width
+          canvas.height = height
+          const ctx = canvas.getContext('2d')
+          ctx.fillStyle = 'rgb(200,0,0)'
+          ctx.fillRect(30, 30, 55, 55)
+          ctx.fillStyle = 'rgb(0,200,0)'
+          ctx.fillRect(50, 50, 55, 55)
+        }
+    </script>
+    <style>
+        body{
+            margin: 0;
+        }
+        canvas{
+            background: #eee;
+        }
+    </style>
+</head>
+<body onload="draw()">
+<canvas id="tutorial"></canvas>
+</body>
+</html>
