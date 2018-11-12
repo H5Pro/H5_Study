@@ -16,7 +16,7 @@ export default {
     }
   },
   mounted () {
-    this.map = new window.google.maps.Map(this.$refs.map, {
+    this.map = new google.maps.Map(this.$refs.map, {
       center: {lat: 1.28000, lng: 103.85000},
       zoom: 10
     })
