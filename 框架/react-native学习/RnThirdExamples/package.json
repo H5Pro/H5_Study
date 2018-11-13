@@ -1,0 +1,45 @@
+{
+  "name": "RNTThirdPartyExample",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@unpourtous/react-native-search-list": "^2.0.10",
+    "crypto": "^1.0.1",
+    "crypto-js": "^3.1.9-1",
+    "native-base": "^2.4.2",
+    "react": "16.3.1",
+    "react-native": "0.55.4",
+    "react-native-actionsheet": "^2.4.2",
+    "react-native-atoz-listview": "^0.0.7",
+    "react-native-input-password": "^1.0.5",
+    "react-native-keychain": "^3.0.0",
+    "react-native-loader": "^1.2.1",
+    "react-native-modal-popover": "^0.0.7",
+    "react-native-pay-password": "^0.0.2",
+    "react-native-popover": "^0.2.0",
+    "react-native-popup-dialog": "^0.15.0",
+    "react-native-popup-menu": "^0.12.5",
+    "react-native-qrcode": "^0.2.6",
+    "react-native-router-flux": "^4.0.0-beta.28",
+    "react-native-search-bar": "^3.4.2",
+    "react-native-search-box": "^0.0.15",
+    "react-native-search-list": "^0.1.0",
+    "react-native-smart-timer-enhance": "^1.0.3",
+    "react-native-tab-view": "^0.0.77",
+    "react-native-vector-icons": "^4.6.0",
+    "web3": "^1.0.0-beta.34"
+  },
+  "devDependencies": {
+    "babel-jest": "22.4.3",
+    "babel-preset-react-native": "4.0.0",
+    "jest": "22.4.3",
+    "react-test-renderer": "16.3.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
