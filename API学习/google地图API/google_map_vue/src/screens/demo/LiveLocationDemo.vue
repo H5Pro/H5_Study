@@ -5,6 +5,20 @@
     <div
       ref="map"
       class="map"></div>
+    <div class="alert" v-show="isGetLoc">获取位置成功</div>
+    <div
+      class="list">
+      <div
+        :key="String(index)"
+        v-for="(item, index) in list">
+        {{item}}
+      </div>
+    </div>
+    <div
+      class="count">{{paths.length}}</div>
+    <div
+      @click="finMe"
+      class="location">定位</div>
   </div>
 </template>
 
@@ -23,43 +37,68 @@ const getDistance = (loc1, loc2) => {
 export default {
   data () {
     return {
+      isGetLoc: false,
       map: null,
       paths: [],
-      flightPath: null
+      flightPath: null,
+      center: {lat: 39.978192299999996, lng: 116.30596050000001},
+      list: []
     }
   },
   watch: {
     paths (v) {
       this.drawPaths(v)
+      console.log(v.length)
     }
   },
   methods: {
+    finMe () {
+      this.map.panTo(this.center)
+    },
     initMap () {
+      this.map = new google.maps.Map(this.$refs.map, {
+        center: this.center,
+        zoom: 18
+      })
       navigator.geolocation.getCurrentPosition((position) => {
+        this.isGetLoc = true
         const {coords: {latitude: lat, longitude: lng}} = position
         const center = {lat, lng}
-        this.map = new google.maps.Map(this.$refs.map, {
-          center,
-          zoom: 18
-        })
+        this.center = center
+        this.map.setCenter(center)
         this.paths.push(center)
+        // 开始实时定位
         this.liveLocation()
       })
     },
     liveLocation () {
-      navigator.geolocation.watchPosition((position) => {
-        const {coords: {latitude: lat, longitude: lng}} = position
-        const newLoc = {lat, lng}
-        if (this.paths.length === 0) {
-          this.paths.push(newLoc)
-        } else {
-          const oldLoc = this.paths[this.paths.length - 1]
-          const distance = getDistance(newLoc, oldLoc)
-          if (distance > 0) {
+      setInterval(() => {
+        navigator.geolocation.getCurrentPosition((position) => {
+          const {coords: {latitude: lat, longitude: lng}} = position
+          const newLoc = {lat, lng}
+          this.center = newLoc
+          if (this.paths.length === 0) {
             this.paths.push(newLoc)
+          } else {
+            const oldLoc = this.paths[this.paths.length - 1]
+            const distance = getDistance(newLoc, oldLoc)
+            if (distance > 0) {
+              this.paths.push(newLoc)
+            }
+            if (this.list.length === 0) {
+              this.list.push(`${distance}`)
+            } else {
+              const arr = this.list[this.list.length - 1].split('x')
+              const last = arr[0]
+              const count = arr.length > 1 ? parseInt(arr[1]) : 1
+              if (distance === parseInt(last)) {
+                this.list.splice(this.list.length - 1, 1)
+                this.list.push(`${last}x${count + 1}`)
+              }
+            }
           }
-        }
-      })
+        })
+      }, 5 * 1000)
     },
     drawPaths (path) {
       if (this.flightPath) {
@@ -85,8 +124,54 @@ export default {
     flex: 1;
     display: flex;
     flex-direction: column;
+    position: relative;
     .map{
       flex: 1;
+    }
+    .alert {
+      position: absolute;
+      top: -76px;
+      right: 0;
+      line-height: 40px;
+      padding: 10px;
+    }
+    .location{
+      background-color: #fff;
+      box-shadow: 0 2px 2px 1px #999;
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      width: 60px;
+      height: 60px;
+      text-align: center;
+      border-radius: 30px;
+      line-height: 60px;
+    }
+    .count{
+      background-color: #fff;
+      box-shadow: 0 2px 2px 1px #999;
+      position: absolute;
+      left: 20px;
+      bottom: 20px;
+      width: 60px;
+      height: 60px;
+      text-align: center;
+      border-radius: 30px;
+      line-height: 60px;
+    }
+    .list {
+      background-color: #fff;
+      box-shadow: 0 0px 2px 0px #999;
+      position: absolute;
+      left: 20px;
+      bottom: 100px;
+      width: 100px;
+      top: 0;
+      margin: auto;
+      text-align: center;
+      border-radius: 10px;
+      line-height: 60px;
+      overflow: auto;
     }
   }
 </style>
