@@ -1,0 +1,34 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.huxinhuzhu.hb"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "com.huxinhuzhu.hb"
+    },
+    "cordova-plugin-wkwebview-engine": {
+      "PACKAGE_NAME": "com.huxinhuzhu.hb"
+    },
+    "phonegap-plugin-barcodescanner": {
+      "PACKAGE_NAME": "com.huxinhuzhu.hb"
+    },
+    "cordova-plugin-qrscanner": {
+      "PACKAGE_NAME": "com.huxinhuzhu.hb"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.huxinhuzhu.hb"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-add-swift-support": {
+      "PACKAGE_NAME": "com.huxinhuzhu.hb"
+    }
+  }
+}
