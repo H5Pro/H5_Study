@@ -1,1 +1,1 @@
-../../../Stripe/Stripe/PublicHeaders/UI/UIImage+Stripe.h
+../../../Stripe/Stripe/UIImage+Stripe.h

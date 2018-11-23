@@ -10,6 +10,8 @@
 
 @interface ViewController : UIViewController
 
+- (IBAction)stripePayBtnClick:(id)sender;
+- (IBAction)stripeBindBtnClick:(id)sender;
 
 @end
 
