@@ -1,0 +1,19 @@
+workspace 'MixCompilation.xcworkspace'
+use_frameworks!
+project 'MainApp/MainApp.xcodeproj'
+project 'SubApp-Swift/SubApp-Swift.xcodeproj'
+target 'MainApp' do
+  platform :ios, '9.0'
+  project 'MainApp/MainApp.xcodeproj'
+  pod 'AFNetworking', '~> 3.2.1'
+  pod 'Stripe', '~> 14.0.0'
+  pod 'Alamofire'
+end
+
+target 'SubApp-Swift' do
+  platform :ios, '9.0'
+  project 'SubApp-Swift/SubApp-Swift.xcodeproj'
+  pod 'SDWebImage', '~> 5.0.0-beta3'
+  pod 'SwiftyJSON'
+end
+

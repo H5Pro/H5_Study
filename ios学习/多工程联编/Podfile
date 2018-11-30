@@ -1,0 +1,18 @@
+workspace 'MutliProject.xcworkspace'
+project 'app1/app1.xcodeproj'
+project 'app2/app2.xcodeproj'
+
+target 'app1' do
+  platform :ios, '9.0'
+  project 'app1/app1.xcodeproj'
+  pod 'AFNetworking', '~> 3.2.1'
+  pod 'Stripe', '~> 14.0.0'
+end
+
+target 'app2' do
+  platform :ios, '9.0'
+  project 'app2/app2.xcodeproj'
+  pod 'AFNetworking', '~> 3.2.1'
+  pod 'SDWebImage', '~> 5.0.0-beta3'
+end
+

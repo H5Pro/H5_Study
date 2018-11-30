@@ -135,14 +135,17 @@ class BrowseViewController: UITableViewController, STPAddCardViewControllerDeleg
     // MARK: STPPaymentMethodsViewControllerDelegate
 
     func paymentMethodsViewControllerDidCancel(_ paymentMethodsViewController: STPPaymentMethodsViewController) {
+         print("finished")
         dismiss(animated: true, completion: nil)
     }
 
     func paymentMethodsViewControllerDidFinish(_ paymentMethodsViewController: STPPaymentMethodsViewController) {
+        print("finished")
         paymentMethodsViewController.navigationController?.popViewController(animated: true)
     }
 
     func paymentMethodsViewController(_ paymentMethodsViewController: STPPaymentMethodsViewController, didFailToLoadWithError error: Error) {
+        print("fail")
         dismiss(animated: true, completion: nil)
     }
 
