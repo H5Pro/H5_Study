@@ -25,8 +25,14 @@ router.get('/authorize', pilotRequired, (req, res) => {
   req.session.state = Math.random().toString(36).slice(2);
   // Prepare the mandatory Stripe parameters.
   let parameters = {
+    // todo: stripe Connect with Standard: response_type  
+    response_type: 'code',
+    // todo: stripe Connect with Standard: redirect_uri  
+    // redirect_uri: 'http://localhost:3000/pilots/stripe/token'
+    // todo: stripe Connect with Standard: scope  
+    scope: 'read_write',
     client_id: config.stripe.clientId,
-    state: req.session.state
+    state: req.session.state,
   };
   // Optionally, Stripe Connect accepts `first_name`, `last_name`, `email`,
   // and `phone` in the query parameters for them to be autofilled.

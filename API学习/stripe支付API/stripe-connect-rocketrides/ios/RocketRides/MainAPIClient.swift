@@ -66,7 +66,7 @@ class MainAPIClient: NSObject, STPEphemeralKeyProvider {
         case missingBaseURL
         case invalidResponse
     }
-
+    
     func createCustomerKey(withAPIVersion apiVersion: String, completion: @escaping STPJSONResponseCompletionBlock) {
         let endpoint = "/api/passengers/me/ephemeral_keys"
 

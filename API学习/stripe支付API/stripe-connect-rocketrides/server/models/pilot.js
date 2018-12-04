@@ -20,7 +20,7 @@ const PilotSchema = new Schema({
   address: String,
   postalCode: String,
   city: String,
-  country: { type: String, default: 'US' },
+  country: { type: String, default: 'CN' },
   created: { type: Date, default: Date.now },
   rocket: {
     model: String,
@@ -63,9 +63,10 @@ PilotSchema.methods.validatePassword = function(password) {
 
 // Get the first fully onboarded pilot.
 PilotSchema.statics.getFirstOnboarded = function() {
-  return Pilot.findOne({ stripeAccountId: { $ne: null } })
-    .sort({ created: 1 })
-    .exec();
+  // todo: 查找特定的用户，后续删除
+  var polit = Pilot.findOne({ email: '18848962883@163.com' })
+  // var polit = Pilot.findOne({ stripeAccountId: { $ne: null } })
+  return polit.sort({ created: 1 }).exec()
 };
 
 // Get the latest fully onboarded pilot.

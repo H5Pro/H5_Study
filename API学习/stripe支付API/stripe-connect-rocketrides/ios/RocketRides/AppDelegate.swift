@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      Ex: "http://localhost:3000" if you're running the Node server locally,
      or "https://rocketrides.io" to try the app using our hosted version.
      */
-    private let baseURLString: String = "http://192.168.6.210:3000"
+    private let baseURLString: String = "http://10.200.101.231:3000"
 
     /**
      Optionally, fill in your Apple Merchant identifier here to try out the
