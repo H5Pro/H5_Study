@@ -76,7 +76,7 @@ class RideRequestViewController: UIViewController, STPPaymentContextDelegate, Lo
     // MARK: Init
 
     required init?(coder aDecoder: NSCoder) {
-        customerContext =  +(keyProvider: MainAPIClient.shared)
+        customerContext = STPCustomerContext(keyProvider: MainAPIClient.shared)
         paymentContext = STPPaymentContext(customerContext: customerContext)
 
         super.init(coder: aDecoder)
