@@ -188,7 +188,7 @@
 				TargetAttributes = {
 					7A1BBCD01CF7B8E3004B1751 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = BBHX4KY824;
+						DevelopmentTeam = 9KU6Y27W74;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -406,10 +406,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RocketRides/RocketRides.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = BBHX4KY824;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9KU6Y27W74;
 				INFOPLIST_FILE = RocketRides/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.stripe.rocketrides;
+				PRODUCT_BUNDLE_IDENTIFIER = network.gse.wallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -424,10 +425,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RocketRides/RocketRides.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = BBHX4KY824;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9KU6Y27W74;
 				INFOPLIST_FILE = RocketRides/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.stripe.rocketrides;
+				PRODUCT_BUNDLE_IDENTIFIER = network.gse.wallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
