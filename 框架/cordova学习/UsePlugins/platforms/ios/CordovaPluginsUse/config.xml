@@ -55,4 +55,7 @@
     <feature name="BackgroundMode">
         <param name="ios-package" value="APPBackgroundMode" />
     </feature>
+    <feature name="Notification">
+        <param name="ios-package" value="CDVNotification" />
+    </feature>
 </widget>

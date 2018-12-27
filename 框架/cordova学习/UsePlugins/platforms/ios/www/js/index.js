@@ -32,7 +32,15 @@ var app = {
         cordova.plugins.backgroundMode.on('deactivate', () => {
                                           console.log(111111)
                                           });
+      function onConfirm(buttonIndex) {
+        alert('You selected button ' + buttonIndex);
+      }
 
+      navigator.notification.confirm(
+        'You are the winner!', // message
+        onConfirm,            // callback to invoke with index of button pressed
+        'Game Over',           // title
+      )
     },
 
     // Update DOM on a Received Event

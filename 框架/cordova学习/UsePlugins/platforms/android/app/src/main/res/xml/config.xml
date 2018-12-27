@@ -29,4 +29,7 @@
     <preference name="loglevel" value="DEBUG" />
     <preference name="KeepRunning" value="true" />
     <preference name="AndroidLaunchMode" value="singleInstance" />
+    <feature name="Notification">
+        <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
+    </feature>
 </widget>

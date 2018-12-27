@@ -17,6 +17,9 @@
 		BD1086633FB54C828478EFD7 /* APPBackgroundMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A180E4049D347B78D0967B5 /* APPBackgroundMode.m */; };
 		9DF412F527F64F25BE7D4E58 /* APPMethodMagic.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D77C26BBE94B02A2FDDA29 /* APPMethodMagic.m */; };
 		4643943D8558408AAA0BAF46 /* appbeep.wav in Resources */ = {isa = PBXBuildFile; fileRef = E1C2A7C07BB44634B5034396 /* appbeep.wav */; };
+		0D95B729911C43F992B446E3 /* CDVNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 82FA8C5D5CCD41F481A30E7B /* CDVNotification.m */; };
+		A9619CC29FC84A9AA4E478A7 /* CDVNotification.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 13C60878EBF943DC96ECA364 /* CDVNotification.bundle */; };
+		ABA54CE66FB540FB8E5CFBB6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E105FB0D9AE24841BCE0CE98 /* AudioToolbox.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +74,10 @@
 		5D2DD9C251EB46A8A3E2CD1C /* APPBackgroundMode.h */ = {isa = PBXFileReference; name = "APPBackgroundMode.h"; path = "cordova-plugin-background-mode/APPBackgroundMode.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		1254EF013AFC4CB0B741A999 /* APPMethodMagic.h */ = {isa = PBXFileReference; name = "APPMethodMagic.h"; path = "cordova-plugin-background-mode/APPMethodMagic.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		E1C2A7C07BB44634B5034396 /* appbeep.wav */ = {isa = PBXFileReference; name = "appbeep.wav"; path = "appbeep.wav"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		82FA8C5D5CCD41F481A30E7B /* CDVNotification.m */ = {isa = PBXFileReference; name = "CDVNotification.m"; path = "cordova-plugin-dialogs/CDVNotification.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		37DE6594C64047C7BB611C56 /* CDVNotification.h */ = {isa = PBXFileReference; name = "CDVNotification.h"; path = "cordova-plugin-dialogs/CDVNotification.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		13C60878EBF943DC96ECA364 /* CDVNotification.bundle */ = {isa = PBXFileReference; name = "CDVNotification.bundle"; path = "CDVNotification.bundle"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.plug-in; explicitFileType = undefined; includeInIndex = 0; };
+		E105FB0D9AE24841BCE0CE98 /* AudioToolbox.framework */ = {isa = PBXFileReference; name = "AudioToolbox.framework"; path = "System/Library/Frameworks/AudioToolbox.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +86,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
+				ABA54CE66FB540FB8E5CFBB6 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +150,7 @@
 				8D1107310486CEB800E47090 /* CordovaPluginsUse-Info.plist */,
 				6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */,
 				E1C2A7C07BB44634B5034396 /* appbeep.wav */,
+				13C60878EBF943DC96ECA364 /* CDVNotification.bundle */,
 			);
 			name = Resources;
 			path = CordovaPluginsUse/Resources;
@@ -150,6 +159,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E105FB0D9AE24841BCE0CE98 /* AudioToolbox.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -182,6 +192,8 @@
 				48D77C26BBE94B02A2FDDA29 /* APPMethodMagic.m */,
 				5D2DD9C251EB46A8A3E2CD1C /* APPBackgroundMode.h */,
 				1254EF013AFC4CB0B741A999 /* APPMethodMagic.h */,
+				82FA8C5D5CCD41F481A30E7B /* CDVNotification.m */,
+				37DE6594C64047C7BB611C56 /* CDVNotification.h */,
 			);
 			name = Plugins;
 			path = CordovaPluginsUse/Plugins;
@@ -279,6 +291,7 @@
 				0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */,
 				6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */,
 				4643943D8558408AAA0BAF46 /* appbeep.wav in Resources */,
+				A9619CC29FC84A9AA4E478A7 /* CDVNotification.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +326,7 @@
 				D1243485305244AA89B3007C /* CDVDevice.m in Sources */,
 				BD1086633FB54C828478EFD7 /* APPBackgroundMode.m in Sources */,
 				9DF412F527F64F25BE7D4E58 /* APPMethodMagic.m in Sources */,
+				0D95B729911C43F992B446E3 /* CDVNotification.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

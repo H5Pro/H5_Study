@@ -12,6 +12,9 @@
     },
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.huxinhuzhu.useplugins"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "com.huxinhuzhu.useplugins"
     }
   },
   "dependent_plugins": {
