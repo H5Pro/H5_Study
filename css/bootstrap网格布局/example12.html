@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bootstrap网格布局示例</title>
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <style>
+        .row{
+            margin-bottom: 10px;
+            line-height: 40px;
+        }
+        .row>div {
+            background-color: #0069b3;
+            color: #fff;
+            border-right: 1px solid #333;
+            border-left: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            First, but unordered
+        </div>
+        <div class="col order-12">
+            Second, but last
+        </div>
+        <div class="col order-1">
+            Third, but first
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="./js/jquery-3.3.1.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+</body>
+</html>

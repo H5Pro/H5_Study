@@ -1,0 +1,15 @@
+
+body{
+    /* 加大号字体 */
+    font-size: 25px;
+}
+
+p{
+    /* 黑色的十六进制值 */
+    color: #000;
+}
+
+img{
+    /* 不显示图像 */
+    display: none;
+}

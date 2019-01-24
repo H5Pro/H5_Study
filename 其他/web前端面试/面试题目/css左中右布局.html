@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css左中右布局</title>
+    <style>
+        .container{
+            position: relative;
+            height: 200px;
+        }
+        .container>div{
+            border-right: 1px solid black;
+            text-align: center;
+        }
+        .left, .right{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+        }
+        .left{
+            left: 0;
+            width: 50px;
+            background: red;
+        }
+        .center{
+            height: 100%;
+            background: green;
+            margin-left: 50px;
+            margin-right: 100px;
+        }
+        .right{
+            right: 0;
+            width: 100px;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="left">left</div>
+    <div class="center">center</div>
+    <div class="right">right</div>
+</div>
+</body>
+</html>
