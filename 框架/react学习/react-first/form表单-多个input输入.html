@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form表单-多个input输入</title>
+    <script src="js/react/development.js"></script>
+    <script src="js/react/dom-development.js"></script>
+    <!-- Don't use this in production: -->
+    <script src="js/react/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    class MultiForm extends React.Component {
+      constructor(props) {
+        super(props)
+        this.state = {
+          isGoing: false,
+          numberOfGuests: 0
+        }
+        this.handleInputChange = this.handleInputChange.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
+      }
+      handleInputChange(e) {
+        const {name, type, value, checked} = e.target
+        this.setState({
+          [name]: type === 'checkbox' ? checked : value
+        })
+      }
+      handleSubmit() {
+        const {isGoing, numberOfGuests} = this.state
+        alert(`is Gong: ${isGoing};  numberOfGuests: ${numberOfGuests}`)
+      }
+      render() {
+        const {isGoing, numberOfGuests} = this.state
+        return (
+          <form onSubmit={this.handleSubmit}>
+            <label>
+                Is going:
+              <input
+                name="isGoing"
+                type="checkbox"
+                value={isGoing}
+                onChange={this.handleInputChange}
+              />
+            </label>
+            <label>
+              Number of guests:
+              <input
+                name="numberOfGuests"
+                type="number"
+                value={numberOfGuests}
+                onChange={this.handleInputChange}
+              />
+            </label>
+            <input type="submit" value="Submit"/>
+          </form>
+        )
+      }
+    }
+    ReactDOM.render(<MultiForm />, document.getElementById('root'))
+</script>
+</body>
+</html>

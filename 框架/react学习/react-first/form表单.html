@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form表单</title>
+    <script src="js/react/development.js"></script>
+    <script src="js/react/dom-development.js"></script>
+    <!-- Don't use this in production: -->
+    <script src="js/react/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    class NameForm extends React.Component {
+      constructor(props) {
+        super(props)
+        this.state = {
+          value: '',
+          value1: '',
+          value2: 'lime'
+        }
+        this.handleChange = this.handleChange.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleTextAreaChange = this.handleTextAreaChange.bind(this)
+        this.handleSelectChange = this.handleSelectChange.bind(this)
+      }
+      handleChange(e) {
+        this.setState({value: e.target.value})
+      }
+      handleTextAreaChange(e) {
+        this.setState({value1: e.target.value.toUpperCase()})
+      }
+      handleSelectChange(e) {
+        this.setState({value2: e.target.value})
+      }
+      handleSubmit(e) {
+        console.log(e.target.value)
+        e.preventDefault()
+      }
+      render() {
+        const {value, value1, value2} = this.state
+        return (
+          <form onSubmit={this.handleSubmit}>
+            <label>
+                Name:
+              <input
+                type="text"
+                value={value}
+                onChange={this.handleChange}
+              />
+            </label>
+            <input type="submit" value="Submit" />
+            <textarea value={value1} onChange={this.handleTextAreaChange}></textarea>
+            <select value={value2} onChange={this.handleSelectChange}>
+              <option value="grapefruit">Grapefruit</option>
+              <option value="lime">Lime</option>
+              <option value="coconut">Coconut</option>
+              <option value="mango">Mango</option>
+            </select>
+            <input type="file" />
+          </form>
+        )
+      }
+    }
+    ReactDOM.render(<NameForm/>, document.getElementById('root'))
+</script>
+</body>
+</html>
