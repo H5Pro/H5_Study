@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/invoiceInfo/invoiceInfo",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "微信",
+    "navigationBarTextStyle": "black"
+  }
+}

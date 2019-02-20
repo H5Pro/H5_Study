@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<view class="container">
+<button bindtap='handleInvoiceiInfoButtonTapped'>
+发票信息
+</button>
+</view>
