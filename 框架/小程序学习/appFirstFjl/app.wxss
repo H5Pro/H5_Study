@@ -1,6 +1,5 @@
 /**app.wxss**/
 page{
-    
   font-family:PingFangSC-Regular;
   background-color: #fff;
   color: #191919;

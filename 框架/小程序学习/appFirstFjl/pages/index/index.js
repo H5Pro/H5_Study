@@ -12,7 +12,7 @@ Page({
   // 处理“发票信息”按钮的点击
   handleInvoiceiInfoButtonTapped: function() {
     wx.navigateTo({
-      url: '../invoiceInfo/invoiceInfo',
+			url: '/pages/invoice-info/index',
     })
   },
   onLoad: function () {

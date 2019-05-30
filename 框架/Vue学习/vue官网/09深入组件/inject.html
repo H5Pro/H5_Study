@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>依赖注入</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<div id="app">
+    {{message}}
+</div>
+<script>
+    Vue.component('first-generation', {
+      inject: ['myAncestor'],
+      template: `
+<div>
+<div>first-generation say: "my ancestor is {{myAncestor}}"</div>
+<second-generation />
+</div>
+`,
+    })
+    Vue.component('second-generation', {
+      inject: [
+        'myAncestor'
+      ],
+      template: `<div>first-generation say: "my ancestor is {{myAncestor}}"</div>`,
+    })
+    Vue.component('x-ancestor', {
+      template: `
+<div>
+<div>
+ancestor say: "My name is {{name}}"
+</div>
+<first-generation />
+</div>
+`,
+      props: {
+        name: String
+      },
+      provide () {
+        return {
+          myAncestor: this.name
+        }
+      }
+    })
+    const god = new Vue({
+      el: '#app',
+      template: `<x-ancestor :name="firstManName"></x-ancestor>`,
+      data () {
+        return {
+          firstManName: 'yadang'
+        }
+      }
+    })
+</script>
+</body>
+</html>

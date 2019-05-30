@@ -1,0 +1,116 @@
+/* pages/invoiceInfo/invoiceInfo.wxss */
+
+.contianer {
+}
+
+.card {
+  padding: 30rpx;
+  background-color: #fff;
+}
+
+.seperator {
+  height: 12rpx;
+  background: rgb(245, 245, 245);
+}
+
+.title {
+  font-size: 28rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  line-height: 40rpx;
+  margin-bottom: 30rpx;
+}
+
+.tabbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tab {
+  flex: 1;
+  line-height: 70rpx;
+  font-size: 28rpx;
+  font-weight: 400;
+  border-radius: 4rpx;
+  background-color: #fff;
+  margin-bottom: 30rpx;
+}
+
+.tab.activated {
+  background: rgba(25, 25, 25, 1);
+  color: #fff;
+}
+
+.tab::after {
+  border-radius: 4rpx;
+  border: 1px solid #191919;
+}
+
+.tab:first-child {
+  margin-left: 10rpx;
+  margin-right: 30rpx;
+}
+
+.tab:last-child {
+  margin-right: 10rpx;
+}
+
+.remind-text {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(110, 110, 110, 1);
+  line-height: 34rpx;
+}
+
+.remind-text-marked {
+  color: #ea4141;
+}
+
+.line {
+  margin-right: -30rpx;
+  height: 4rpx;
+  background-color: #e6e6e6;
+}
+
+.inputs {
+  padding: 0 10rpx;
+  margin-top: 30rpx;
+}
+
+.has-bottom-margin {
+  margin-bottom: 30rpx;
+}
+
+.invoice-notice-container {
+  background: rgba(250, 250, 250, 1);
+  padding: 30rpx 20rpx;
+  font-size: 24rpx;
+  font-weight: 400;
+  color: rgba(25, 25, 25, 1);
+  line-height: 17px;
+  margin-bottom: 100rpx;
+}
+
+.watch-more {
+	margin-top: 20rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: rgba(25, 25, 25, 1);
+  line-height: 34rpx;
+}
+
+.ensure-button {
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 10rpx;
+  width: 690rpx;
+  line-height: 80rpx;
+  color: #fff;
+  background: rgba(25, 25, 25, 1);
+  border-radius: 4rpx;
+  font-size: 30rpx;
+}

@@ -1,0 +1,36 @@
+/* components/wd-input/index.wxss */
+
+.wd-input-container {
+  border-radius: 4rpx;
+  border: 2rpx solid rgb(158, 158, 158);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20rpx;
+  height: 80rpx;
+	position: relative;
+}
+.wd-input-container::after {
+	flex: 0 15rpx;
+	content: ' ';
+	margin-left: 2rpx;
+	width: 15rpx;
+	height: 15rpx;
+	border-top: 2rpx solid rgb(216,216,216);
+	border-right: 2rpx solid rgb(216,216,216);
+	transform: rotate(45deg);
+}
+
+.title {
+	flex: 0 130rpx;
+	display: inline-block;
+  font-size: 28rpx;
+  line-height: 40rpx;
+}
+
+.wd-input {
+	flex:1;
+  text-align: right;
+  font-size: 24rpx;
+	line-height: 34rpx;
+}

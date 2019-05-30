@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>model</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<div id="app"></div>
+<script>
+    Vue.component('x-checkbox', {
+      template: `<input type="checkbox" :checked="checked" @change="handleChange">`,
+      model: {
+        prop: 'checked', // v-model 绑定的属性
+        event: 'change'  // v-model 向外输出时的事件
+      },
+      props: {
+        checked: Boolean,
+        value: String, // 用于其他用途
+        default: true
+      },
+      methods: {
+        handleChange (e) {
+          this.$emit('change', e.target.checked)
+        }
+      },
+      created () {
+        console.log(this.value)
+      }
+    })
+    const app = new Vue({
+      el: '#app',
+      template: `
+      <div>
+      <x-checkbox value="apple" v-model="isLikeApple"/> 你{{isLikeApple ? '' : '不'}}喜欢苹果
+</div>
+      `,
+      data() {
+        return {
+          isLikeApple: true
+        }
+      }
+    })
+</script>
+</body>
+</html>

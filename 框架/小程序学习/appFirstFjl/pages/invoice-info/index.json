@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+		"wd-input": "/components/wd-input/index"
+	},
+  "navigationBarTitleText": "发票信息"
+}  

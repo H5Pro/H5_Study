@@ -1,0 +1,44 @@
+<!--pages/invoiceInfo/invoiceInfo.wxml-->
+<view class='container'>
+  <view class='card'>
+    <view class='title'>发票类型</view>
+    <view class='tabbar' bindtap='handleInvoiceTypeSwitch'>
+      <button id='noInvoice' class="tab {{!isInvoice ? 'activated' : ''}}">不开发票</button>
+      <button id='eInvoice' class="tab {{isInvoice ? 'activated' : ''}}">电子发票</button>
+    </view>
+    <view class='remind-text'>电子发票与纸质发票具有相同的法律效力，可以作为报销、售后、维权凭证，
+      <text class='remind-text-marked'>使用电子发票，不易丢失，更方便环保。</text>
+    </view>
+  </view>
+  <view class='seperator'></view>
+  <view wx:if='{{isInvoice}}'>
+    <view class='card'>
+      <view class='title'>发票抬头</view>
+      <view class='tabbar' bindtap='handleInvoiceTitleSwitch'>
+        <button id='person' class="tab {{invoiceTitle ==='person' ? 'activated' : ''}}">个人</button>
+        <button id='company' class="tab {{invoiceTitle ==='company' ? 'activated' : ''}}">企业</button>
+      </view>
+      <view class='line'></view>
+      <view class='inputs'>
+        <wd-input wx:if="{{invoiceTitle==='company'}}" name='companyName' container-class='has-bottom-margin' value='{{companyName}}' label='单位名称' placeholder='请填写单名称' bind:onChange='handleWDInputChange' />
+        <wd-input wx:if="{{invoiceTitle==='company'}}" name='identifier' container-class='has-bottom-margin' value='{{identifier}}' label='识别码' placeholder='请输入识别码' bind:onChange='handleWDInputChange' />
+        <wd-input type='number' name='telephone' label='手机号' value='{{telephone}}' placeholder='选填，可通过手机号咋发票服务平台查询' bind:onChange='handleWDInputChange' />
+      </view>
+    </view>
+    <view class='seperator'></view>
+  </view>
+  <view class='card'>
+    <view class='invoice-notice-container'>
+      <view>发票须知</view>
+      <view>1、开具发票需要您先进行确认收货。 </view>
+      <view>2、电子发票在订单完成 在订单详情页中下载和查看。</view>
+      <view>3、如您下单时未选择开票，自然年内，仍可通过订单详情在收货后重</view>
+      <view>4、退货后原开具发票自动失效，将不能再作为有效票据。</view>
+      <view>5、开具同一发票的多个商品部分退货的，原发票将作废，并重新开具与实际等额的发票。</view>
+      <view bindtap='watchMoreQuestions' class='watch-more'>查看更多发票常见问题 ></view>
+    </view>
+  </view>
+  <button bindtap='handleEnsureButtonTapped' class='ensure-button'>
+    确认
+  </button>
+</view>

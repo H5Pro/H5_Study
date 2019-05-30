@@ -1,13 +1,15 @@
 {
-  "pages": [
-    "pages/invoiceInfo/invoiceInfo",
-    "pages/index/index",
-    "pages/logs/logs"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#ffffff",
-    "navigationBarTitleText": "微信",
-    "navigationBarTextStyle": "black"
-  }
+	"pages": [
+		"pages/home/index",
+		"pages/index/index",
+		"pages/invoice-info/index",
+		"pages/logs/logs" 
+	],
+	"window": {
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#ffffff",
+		"navigationBarTitleText": "微信",
+		"navigationBarTextStyle": "black",
+		"navigationStyle": "custom"
+	}
 }

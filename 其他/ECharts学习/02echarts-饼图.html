@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>echart饼图</title>
+  <script src="./assets/js/echarts.js"></script>
+</head>
+<body>
+<div
+    id="main"
+    style="width: 600px; height: 400px"
+></div>
+<script>
+  echarts.init(document.getElementById('main'), 'dark').setOption({
+    title: {
+      text: '饼图',
+    },
+    backgroundColor: '#2c42c',
+    visualMap: {
+      show: false,
+      min: 80,
+      max: 600,
+      inRange: {
+        colorLightness: [0, 1]
+      }
+    },
+    series: [
+      {
+        name: '访问来源',
+        type: 'pie',
+        roseType: 'angle',
+        // radius: '55%',
+        itemStyle: {
+          // emphasis: {
+          //   shadowBlur: 200,
+          //   shadowColor: 'rgba(0, 0, 0, 0.5)'
+          // },
+          normal: {
+            color: '#c23531',
+            shadowBlur: 200,
+            shadowColor: 'rgba(0, 0, 0, 0.5)'
+          },
+          // shadowBlur: 200,
+          // shadowColor: 'rgba(0,0,0,0.5)',
+          // color: '#c23531',
+        },
+        label: {
+          normal: {
+            textStyle: {
+              color: 'rgba(0, 0, 0, 0.3)'
+            }
+          }
+        },
+        labelLine: {
+          normal: {
+            lineStyle: {
+              color: 'rgba(0, 0, 0, 0.3)'
+            }
+          }
+        },
+        data: [
+          {
+            value: 235,
+            name: '视频广告',
+            // itemStyle: {
+            //   color: '#0000ff'
+            // }
+          },
+          {value: 274, name: '联盟广告'},
+          {value: 310, name: '邮件营销'},
+          {value: 335, name: '直接访问'},
+          {value: 400, name: '搜索引擎'}
+        ]
+      }
+    ]
+  })
+</script>
+</body>
+</html>

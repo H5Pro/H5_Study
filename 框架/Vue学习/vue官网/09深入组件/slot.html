@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slot插槽</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<div id="app"></div>
+<script>
+    Vue.component('base-layout', {
+      template: `
+<div>
+<header>
+<slot name="header"></slot>
+</header>
+<main style="background: #eee; margin: 20px 0">
+<slot></slot>
+</main>
+<footer>
+<slot name="footer"></slot>
+</footer>
+</div>
+      `
+    })
+    var aa = new Vue({
+      el: '#app',
+      template: `
+<base-layout>
+<template v-slot:header>
+<div>我是头部</div>
+</template>
+<h1>我是内容</h1>
+<template v-slot:footer>
+<div>我是底部</div>
+</template>
+</base-layout>
+`
+    })
+</script>
+</body>
+</html>
