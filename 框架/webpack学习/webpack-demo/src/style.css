@@ -1,0 +1,24 @@
+
+@font-face {
+  font-family: 'MyFont';
+  src: url("./iconfont.woff") format('woff'),
+  url("./iconfont.woff2") format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+body{
+  font-family: 'MyFont';
+}
+.demo{
+  background-color: red;
+}
+
+.back{
+  width: 200px;
+  height: 200px;
+  background-image: url("./icon.jpg");
+}
+.title{
+  font-size: 20px;
+  color: #fff;
+}
