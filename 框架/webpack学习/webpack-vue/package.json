@@ -1,0 +1,16 @@
+{
+  "name": "webpack-vue",
+  "version": "1.0.0",
+  "description": "使用webpack从0到1构建vue项目",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vue",
+    "webpack",
+    "手动"
+  ],
+  "author": "fjl",
+  "license": "ISC"
+}

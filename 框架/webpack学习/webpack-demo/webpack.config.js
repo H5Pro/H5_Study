@@ -3,20 +3,24 @@
  */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const webpack = require('webpack');
+console.log(CleanWebpackPlugin);
 module.exports = {
   mode: 'development',
   entry: './src/index.js',
   devtool: 'inline-source-map',
   devServer: {
     contentBase: './dist',
-    compress: true,
-    port: 9000,
+    // compress: true,
+    // port: 9000,
+    // inline: true,
     hot: true,
   },
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, 'dist'),
+    publicPath: "/",
   },
   module: {
     rules: [
@@ -46,9 +50,11 @@ module.exports = {
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: '管理输出',
+      title: '模块热替换',
       // template: './src/index.html'
-    })
+    }),
+    // new webpack.HotModuleReplacementPlugin()
   ]
 };
