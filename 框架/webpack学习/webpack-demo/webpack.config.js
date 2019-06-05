@@ -5,7 +5,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const webpack = require('webpack');
-console.log(CleanWebpackPlugin);
 module.exports = {
   mode: 'development',
   entry: './src/index.js',
@@ -55,6 +54,6 @@ module.exports = {
       title: '模块热替换',
       // template: './src/index.html'
     }),
-    // new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin()
   ]
 };
