@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "dev": "webpack",
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+    "lint": "tslint -c tslint.json --fix 'src/**/*.ts'"
   },
   "keywords": [
     "vue",
@@ -24,6 +25,9 @@
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "ts-loader": "^6.0.2",
+    "tslint": "^5.17.0",
+    "tslint-config-standard": "^8.0.1",
+    "tslint-loader": "^3.5.4",
     "typescript": "^3.5.1",
     "vue-loader": "^15.7.0",
     "vue-template-compiler": "^2.6.10",

@@ -1,10 +1,12 @@
 /**
  * Created by fjl on 2019/6/4
  */
-import './assets/style/common.scss';
-import App from './App.vue';
-import Vue from 'vue';
+import Vue, {CreateElement} from "vue";
+
+Vue.config.productionTip = false;
+import App from "./App.vue";
+import "./assets/style/common.scss";
 
 new Vue({
-  render: (h: Function) => h(App),
-}).$mount('#app');
+  render: (h: CreateElement) => h(App),
+}).$mount("#app");

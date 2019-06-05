@@ -29,6 +29,12 @@ module.exports = {
         use: ['style-loader', 'css-loader']
       },
       {
+        test: /\.ts$/,
+        exclude: /node_modules/,
+        enforce: 'pre',
+        loader: 'tslint-loader'
+      },
+      {
         test: /\.tsx?$/,
         loader: 'ts-loader',
         exclude: /node_modules/,
@@ -43,7 +49,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: ['.tsx', '.ts', '.js', '.json', '.vue'],
 
   },
   plugins: [
