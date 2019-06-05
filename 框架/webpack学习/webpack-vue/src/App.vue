@@ -1,7 +1,7 @@
 <!--Created by fjl on 2019/6/4-->
 <template>
   <div class="App">
-    <h1>hello Ap!{{aa}}</h1>
+    <h1>hello App!{{aa}}</h1>
   </div>
 </template>
 
@@ -12,7 +12,9 @@
   export default class App extends Vue {
     private aa: number = 123;
     private created() {
-      this.aa = 3457;
+      setTimeout(() => {
+        this.aa = 3457;
+      }, 1000);
     }
   }
 </script>
