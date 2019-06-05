@@ -1,7 +1,7 @@
 <!--Created by fjl on 2019/6/4-->
 <template>
   <div class="App">
-    <h1>hello App!{{aa}}</h1>
+    <h1>hello Ap!{{aa}}</h1>
   </div>
 </template>
 
@@ -10,9 +10,9 @@
 
   @Component
   export default class App extends Vue {
-    private aa: string = '123';
+    private aa: number = 123;
     private created() {
-      this.aa = 34579;
+      this.aa = 3457;
     }
   }
 </script>

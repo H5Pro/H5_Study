@@ -2,16 +2,15 @@
   "compilerOptions": {
     "outDir": "./dist/",
     "sourceMap": true,
-    "noImplicitAny": true,
-    "module": "es6",
+    "strict": true,
+    "module": "es2015",
     "target": "es5",
     "jsx": "react",
-    "allowJs": true,
-    "experimentalDecorators": true,
     "moduleResolution": "node",
-    "baseUrl": ".",
-    "paths": {
-
-    }
-  }
+    "experimentalDecorators": true
+  },
+  "include": [
+    "./src/**/*"
+  ]
 }
+
