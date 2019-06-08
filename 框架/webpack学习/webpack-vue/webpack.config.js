@@ -5,6 +5,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 module.exports = env => {
   return {
     mode: env.production ? 'production' : 'development',
@@ -22,11 +24,18 @@ module.exports = env => {
       rules: [
         {
           test: /\.scss$/,
-          use: ['style-loader', 'css-loader', 'sass-loader']
+          use: [
+            env.production ? MiniCssExtractPlugin.loader : 'style-loader',
+            'css-loader',
+            'sass-loader'
+          ]
         },
         {
           test: /\.css$/,
-          use: ['style-loader', 'css-loader']
+          use: [
+            env.production ? MiniCssExtractPlugin.loader : 'style-loader',
+            'css-loader'
+          ]
         },
         {
           test: /\.(ts)$/,
@@ -67,7 +76,11 @@ module.exports = env => {
       new HtmlWebpackPlugin({
         template: 'public/index.html'
       }),
-      new VueLoaderPlugin() // vue相关，必须
+      // vue相关，必须
+      new VueLoaderPlugin(),
+      new MiniCssExtractPlugin({
+        filename: 'style.css'
+      })
     ]
   }
 }

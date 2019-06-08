@@ -1,6 +1,6 @@
 <!--Created by fjl on 2019/6/8-->
 <template>
-  <div class="App">
+  <div class="app">
     <h1>hello App1234!</h1>
     <img src="./assets/img/c.jpg" alt="">
   </div>
@@ -15,8 +15,13 @@
   }
 </script>
 
+<style lang="scss">
+  .app{
+    font-size: 14px;
+  }
+</style>
 <style lang="scss" scoped>
-  .App {
-
+  .app {
+    background-color: red;
   }
 </style>
