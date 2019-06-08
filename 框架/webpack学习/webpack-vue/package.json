@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "dev": "npm run build",
+    "prod": "webpack --env.production",
+    "dev": "webpack --env.developmemt",
     "watch": "webpack --watch",
     "start": "webpack-dev-server --open",
-    "lint-f": "tslint -c tslint1234.json --fix 'src/**/*.ts'",
-    "lint": "tslint -c tslint1234.json 'src/**/*.ts'"
+    "lint-f": "tslint -c tslint.json --fix 'src/**/*.ts'",
+    "lint": "tslint -c tslint.json 'src/**/*'"
   },
   "keywords": [
     "vue",

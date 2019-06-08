@@ -22,4 +22,4 @@ print(); // logs 'shadow'.
 
 new Vue({
 	render: (h: CreateElement) => h(App),
-}).$mount("#app");
+}).$mount('#app');
