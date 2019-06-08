@@ -5,5 +5,5 @@ import Vue from "vue";
 import "./shims-vue.d.ts";
 console.log(Vue);
 export default {
-  name: '236'
-}
+	name: "236",
+};

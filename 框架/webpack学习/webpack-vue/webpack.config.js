@@ -6,11 +6,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 module.exports = env => {
-  console.log(env.production === true);
   return {
-    mode: 'development',
+    mode: env.production ? 'production' : 'development',
     entry: './src/main.ts',
-    devtool: 'inline-source-map',
+    devtool: env.production ? '' : 'inline-source-map',
     output: {
       filename: 'bundle.js',
       path: path.resolve(__dirname, 'dist'),
@@ -30,14 +29,15 @@ module.exports = env => {
           use: ['style-loader', 'css-loader']
         },
         {
-          test: /\.(ts|vue)$/,
+          test: /\.(ts)$/,
           exclude: /node_modules/,
           include: /src/,
           enforce: 'pre',
           loader: 'tslint-loader',
           options: {
             // configFile: 'tslint.json', // 读取的tslint的配置文件，默认是根目录下的tslint.json
-            failOnHint: env.production === true, // tslint错误是否会打断编译
+            failOnHint: env.production && env.development, // tslint错误是否会打断编译
+            // fix: env.local // 是否自动修补错误
           }
         },
         {
@@ -53,6 +53,10 @@ module.exports = env => {
           test: /\.vue$/,
           loader: 'vue-loader'
         },
+        {
+          test: /\.(png|jpe?g|gif)$/,
+          use: [{loader: "file-loader"}]
+        }
       ],
     },
     resolve: {

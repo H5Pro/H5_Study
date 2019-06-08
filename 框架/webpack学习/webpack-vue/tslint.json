@@ -9,22 +9,22 @@
         ]
     },
     "rules": {
+        // 单引号
         "quotemark": [
             true,
             "double"
         ],
-        // 单引号
+        // 缩进使用tab，tab大小是2个空格
         "indent": [
             true,
             "tabs",
             2
         ],
-        // 缩进使用tab，tab大小是2个空格
-        "ordered-imports": false,
         // 关闭"多导入，按字母排序"
-        "object-literal-sort-keys": false,
+        "ordered-imports": false,
         // 关闭"对象按key的字母排序"
-        "no-console": false
+        "object-literal-sort-keys": false,
         // 关闭"禁止console语句"
+        "no-console": false
     }
 }
