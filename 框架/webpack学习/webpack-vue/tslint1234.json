@@ -1,0 +1,30 @@
+{
+    "defaultSeverity": "warning",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "linterOptions": {
+        "exclude": [
+            "node_modules/**"
+        ]
+    },
+    "rules": {
+        "quotemark": [
+            true,
+            "double"
+        ],
+        // 单引号
+        "indent": [
+            true,
+            "tabs",
+            2
+        ],
+        // 缩进使用tab，tab大小是2个空格
+        "ordered-imports": false,
+        // 关闭"多导入，按字母排序"
+        "object-literal-sort-keys": false,
+        // 关闭"对象按key的字母排序"
+        "no-console": false
+        // 关闭"禁止console语句"
+    }
+}

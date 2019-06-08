@@ -31,12 +31,18 @@ module.exports = {
       {
         test: /\.ts$/,
         exclude: /node_modules/,
+        include: /src/,
         enforce: 'pre',
-        loader: 'tslint-loader'
+        loader: 'tslint-loader',
+        options: {
+          configFile: 'tslint1234.json',
+          failOnHint: true,
+        }
       },
       {
         test: /\.tsx?$/,
         loader: 'ts-loader',
+        include: /src/,
         exclude: /node_modules/,
         options: {
           appendTsSuffixTo: [/\.vue$/],
@@ -49,8 +55,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js', '.json', '.vue'],
-
+    extensions: ['.tsx', '.ts', '.js', '.json', '.vue']
   },
   plugins: [
     new CleanWebpackPlugin(),
