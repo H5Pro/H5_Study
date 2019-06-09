@@ -40,7 +40,7 @@ module.exports = env => {
           ]
         },
         {
-          test: /\.(ts)$/,
+          test: /\.(tsx?)$/,
           exclude: /node_modules/,
           include: /src/,
           enforce: 'pre',
@@ -57,12 +57,17 @@ module.exports = env => {
           include: /src/,
           exclude: /node_modules/,
           options: {
-            appendTsSuffixTo: [/\.vue$/],
+            appendTsSuffixTo: [/\.vue$/]
           }
         },
         {
           test: /\.vue$/,
-          loader: 'vue-loader'
+          loader: 'vue-loader',
+          options: {
+            loaders: {
+              ts: 'ts-loader!tslint-loader'
+            }
+          }
         },
         {
           test: /\.(png|jpe?g|gif)$/,
