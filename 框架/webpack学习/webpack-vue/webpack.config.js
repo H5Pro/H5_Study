@@ -5,6 +5,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+
+// css提取
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = env => {
@@ -46,7 +48,7 @@ module.exports = env => {
           options: {
             // configFile: 'tslint.json', // 读取的tslint的配置文件，默认是根目录下的tslint.json
             failOnHint: env.production && env.development, // tslint错误是否会打断编译
-            // fix: env.local // 是否自动修补错误
+            fix: env.local // 是否自动修补错误
           }
         },
         {

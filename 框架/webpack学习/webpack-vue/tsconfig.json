@@ -8,6 +8,7 @@
     "jsx": "react",
     "moduleResolution": "node",
     "experimentalDecorators": true,
+    // 不允许未使用的定义（变量，函数，接口，类等）存在
     "noUnusedLocals": true
   },
   "include": [

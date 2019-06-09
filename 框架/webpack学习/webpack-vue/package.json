@@ -9,8 +9,8 @@
     "dev": "webpack --env.development",
     "watch": "webpack --env.local --watch",
     "start": "webpack-dev-server --env.local",
-    "lint-f": "tslint -c tslint.json --fix 'src/**/*.ts'",
-    "lint": "tslint -c tslint.json 'src/**/*'"
+    "lint-f": "tslint -c tslint.json --fix 'src/**/*.ts' 'src/**/*.vue'",
+    "lint": "tslint -c tslint.json 'src/**/*.ts' 'src/**/*.vue'"
   },
   "keywords": [
     "vue",

@@ -9,17 +9,10 @@
         ]
     },
     "rules": {
-        // 单引号
-        "quotemark": [
-            true,
-            "double"
-        ],
+        // 引号：（使用单引号）
+        "quotemark": [true, "single"],
         // 缩进使用tab，tab大小是2个空格
-        "indent": [
-            true,
-            "tabs",
-            2
-        ],
+        "indent": [true, "tabs", 2],
         // 关闭"多导入，按字母排序"
         "ordered-imports": false,
         // 关闭"对象按key的字母排序"
