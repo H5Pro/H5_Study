@@ -2,8 +2,8 @@
 	"pages": [
 		"pages/home/index",
 		"pages/index/index",
-		"pages/invoice-info/index",
-		"pages/logs/logs" 
+		"pages/logs/logs",
+		"pages/invoice-info/index"
 	],
 	"window": {
 		"backgroundTextStyle": "light",

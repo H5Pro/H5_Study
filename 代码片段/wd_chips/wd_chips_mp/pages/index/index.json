@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "single-list": "../../components/cards/single_list/single_list"
+  }
+}

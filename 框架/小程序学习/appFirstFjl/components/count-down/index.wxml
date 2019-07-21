@@ -1,0 +1,4 @@
+<!--components/count-down/index.wxml-->
+<view>
+	<text>{{info[0].a}}</text>
+</view>

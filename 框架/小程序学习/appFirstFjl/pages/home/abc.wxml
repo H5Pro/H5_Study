@@ -1,0 +1,5 @@
+<template name="abc">
+	<view>
+		<text>{{name.length}}123456</text>
+	</view>
+</template>

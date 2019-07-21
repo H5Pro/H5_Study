@@ -1,2 +1,8 @@
 <!--pages/home/index.wxml-->
-<text>pages/home/index.wxml</text>
+<import src="./abc.wxml" />
+<view style='margin-top: 64px'>
+	{{'name'}}
+	<count-down info="{{[{a: 1}]}}" />
+	<template is="abc" data="{{name: []}}"></template>
+	<button bindtap="handleBtnClick">点击</button>
+</view>

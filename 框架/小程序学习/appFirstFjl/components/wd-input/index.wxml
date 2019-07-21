@@ -1,5 +1,5 @@
 <!--components/wd-input/index.wxml-->
 <view class='container-class wd-input-container'>
-  <view class='title'>{{label}}</view>
+  <view class='label-class title'>{{label}}</view>
   <input bindinput='handleInputChange' type='{{type}}' value='{{value}}' class='wd-input' placeholder='{{placeholder}}'/>
 </view>
