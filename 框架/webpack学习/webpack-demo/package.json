@@ -30,5 +30,7 @@
     "webpack-merge": "^4.2.1",
     "xml-loader": "^1.2.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "webpack-numbers": "git+https://github.com/H5Pro/webpack-numbers.git"
+  }
 }
