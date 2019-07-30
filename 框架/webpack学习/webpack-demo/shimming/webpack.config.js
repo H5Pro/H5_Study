@@ -10,7 +10,7 @@ module.exports = {
 	mode: 'production',
 	entry: {
 		polyfills: './polyfills.js',
-		index: './src/index.js'
+		index: './src/index.ts'
 	},
 	output: {
 		filename: "[name].bundle.js",
@@ -20,7 +20,7 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: require.resolve('./src/index.js'),
+				test: require.resolve('./src/index.ts'),
 				use: 'imports-loader?this=>undefined'
 			},
 			{
